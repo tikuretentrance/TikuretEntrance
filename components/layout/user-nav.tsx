@@ -15,7 +15,7 @@ export function UserNav() {
     setMounted(true);
   }, []);
 
-  // Don't render anything until the component is mounted and auth is loaded
+  // render loader until the component is mounted and auth is loaded
   if (!mounted || !isLoaded) {
     return (
       <Button variant="ghost" disabled>
@@ -46,10 +46,10 @@ export function UserNav() {
   return (
     <div className="flex items-center space-x-4">
       <Button variant="ghost" asChild>
-        <Link href="/login">Login</Link>
+        <Link href="/sign-in">Login</Link>
       </Button>
       <Button asChild>
-        <Link href="/register">Get Started</Link>
+        <Link href="/sign-up">Get Started</Link>
       </Button>
     </div>
   );
