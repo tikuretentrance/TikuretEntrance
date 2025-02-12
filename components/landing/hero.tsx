@@ -18,10 +18,13 @@ export default function Hero() {
             </p>
             <div className="flex gap-4 justify-center">
                 {isSignedIn ? (
-                    <Button size="lg" className="shadow-lg hover:shadow-primary/25">
-                        Go to Dashboard
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link href="/dashboard">
+                        <Button size="lg" className="shadow-lg hover:shadow-primary/25">
+                            Go to Dashboard
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </Link>
+
                 ) : (
                     <Button size="lg" asChild>
                         <Link href="/register">Start Learning Now</Link>

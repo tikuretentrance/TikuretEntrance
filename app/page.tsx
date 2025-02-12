@@ -1,3 +1,5 @@
+'use client';
+
 import CTA from "@/components/landing/cta";
 import { FeaturesSection } from "@/components/landing/features";
 import Hero from "@/components/landing/hero";

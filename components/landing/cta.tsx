@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useAuth } from "@clerk/nextjs";
 
 export default function CTA() {
+    const { isSignedIn } = useAuth();
     return (
         <section className="py-16 text-center">
             <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
@@ -10,9 +12,17 @@ export default function CTA() {
                     Join thousands of students preparing for university entrance exams.
                     Start your journey today!
                 </p>
-                <Button size="lg" variant="secondary" asChild>
-                    <Link href="/register">Create Free Account</Link>
-                </Button>
+                {isSignedIn ? (
+                    <Button size="lg" variant="secondary" asChild>
+                        <Link href="/dashboard">
+                            Explore Courses
+                        </Link>
+                    </Button>
+                ) : (
+                    <Button size="lg" variant="secondary" asChild>
+                        <Link href="/sign-up">Create Free Account</Link>
+                    </Button>
+                )}
             </div>
         </section>
     )
