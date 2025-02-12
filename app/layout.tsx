@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-// import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
+import { Providers } from './providers';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,16 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Toaster richColors position="bottom-right" />
+        <Providers>
           <Header />
-          <main className="min-h-screen bg-background">{children}</main>
-          {/* <Toaster /> */}
-        </ThemeProvider>
+          <main className="min-h-screen bg-background">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
