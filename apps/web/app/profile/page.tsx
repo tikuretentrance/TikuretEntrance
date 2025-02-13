@@ -1,3 +1,5 @@
+'use client';
+
 import { ProfileForm } from "@/components/profile/profile-form"
 import { ProfileStats } from "@/components/profile/profile-stats"
 

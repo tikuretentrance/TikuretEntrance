@@ -1,3 +1,5 @@
+'use client';
+
 import { CourseGrid } from "@/components/courses/course-grid";
 import { SubjectFilter } from "@/components/courses/subject-filter";
 import { GradeFilter } from "@/components/courses/grade-filter";
