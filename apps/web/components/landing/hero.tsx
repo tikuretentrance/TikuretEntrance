@@ -27,7 +27,7 @@ export default function Hero() {
 
                 ) : (
                     <Button size="lg" asChild>
-                        <Link href="/register">Start Learning Now</Link>
+                        <Link href="/sign-in">Start Learning Now</Link>
                     </Button>
                 )}
                 <Button size="lg" variant="outline" asChild>
