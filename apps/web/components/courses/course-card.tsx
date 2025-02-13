@@ -1,0 +1,46 @@
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { BookOpen, Clock, Users } from "lucide-react";
+import Link from "next/link";
+import { Course } from "@/lib/types";
+
+interface CourseCardProps {
+  course: Course;
+}
+
+export function CourseCard({ course }: CourseCardProps) {
+  return (
+    <Card className="flex flex-col">
+      <CardHeader>
+        <div className="flex items-center justify-between mb-2">
+          <Badge variant="secondary">{course.grade}</Badge>
+          <Badge variant="outline">{course.subject}</Badge>
+        </div>
+        <h3 className="text-xl font-semibold">{course.title}</h3>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <p className="text-muted-foreground mb-4">{course.description}</p>
+        <div className="space-y-2 text-sm text-muted-foreground">
+          <div className="flex items-center">
+            <Clock className="mr-2 h-4 w-4" />
+            {course.duration}
+          </div>
+          <div className="flex items-center">
+            <BookOpen className="mr-2 h-4 w-4" />
+            {course.lessons} lessons
+          </div>
+          <div className="flex items-center">
+            <Users className="mr-2 h-4 w-4" />
+            {course.students} students enrolled
+          </div>
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full" asChild>
+          <Link href={`/courses/${course.id}`}>Start Learning</Link>
+        </Button>
+      </CardFooter>
+    </Card>
+  );
+}
