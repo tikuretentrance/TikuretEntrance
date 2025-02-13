@@ -23,5 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Install Turbo globally
+        run: npm install -g turbo
+
       - name: Build application
         run: npm run build
