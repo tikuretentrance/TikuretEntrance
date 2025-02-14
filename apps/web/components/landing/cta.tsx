@@ -6,22 +6,24 @@ export default function CTA() {
     const { isSignedIn } = useAuth();
     return (
         <section className="py-16 text-center">
-            <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12">
-                <h2 className="text-3xl font-bold mb-4">Ready to Start Learning?</h2>
-                <p className="text-lg mb-8 max-w-2xl mx-auto">
+            <div className="gradient-primary rounded-lg p-8 md:p-12 shadow-soft">
+                <h2 className="text-3xl font-bold mb-4 text-white">Ready to Start Learning?</h2>
+                <p className="text-lg mb-8 max-w-2xl mx-auto text-white/90">
                     Join thousands of students preparing for university entrance exams.
                     Start your journey today!
                 </p>
                 {isSignedIn ? (
-                    <Button size="lg" variant="secondary" asChild>
-                        <Link href="/dashboard">
+                    <Link href="/dashboard">
+                        <Button size="lg" className="gradient-secondary hover-lift" variant="secondary">
                             Explore Courses
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>
                 ) : (
-                    <Button size="lg" variant="secondary" asChild>
-                        <Link href="/sign-up">Create Free Account</Link>
-                    </Button>
+                    <Link href="/sign-up">
+                        <Button size="lg" className="gradient-secondary hover-lift" variant="secondary">
+                            Create Free Account
+                        </Button>
+                    </Link>
                 )}
             </div>
         </section>

@@ -28,12 +28,12 @@ export function FeaturesSection() {
     ];
     return (
         <section className="py-16">
-            <h2 className="text-3xl font-bold text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gradient">
                 Why Choose TikuretEntrance?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {features.map((feature, index) => (
-                    <Card key={index} className="p-6">
+                    <Card key={index} className="p-6 card-hover">
                         <div className="mb-4 text-primary">{feature.icon}
                         </div>
                         <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
