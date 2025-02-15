@@ -4,6 +4,7 @@ import SubjectFilter from "@/components/exams/subject-filter"
 import StreamFilter from "@/components/exams/stream-filter"
 import ExamStats from "@/components/exams/exam-stats"
 import { Suspense } from "react"
+import { ExamSearch } from "@/components/exams/exam-search"
 
 export default function ExamsPage() {
   return (
@@ -15,6 +16,8 @@ export default function ExamsPage() {
             Practice with actual entrance exams from previous years
           </p>
         </div>
+
+        <ExamSearch />
 
         <Suspense fallback={<div>Loading Exam Stats...</div>}>
           <div className="grid gap-6 md:grid-cols-[240px_1fr]">
