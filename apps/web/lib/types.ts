@@ -28,3 +28,26 @@ export interface CourseTopic {
   completed: boolean
   description?: string
 }
+
+export interface Test {
+  id: string
+  title: string
+  subject: string
+  difficulty: string
+  duration: number
+  questions: number
+  averageScore: number
+  attempts: number
+}
+
+export interface Exam {
+  id: string
+  subject: string
+  stream: string
+  year: number
+  description: string
+  duration: number
+  questions: number
+  attempts: number
+  averageScore: number
+}

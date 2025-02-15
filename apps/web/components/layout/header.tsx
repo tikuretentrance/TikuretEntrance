@@ -9,8 +9,10 @@ import { ThemeToggle } from "../theme/theme-toggle";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Courses", href: "/courses" },
-  { name: "Practice Tests", href: "/practice" },
+  { name: "Books", href: "/books" },
+  // { name: "Courses", href: "/courses" },
+  // { name: "Practice Tests", href: "/practice" },
+  { name: "Exams", href: "/exams" },
   { name: "Study Plans", href: "/study-plans" },
 ];
 
@@ -23,7 +25,7 @@ export default function Header() {
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <GraduationCap className="h-6 w-6" />
-            <span className="font-bold text-lg">TikuretEntrance</span>
+            <span className="font-bold text-lg text-gradient">TikuretEntrance</span>
           </Link>
         </div>
         <nav className="hidden md:flex flex-grow justify-center gap-8">
