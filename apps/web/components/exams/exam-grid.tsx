@@ -5,26 +5,34 @@ import { ExamCard } from "./exam-card"
 import { exams } from "@/lib/exams-data"
 
 export default function ExamGrid() {
-    const searchParams = useSearchParams()
-    const stream = searchParams.get("stream")
-    const subject = searchParams.get("subject")
-    const year = searchParams.get("year")
+  const searchParams = useSearchParams()
+  const stream = searchParams.get("stream")
+  const subject = searchParams.get("subject")
+  const year = searchParams.get("year")
+  const search = searchParams.get("search")?.toLowerCase()
 
-    const filteredExams = exams.filter(exam => {
-        if (stream && stream !== "all" && exam.stream.toLowerCase() !== stream) {
-            return false
-        }
+  const filteredExams = exams.filter(exam => {
+    if (stream && stream !== "all" && exam.stream.toLowerCase() !== stream) {
+      return false
+    }
+    
+    if (subject && subject !== "all" && exam.subject.toLowerCase() !== subject) {
+      return false
+    }
+    
+    if (year && year !== "all" && exam.year.toString() !== year) {
+      return false
+    }
 
-        if (subject && subject !== "all" && exam.subject.toLowerCase() !== subject) {
-            return false
-        }
-
-        if (year && year !== "all" && exam.year.toString() !== year) {
-            return false
-        }
-
-        return true
-    })
+    if (search) {
+      const searchableText = `${exam.subject} ${exam.year} ${exam.description}`.toLowerCase()
+      if (!searchableText.includes(search)) {
+        return false
+      }
+    }
+    
+    return true
+  })
 
     if (filteredExams.length === 0) {
         return (
