@@ -3,6 +3,7 @@ import YearFilter from "@/components/exams/year-filter"
 import SubjectFilter from "@/components/exams/subject-filter"
 import StreamFilter from "@/components/exams/stream-filter"
 import ExamStats from "@/components/exams/exam-stats"
+import { Suspense } from "react"
 
 export default function ExamsPage() {
   return (
@@ -15,18 +16,20 @@ export default function ExamsPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-[240px_1fr]">
-          <aside className="space-y-6">
-            <ExamStats />
-            <StreamFilter />
-            <SubjectFilter />
-            <YearFilter />
-          </aside>
-          
-          <main>
-            <ExamGrid />
-          </main>
-        </div>
+        <Suspense fallback={<div>Loading Exam Stats...</div>}>
+          <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+            <aside className="space-y-6">
+              <ExamStats />
+              <StreamFilter />
+              <SubjectFilter />
+              <YearFilter />
+            </aside>
+
+            <main>
+              <ExamGrid />
+            </main>
+          </div>
+        </Suspense>
       </div>
     </div>
   )
