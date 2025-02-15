@@ -17,7 +17,9 @@ export default function ExamsPage() {
           </p>
         </div>
 
-        <ExamSearch />
+        <Suspense fallback={<div>Loading Exam Search...</div>}>
+          <ExamSearch />
+        </Suspense>
 
         <Suspense fallback={<div>Loading Exam Stats...</div>}>
           <div className="grid gap-6 md:grid-cols-[240px_1fr]">
