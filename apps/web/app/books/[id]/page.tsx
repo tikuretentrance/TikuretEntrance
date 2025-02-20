@@ -38,7 +38,7 @@ export default function BookPage({ params }: BookPageProps) {
     }
 
     return (
-        <div className="container px-4 py-8">
+        <div className="container px-4 py-8 mx-auto">
             <BookDetails book={book} />
         </div>
     )
