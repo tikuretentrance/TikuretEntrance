@@ -9,6 +9,7 @@ import { FileText, Info, BookOpen, Download, Heart } from "lucide-react"
 import { Book as BookType } from "@/lib/types"
 import Image from "next/image"
 import { Document, Page, pdfjs } from "react-pdf"
+import { Viewer, SpecialZoomLevel, ProgressBar } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css'
 
 // PDF.js worker config
@@ -45,58 +46,11 @@ export function BookDetails({ book }: BookDetailsProps) {
                         </TabsList>
 
                         <TabsContent value="reader" className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <div className="space-x-2">
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={() => setScale(scale - 0.1)}
-                                        disabled={scale <= 0.5}
-                                    >
-                                        Zoom Out
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={() => setScale(scale + 0.1)}
-                                        disabled={scale >= 1.2}
-                                    >
-                                        Zoom In
-                                    </Button>
-                                </div>
-                                <div className="text-sm text-muted-foreground">
-                                    Page {pageNumber} of {numPages}
-                                </div>
-                            </div>
-
-                            {/* Toggle between single page and continuous scroll */}
-                            <div className="flex justify-end space-x-2">
-                                <Button
-                                    variant={viewMode === "single" ? "default" : "outline"}
-                                    onClick={() => setViewMode("single")}
-                                >
-                                    Single Page
-                                </Button>
-                                <Button
-                                    variant={viewMode === "continuous" ? "default" : "outline"}
-                                    onClick={() => setViewMode("continuous")}
-                                >
-                                    Continuous Scroll
-                                </Button>
-                            </div>
-
                             <div className="border rounded-lg p-4 bg-white overflow-hidden">
                                 {viewMode === "single" ? (
-                                    <Document
-                                        file={book.pdfUrl}
-                                        onLoadSuccess={onDocumentLoadSuccess}
-                                    >
-                                        <Page pageNumber={pageNumber} scale={scale} 
-                                        
-                                        renderTextLayer={false}
-                                        renderAnnotationLayer={false}
-                                        />
-                                    </Document>
+
+                                    <Viewer fileUrl={book.pdfUrl} defaultScale={SpecialZoomLevel.PageWidth} />
+
                                 ) : (
                                     <Document
                                         file={book.pdfUrl}
@@ -104,8 +58,8 @@ export function BookDetails({ book }: BookDetailsProps) {
                                     >
                                         {/* Display all pages for continuous scroll */}
                                         {Array.from(new Array(numPages), (el, index) => (
-                                            <Page key={index} pageNumber={index + 1} scale={scale}  renderTextLayer={false}
-                                            renderAnnotationLayer={false} />
+                                            <Page key={index} pageNumber={index + 1} scale={scale} renderTextLayer={false}
+                                                renderAnnotationLayer={false} />
                                         ))}
                                     </Document>
                                 )}
