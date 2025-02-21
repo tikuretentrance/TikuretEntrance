@@ -29,5 +29,5 @@ jobs:
       - name: Install Turbo globally
         run: npm install -g turbo
 
-      - name: Build application
-        run: npm run build
+      - name: Build web application only
+        run: npm run build -- --filter=web
