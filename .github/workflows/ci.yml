@@ -23,22 +23,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm@9.14.2
 
-      - name: Set SHELL environment variable and setup pnpm global bin directory
-        run: |
-          export SHELL=/bin/bash
-          pnpm setup
-          export PNPM_HOME=$(pnpm env get PNPM_HOME)
-          echo "PNPM_HOME=$PNPM_HOME" >> $GITHUB_ENV
-          echo "$PNPM_HOME/bin" >> $GITHUB_PATH
-
-      - name: Check pnpm version
-        run: pnpm --version
-
       - name: Install dependencies with pnpm
         run: pnpm install
-
-      - name: Print PATH
-        run: echo $PATH
 
       - name: Install Turbo globally with npm
         run: npm install -g turbo
