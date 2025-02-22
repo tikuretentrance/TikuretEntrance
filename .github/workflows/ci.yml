@@ -29,5 +29,8 @@ jobs:
       - name: Install Turbo globally
         run: npm install -g turbo
 
+      - name: Enable Turbo Debugging
+        run: export TURBO_TELEMETRY_DEBUG=1
+
       - name: Build web application only
         run: npm run build -- --filter=web
