@@ -20,20 +20,20 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Check npm version
-        run: npm --version
+      - name: Install pnpm
+        run: npm install -g pnpm@9.14.2
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: Check pnpm version
+        run: pnpm --version
+
+      - name: Install dependencies with pnpm
+        run: pnpm install
 
       - name: Print PATH
         run: echo $PATH
 
-      - name: Add npm to PATH
-        run: echo "$(npm bin)" >> $GITHUB_PATH
-
-      - name: Install Turbo locally
-        run: npm install turbo --save-dev
+      - name: Install Turbo globally with pnpm
+        run: pnpm install -g turbo
 
       - name: Build web application only
-        run: npx turbo run build -- --filter=web --cache=local:r,remote:r
+        run: pnpm run build -- --filter=web --cache=local:r,remote:r
