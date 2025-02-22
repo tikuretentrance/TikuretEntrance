@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  db-mela:
+    image: postgres:latest
+    container_name: db-mela
+    environment:
+      POSTGRES_USER: ${PSQL_USER}
+      POSTGRES_PASSWORD: ${PSQL_PASSWORD}
+      POSTGRES_DB: ${PSQL_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    ports:
+      - '5436:5432' # Exposing port 5432 to allow external connections
+
+  pgadmin:
+    links:
+      - db-mela:db-mela
+    container_name: pgadmin-mela
+    image: dpage/pgadmin4
+    ports:
+      - '8083:80'
+    volumes:
+      - /data/pgadmin:/root/.pgadmin
+    env_file:
+      - docker.env
+    networks:
+      - app-network
+
+  mela-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mela-server
+    ports:
+      - '4636:4636'
+    depends_on:
+      - db-mela
+    environment:
+      PSQL_HOST: db-mela
+      PSQL_PORT: ${PSQL_PORT}
+      PSQL_USER: ${PSQL_USER}
+      PSQL_PASSWORD: ${PSQL_PASSWORD}
+      PSQL_DB: ${PSQL_DB}
+    env_file:
+      - .env
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge
