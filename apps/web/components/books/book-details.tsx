@@ -9,7 +9,12 @@ import { FileText, Info, BookOpen, Download, Heart } from "lucide-react"
 import { Book as BookType } from "@/lib/types"
 import Image from "next/image"
 import { Document, Page, pdfjs } from "react-pdf"
+import { Viewer, SpecialZoomLevel, ProgressBar, ViewMode } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+
 import '@react-pdf-viewer/core/lib/styles/index.css'
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
 
 // PDF.js worker config
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`
@@ -19,15 +24,8 @@ interface BookDetailsProps {
 }
 
 export function BookDetails({ book }: BookDetailsProps) {
-    const [numPages, setNumPages] = useState<number | null>(null)
-    const [pageNumber, setPageNumber] = useState(1)
-    const [scale, setScale] = useState(1.0)
-    const [viewMode, setViewMode] = useState("single") // "single" or "continuous"
 
-    function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-        setNumPages(numPages)
-    }
-
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
     return (
         <div className="max-w-7xl mx-auto">
             <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
@@ -45,89 +43,18 @@ export function BookDetails({ book }: BookDetailsProps) {
                         </TabsList>
 
                         <TabsContent value="reader" className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <div className="space-x-2">
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={() => setScale(scale - 0.1)}
-                                        disabled={scale <= 0.5}
-                                    >
-                                        Zoom Out
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={() => setScale(scale + 0.1)}
-                                        disabled={scale >= 1.2}
-                                    >
-                                        Zoom In
-                                    </Button>
-                                </div>
-                                <div className="text-sm text-muted-foreground">
-                                    Page {pageNumber} of {numPages}
-                                </div>
+                            <div className="border rounded-lg p-1 bg-white overflow-auto max-h-[600px]">
+                                <Viewer
+                                    viewMode={ViewMode.DualPageWithCover}
+                                    fileUrl={book.pdfUrl}
+                                    defaultScale={SpecialZoomLevel.PageFit}
+                                    plugins={[defaultLayoutPluginInstance]}
+                                    renderLoader={(percentages: number) => (
+                                        <div style={{ width: '240px' }}>
+                                            <ProgressBar progress={Math.round(percentages)} />
+                                        </div>
+                                    )} />
                             </div>
-
-                            {/* Toggle between single page and continuous scroll */}
-                            <div className="flex justify-end space-x-2">
-                                <Button
-                                    variant={viewMode === "single" ? "default" : "outline"}
-                                    onClick={() => setViewMode("single")}
-                                >
-                                    Single Page
-                                </Button>
-                                <Button
-                                    variant={viewMode === "continuous" ? "default" : "outline"}
-                                    onClick={() => setViewMode("continuous")}
-                                >
-                                    Continuous Scroll
-                                </Button>
-                            </div>
-
-                            <div className="border rounded-lg p-4 bg-white overflow-hidden">
-                                {viewMode === "single" ? (
-                                    <Document
-                                        file={book.pdfUrl}
-                                        onLoadSuccess={onDocumentLoadSuccess}
-                                    >
-                                        <Page pageNumber={pageNumber} scale={scale} 
-                                        
-                                        renderTextLayer={false}
-                                        renderAnnotationLayer={false}
-                                        />
-                                    </Document>
-                                ) : (
-                                    <Document
-                                        file={book.pdfUrl}
-                                        onLoadSuccess={onDocumentLoadSuccess}
-                                    >
-                                        {/* Display all pages for continuous scroll */}
-                                        {Array.from(new Array(numPages), (el, index) => (
-                                            <Page key={index} pageNumber={index + 1} scale={scale}  renderTextLayer={false}
-                                            renderAnnotationLayer={false} />
-                                        ))}
-                                    </Document>
-                                )}
-                            </div>
-
-                            {viewMode === "single" && (
-                                <div className="flex justify-between">
-                                    <Button
-                                        variant="outline"
-                                        onClick={() => setPageNumber(pageNumber - 1)}
-                                        disabled={pageNumber <= 1}
-                                    >
-                                        Previous
-                                    </Button>
-                                    <Button
-                                        onClick={() => setPageNumber(pageNumber + 1)}
-                                        disabled={pageNumber >= (numPages || 1)}
-                                    >
-                                        Next
-                                    </Button>
-                                </div>
-                            )}
                         </TabsContent>
 
                         <TabsContent value="info">

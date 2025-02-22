@@ -10,7 +10,7 @@ import { ThemeToggle } from "../theme/theme-toggle";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Books", href: "/books" },
-  // { name: "Courses", href: "/courses" },
+  { name: "Courses", href: "/courses" },
   // { name: "Practice Tests", href: "/practice" },
   { name: "Exams", href: "/exams" },
   { name: "Study Plans", href: "/study-plans" },

@@ -63,6 +63,27 @@ export const courses: Course[] = [
             description: "Advanced integration methods"
           }
         ]
+      },
+      {
+        id: 2,
+        title: "Integration Methods",
+        progress: 43,
+        topics: [
+          {
+            id: 4,
+            title: "Basic Integration",
+            duration: "1 hour",
+            completed: true,
+            description: "Fundamental integration techniques"
+          },
+          {
+            id: 5,
+            title: "Integration by Parts",
+            duration: "1 hour",
+            completed: false,
+            description: "Advanced integration methods"
+          }
+        ]
       }
     ]
   },

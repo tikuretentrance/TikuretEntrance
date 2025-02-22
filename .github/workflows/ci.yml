@@ -20,11 +20,16 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: Install pnpm
+        run: npm install -g pnpm@9.14.2
 
-      - name: Install Turbo globally
+      - name: Install dependencies with pnpm
+        run: pnpm install
+
+      - name: Install Turbo globally with npm
         run: npm install -g turbo
 
-      - name: Build application
-        run: npm run build
+      - name: Build web application only
+        env:
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        run: turbo run build --filter=web --only --cache=local:r,remote:r
