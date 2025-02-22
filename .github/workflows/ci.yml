@@ -32,4 +32,4 @@ jobs:
       - name: Build web application only
         env:
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-        run: turbo run build --filter=web --only --cache=local:r,remote:r
+        run: turbo run build --cache=local:r,remote:r
