@@ -33,4 +33,4 @@ jobs:
         run: npm install -g turbo
 
       - name: Build web application only
-        run: npm run build -- --filter=web
+        run: npm run build -- --filter=web --no-cache
