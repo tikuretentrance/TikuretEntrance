@@ -40,8 +40,8 @@ jobs:
       - name: Print PATH
         run: echo $PATH
 
-      - name: Install Turbo globally with pnpm
-        run: pnpm install -g turbo
+      - name: Install Turbo globally with npm
+        run: npm install -g turbo
 
       - name: Build web application only
         run: pnpm run build -- --filter=web --cache=local:r,remote:r
