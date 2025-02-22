@@ -29,8 +29,11 @@ jobs:
       - name: Print PATH
         run: echo $PATH
 
-      - name: Install Turbo globally
-        run: npm install -g turbo
+      - name: Add npm to PATH
+        run: echo "$(npm bin)" >> $GITHUB_PATH
+
+      - name: Install Turbo locally
+        run: npm install turbo --save-dev
 
       - name: Build web application only
-        run: npm run build -- --filter=web --cache=local:r,remote:r
+        run: npx turbo run build -- --filter=web --cache=local:r,remote:r
