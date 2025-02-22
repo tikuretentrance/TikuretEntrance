@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  db-mela:
+  db-tikuretentrance:
     image: postgres:latest
-    container_name: db-mela
+    container_name: db-tikuretentrance
     environment:
       POSTGRES_USER: ${PSQL_USER}
       POSTGRES_PASSWORD: ${PSQL_PASSWORD}
@@ -17,7 +17,7 @@ services:
 
   pgadmin:
     links:
-      - db-mela:db-mela
+      - db-tikuretentrance:db-tikuretentrance
     container_name: pgadmin-mela
     image: dpage/pgadmin4
     ports:
@@ -29,17 +29,17 @@ services:
     networks:
       - app-network
 
-  mela-server:
+  tikuretentrance-server:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mela-server
+    container_name: tikuretentrance-server
     ports:
       - '4636:4636'
     depends_on:
-      - db-mela
+      - db-tikuretentrance
     environment:
-      PSQL_HOST: db-mela
+      PSQL_HOST: db-tikuretentrance
       PSQL_PORT: ${PSQL_PORT}
       PSQL_USER: ${PSQL_USER}
       PSQL_PASSWORD: ${PSQL_PASSWORD}

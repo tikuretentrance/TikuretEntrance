@@ -2,7 +2,7 @@ FROM node:20.0.0 AS base
 
 FROM base AS build
 
-WORKDIR /mela-base
+WORKDIR /tikuretentrance-base
 
 COPY package.json package-lock.json ./
 RUN npm ci --legacy-peer-deps
@@ -14,12 +14,12 @@ RUN npm run build
 
 FROM node:20.0.0 AS production
 
-WORKDIR /mela-base
+WORKDIR /tikuretentrance-base
 
-COPY --from=build /mela-base/package.json /mela-base/package-lock.json ./
+COPY --from=build /tikuretentrance-base/package.json /tikuretentrance-base/package-lock.json ./
 RUN npm ci --only=production --legacy-peer-deps
 
-COPY --from=build /mela-base/dist ./dist
+COPY --from=build /tikuretentrance-base/dist ./dist
 
 ENV NODE_ENV=production
 
