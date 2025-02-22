@@ -23,8 +23,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm@9.14.2
 
-      - name: Setup pnpm global bin directory
+      - name: Set SHELL environment variable and setup pnpm global bin directory
         run: |
+          export SHELL=/bin/bash
           pnpm setup
           export PNPM_HOME=$(pnpm env get PNPM_HOME)
           echo "PNPM_HOME=$PNPM_HOME" >> $GITHUB_ENV
