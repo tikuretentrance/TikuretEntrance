@@ -45,7 +45,7 @@ export function BookDetails({ book }: BookDetailsProps) {
                         <TabsContent value="reader" className="space-y-4">
                             <div className="border rounded-lg p-1 bg-white overflow-auto max-h-[600px]">
                                 <Viewer
-                                    viewMode={ViewMode.DualPageWithCover}
+                                    viewMode={ViewMode.SinglePage}
                                     fileUrl={book.pdfUrl}
                                     defaultScale={SpecialZoomLevel.PageFit}
                                     plugins={[defaultLayoutPluginInstance]}
