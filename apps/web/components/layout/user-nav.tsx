@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { UserButton } from "@clerk/nextjs";
 import { useAuth } from "@clerk/nextjs";
@@ -7,7 +7,11 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Loader } from "lucide-react";
 
-export function UserNav() {
+interface UserNavProps {
+  isMobile?: boolean;
+}
+
+export function UserNav({ isMobile = false }: UserNavProps) {
   const { isSignedIn, isLoaded } = useAuth();
   const [mounted, setMounted] = useState(false);
 
@@ -15,24 +19,24 @@ export function UserNav() {
     setMounted(true);
   }, []);
 
-  // render loader until the component is mounted and auth is loaded
   if (!mounted || !isLoaded) {
     return (
       <Button variant="ghost" disabled>
-        Loading...
-        <Loader className="mr-2" />
+        <Loader className="h-4 w-4 animate-spin" />
+        <span className="ml-2">Loading...</span>
       </Button>
     );
   }
 
   if (isSignedIn) {
     return (
-      <div className="flex items-center space-x-4">
+      <div className={`flex items-center ${isMobile ? 'flex-col space-y-2' : 'space-x-4'}`}>
         <Link href="/dashboard">
-          <Button variant="ghost">Dashboard</Button>
+          <Button variant="ghost" className={isMobile ? 'w-full justify-start' : ''}>
+            Dashboard
+          </Button>
         </Link>
         <UserButton
-          afterSignOutUrl="/"
           appearance={{
             elements: {
               avatarBox: "h-8 w-8"
@@ -43,13 +47,27 @@ export function UserNav() {
     );
   }
 
+  if (isMobile) {
+    return (
+      <div className="flex flex-col space-y-2">
+        <Link href="/sign-in" className="w-full">
+          <Button variant="ghost" className="w-full justify-start">
+            Login
+          </Button>
+        </Link>
+        <Link href="/sign-up" className="w-full">
+          <Button className="justify-start">
+          Get Started
+          </Button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center space-x-4">
       <Button variant="ghost" asChild>
         <Link href="/sign-in">Login</Link>
-      </Button>
-      <Button asChild>
-        <Link href="/sign-up">Get Started</Link>
       </Button>
     </div>
   );
