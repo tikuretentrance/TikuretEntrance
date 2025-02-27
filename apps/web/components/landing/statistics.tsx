@@ -22,8 +22,8 @@ export function Statistics() {
         },
         {
             icon: <School className="h-6 w-6" />,
-            value: "50+",
-            label: "Partner Universities",
+            value: "10+",
+            label: "Partner Schools",
         },
     ];
 
