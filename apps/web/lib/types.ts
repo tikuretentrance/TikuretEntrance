@@ -65,6 +65,19 @@ export interface ExamQuestion {
   imageAlt?: string
 }
 
+// Define a more structured result type for future backend integration
+export interface ExamResult {
+  examId: string
+  userId: string
+  score: number
+  totalQuestions: number
+  timeSpent: number
+  answers: Record<number, number>
+  submittedAt: string
+  completed: boolean
+  attemptId: string
+}
+
 export interface Book {
   id: string
   title: string

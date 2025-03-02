@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { Exam, ExamQuestion } from "@/lib/types"
+import { Exam, ExamQuestion, ExamResult } from "@/lib/types"
 import { BarChart, CheckCircle2, XCircle, Clock, Award, BookOpen, BarChart2 } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
@@ -12,19 +12,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface ExamResultsProps {
     exam: Exam
-}
-
-// Define a more structured result type for future backend integration
-interface ExamResult {
-    examId: string
-    userId: string
-    score: number
-    totalQuestions: number
-    timeSpent: number
-    answers: Record<number, number>
-    submittedAt: string
-    completed: boolean
-    attemptId: string
 }
 
 interface TopicPerformance {
