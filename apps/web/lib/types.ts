@@ -50,6 +50,19 @@ export interface Exam {
   questions: number
   attempts: number
   averageScore: number
+  questionData?: ExamQuestion[]
+}
+
+export interface ExamQuestion {
+  id: number
+  text: string
+  options: string[]
+  correctAnswer: number
+  explanation: string
+  topic?: string
+  difficulty?: 'easy' | 'medium' | 'hard'
+  imageUrl?: string
+  imageAlt?: string
 }
 
 export interface Book {
