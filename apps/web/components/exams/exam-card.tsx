@@ -1,16 +1,20 @@
+'use client'
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Clock, FileText, Users, Award } from "lucide-react"
 import Link from "next/link"
 import { Exam } from "@/lib/types"
+import { useAuth } from "@clerk/nextjs"
+
 
 interface ExamCardProps {
   exam: Exam
 }
 
 export function ExamCard({ exam }: ExamCardProps) {
-  return (
+const { isSignedIn } = useAuth()
+return (
     <Card className="flex flex-col card-interactive">
       <CardHeader>
         <div className="flex items-center justify-between mb-2">
@@ -43,9 +47,16 @@ export function ExamCard({ exam }: ExamCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full gradient-primary hover-lift" asChild>
-          <Link href={`/exams/${exam.id}`}>Start Exam</Link>
-        </Button>
+        {isSignedIn ? (
+          <Button className="w-full gradient-primary hover-lift" asChild>
+            <Link href={`/exams/${exam.id}`}>Start Exam</Link>
+          </Button>
+        ) : (
+          <Button className="w-full gradient-primary hover-lift" asChild>
+            <Link href="/sign-in">Sign In to Start Exam</Link>
+          </Button>
+        )}
+
       </CardFooter>
     </Card>
   )
