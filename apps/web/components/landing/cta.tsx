@@ -13,9 +13,9 @@ export default function CTA() {
                     Start your journey today!
                 </p>
                 {isSignedIn ? (
-                    <Link href="/dashboard">
+                    <Link href="/exams">
                         <Button size="lg" className="gradient-secondary hover-lift" variant="secondary">
-                            Explore Courses
+                            Explore Exams
                         </Button>
                     </Link>
                 ) : (

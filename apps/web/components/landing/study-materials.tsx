@@ -42,8 +42,8 @@ export function StudyMaterials() {
     return (
         <section className="py-16">
             <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Comprehensive Study Resources</h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <h2 className="text-3xl font-bold mb-4 text-gradient">Comprehensive Study Resources</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Everything you need to excel in your Grade 12 entrance exam - from complete curriculum to previous year papers
                 </p>
             </div>
