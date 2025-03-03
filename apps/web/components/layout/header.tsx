@@ -20,7 +20,7 @@ const navigation = [
   { name: "Books", href: "/books" },
   { name: "Courses", href: "/courses" },
   { name: "Exams", href: "/exams" },
-  { name: "Study Plans", href: "/study-plans" },
+  { name: "FAQ", href: "/faq" },
 ];
 
 export default function Header() {
