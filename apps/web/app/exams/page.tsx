@@ -1,3 +1,5 @@
+'use client';
+
 import ExamGrid from "@/components/exams/exam-grid"
 import YearFilter from "@/components/exams/year-filter"
 import SubjectFilter from "@/components/exams/subject-filter"
