@@ -26,7 +26,7 @@ export function BookCard({ book }: BookCardProps) {
                     <Badge variant="secondary">{book.grade}</Badge>
                     <Badge variant="outline">{book.subject}</Badge>
                 </div>
-                <h3 className="text-xl font-semibold">{book.title}</h3>
+                <h3 className="text-xl font-semibold text-gradient">{book.title}</h3>
             </CardHeader>
             <CardContent className="flex-1">
                 <p className="text-muted-foreground mb-4">{book.description}</p>

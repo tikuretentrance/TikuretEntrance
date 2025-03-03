@@ -22,7 +22,7 @@ return (
           <Badge variant="outline" className="pill">{exam.year}</Badge>
         </div>
         <div className="space-y-2">
-          <h3 className="text-xl font-semibold">{exam.subject}</h3>
+          <h3 className="text-xl font-semibold text-gradient">{exam.subject}</h3>
           <p className="text-sm text-muted-foreground">{exam.description}</p>
         </div>
       </CardHeader>
