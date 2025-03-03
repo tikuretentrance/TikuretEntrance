@@ -15,11 +15,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC9gb2EOI8uZqeSw0R15jrKJzXHNgbxc2lGh3O",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC9gb2EOI8uZqeSw0R15jrKJzXHNgbxc2lGh3O",
     chapters: [
-      "Basic Algebra",
-      "Geometry",
-      "Trigonometry",
-      "Statistics",
-      "Probability"
+      "Further on Sets",
+      "The Number System",
+      "Solving Equations",
+      "Solving Inequalities",
+      "Introduction to Trigonometry",
+      "Regular Polygons",
+      "Congruency and Similarity",
+      "Vectors in Two Dimensions",
+      "Statistics and Probability"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -43,11 +47,13 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCqfOhdTZE3a0rPtbJV2sHuZACmqTD6hy97Gdn",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCqfOhdTZE3a0rPtbJV2sHuZACmqTD6hy97Gdn",
     chapters: [
-      "Algebra",
-      "Geometry",
-      "Trigonometry",
-      "Statistics",
-      "Probability"
+      "Relations and Functions",
+      "Polynomial Functions",
+      "Exponential and Logarithmic Functions",
+      "Trigonometric Functions",
+      "Circles",
+      "Solid Figures",
+      "Coordinate Geometry"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -71,11 +77,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCHbymxy9TrUi9LPFvS62V8KzgGkMOXJcx0Bj1",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCHbymxy9TrUi9LPFvS62V8KzgGkMOXJcx0Bj1",
     chapters: [
-      "Advanced Algebra",
-      "Calculus",
+      "Relations and Functions",
+      "Rational Expression and Rational Functions",
+      "Matrices",
+      "Determinants and their properties",
       "Vectors",
-      "Geometry",
-      "Matrices"
+      "Transformations of the plane",
+      "Statistics",
+      "Probability"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -99,11 +108,9 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCsbkvHry2CKDGk0dtSWmPzaBuQxXJi5Nhr1Eo",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCsbkvHry2CKDGk0dtSWmPzaBuQxXJi5Nhr1Eo",
     chapters: [
-      "Functions and Graphs",
-      "Limits and Continuity",
-      "Differentiation",
-      "Integration",
-      "Vectors in 3D"
+      "Sequence and Series",
+      "Introductions to Calculus",
+      "Statistics"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -129,11 +136,16 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC4nrRDoW90GmfSAyDpotqIX7OlxCUv1a2khVR",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC4nrRDoW90GmfSAyDpotqIX7OlxCUv1a2khVR",
     chapters: [
-      "Grammar",
-      "Vocabulary",
-      "Writing Skills",
-      "Reading Comprehension",
-      "Literature"
+      "Living in Urban Areas",
+      "Study Skills",
+      "Traffic Accident",
+      "National Parks",
+      "Horticulture",
+      "Poverty in Ethiopia",
+      "Community Services",
+      "Communicable Diseases",
+      "Fairness and Equity",
+      "The Internet"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -157,11 +169,16 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCLRGlABMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCLRGlABMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     chapters: [
-      "Grammar",
-      "Vocabulary",
-      "Writing Skills",
-      "Reading Comprehension",
-      "Literature"
+      "Population Growth",
+      "Travel Behaviors",
+      "Punctuality",
+      "Tourist Attractions",
+      "Honey Processing",
+      "Migration",
+      "Branding Ethiopia and National",
+      "The Healing Power of Plants",
+      "Multilingualism",
+      "Digital Vs Satellite Television"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -185,11 +202,16 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCY5tmsiSoZfspXA1hVDC8dRm2kUB9uvNOSrWb",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCY5tmsiSoZfspXA1hVDC8dRm2kUB9uvNOSrWb",
     chapters: [
-      "Grammar",
-      "Vocabulary",
-      "Writing Skills",
-      "Reading Comprehension",
-      "Literature"
+      "Environmental Hazards",
+      "Civilization",
+      "Causes of Road Traffic Accidents",
+      "People and Natural Resources",
+      "Irrigation",
+      "Global Warming",
+      "Patriotism",
+      "Efficiency of Health Services",
+      "Indigenous Conflict Resolution",
+      "Artificial Intelligence",
     ],
     recentlyViewed: true,
     favorite: false,
@@ -213,11 +235,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCwUFNrEPLatv3qh8oIlDJeb92OZcnTQ4EViYz",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCwUFNrEPLatv3qh8oIlDJeb92OZcnTQ4EViYz",
     chapters: [
-      "Grammar",
-      "Vocabulary",
-      "Writing Skills",
-      "Reading Comprehension",
-      "Literature"
+      "Sustainable Development",
+      "Time Management",
+      "Evidence on Traffic Accident",
+      "Natural Resource Management",
+      "Mechanized Agriculture",
+      "Green Economies",
+      "National Pride",
+      "Telemedicine",
+      "Conflict Management"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -243,10 +269,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCuaJKrT5Fa6G12UtKiAh8d0ITePqpN7EZms4B",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCuaJKrT5Fa6G12UtKiAh8d0ITePqpN7EZms4B",
     chapters: [
-      "Physical Geography",
-      "Human Geography",
-      "Climate",
-      "Population"
+      "Geological History And Topography Of Ethiopia",
+      "Climate Of Ethiopia",
+      "Natural Resource Base Of Ethiopia",
+      "Population And Demographic Characteristics Of Ethiopia",
+      "Major Economic And Cultural Activities In Ethiopia",
+      "Human - Natural Environment Interactions In Ethiopia",
+      "Contemporary Geographic Issues And Public Concerns In Ethiopia",
+      "Geographic Inquiry Skills And Techniques"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -270,10 +300,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC2ZZRpS4zbYhlBUJCXe8PDMmTZk3pGHy9Idwo",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC2ZZRpS4zbYhlBUJCXe8PDMmTZk3pGHy9Idwo",
     chapters: [
-      "Physical Geography",
-      "Economic Geography",
-      "Environmental Issues",
-      "Map Skills"
+      "Land-forms Of Africa",
+      "Climate Of Africa",
+      "Natural Resource Base Of Africa",
+      "Population of Africa",
+      "Major Economic and Cultural Activities of Africa",
+      "Human - Natural Environment Interactions",
+      "Geographic Issues And Public Concerns In Africa",
+      "Geospatial Information And Data Processing"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -298,10 +332,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCWu30g7fSnw7VqOU9zZJIa38QELexiBp2MoPF",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCWu30g7fSnw7VqOU9zZJIa38QELexiBp2MoPF",
     chapters: [
-      "Physical Geography",
-      "Economic Geography",
-      "Environmental Issues",
-      "Map Skills"
+      "Formation of the Continents",
+      "Climate Classification and Climate Regions of Our World",
+      "Natural Resources and Conflicts Over Resources",
+      "Global Population Dynamics and Challenges",
+      "Geography and Economic Development",
+      "Major Global Environmental Changes",
+      "Geographic Issues and Public Concerns",
+      "Geo-spatial Information and Data Processing"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -325,10 +363,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCqhigQpZE3a0rPtbJV2sHuZACmqTD6hy97Gdn",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCqhigQpZE3a0rPtbJV2sHuZACmqTD6hy97Gdn",
     chapters: [
-      "Physical Geography",
-      "Economic Geography",
-      "Environmental Issues",
-      "Map Skills"
+      "Major Geological Processes Associated with Plate Tectonics",
+      "Climate Change",
+      "Management of Conflict Over Resources",
+      "Population Policies Programs and The Environment",
+      "Challenges of Economic Development",
+      "Solutions to Environmental and Sustainablity Problems",
+      "Contemporary Global Geographic Issues and Public Concerns",
+      "Geographical Enquiry and Map Making"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -355,11 +397,13 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCQfBgvq90JnGoIbVtPUXSQm52WKDfd6Tiyx43",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCQfBgvq90JnGoIbVtPUXSQm52WKDfd6Tiyx43",
     chapters: [
-      "Mechanics",
-      "Heat",
-      "Light",
-      "Sound",
-      "Electricity"
+      "Physics and Human Society",
+      "Physical Quantities",
+      "Morion in a Straight Line",
+      "Force, Work, Energy, and Power",
+      "Simple Machines",
+      "Mechanical Oscillation and Sound Wave",
+      "Temperature and Thermometer"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -383,11 +427,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCwkBhvR6PLatv3qh8oIlDJeb92OZcnTQ4EViY",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCwkBhvR6PLatv3qh8oIlDJeb92OZcnTQ4EViY",
     chapters: [
-      "Mechanics",
-      "Heat",
-      "Light",
-      "Sound",
-      "Electricity"
+      "Vector Quantities",
+      "Uniformly Accelerated Motion",
+      "Elasticity and Static Equilibrium of Rigid Body",
+      "Static and Current Electricity",
+      "Magnetism",
+      "Electromagnetic Waves and Geometrical Optics"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -411,11 +456,13 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMHLF9glMKQDVz97SNsiJqGurTt2EaIywXbRx",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMHLF9glMKQDVz97SNsiJqGurTt2EaIywXbRx",
     chapters: [
-      "Mechanics",
-      "Heat",
-      "Light",
-      "Sound",
-      "Electricity"
+      "Physics and Human Society",
+      "Vectors",
+      "Motion in one and two dimensions",
+      "Dynamics",
+      "Heat Conduction and Calorimetry",
+      "Electrostatics and Electric Circuit",
+      "Nuclear Physic"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -439,11 +486,11 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCx4UEpS2Oor5JfVEwxPzHZF6bANu2DaQ08isS",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCx4UEpS2Oor5JfVEwxPzHZF6bANu2DaQ08isS",
     chapters: [
-      "Mechanics",
-      "Heat",
-      "Light",
-      "Sound",
-      "Electricity"
+      "Application of physics in other fields ",
+      "Two-dimensional motion ",
+      "Fluid Mechanics",
+      "Electromagnetism",
+      "Basics of electronics"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -469,10 +516,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCLVBsbQMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCLVBsbQMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     chapters: [
-      "Computer Hardware",
-      "Software",
-      "Networking",
-      "Programming"
+      "Organization of Files",
+      "Computer Network",
+      "Application Software",
+      "Image Processing and Multimedia",
+      "Information and Computer Security",
+      "Fundamentals of Programming"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -484,7 +533,6 @@ export const books: Book[] = [
     curriculum: "Ethiopian Secondary Education"
   },
   {
-
     id: "ict-g10",
     title: "ICT Grade 10",
     description: "Official Grade 10 ICT textbook covering advanced computer hardware, software, networking, and programming.",
@@ -497,10 +545,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCxqtE1vB2Oor5JfVEwxPzHZF6bANu2DaQ08is",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCxqtE1vB2Oor5JfVEwxPzHZF6bANu2DaQ08is",
     chapters: [
-      "Computer Hardware",
-      "Software",
-      "Networking",
-      "Programming"
+      "Organization of Files",
+      "Computer Network",
+      "Application Software",
+      "Image Processing and Multimedia",
+      "Information and Computer Security",
+      "Fundamentals of Programming"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -526,10 +576,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCAgUiCPm1QWfbqNcla7URLp8vs0ogw532IuGY",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCAgUiCPm1QWfbqNcla7URLp8vs0ogw532IuGY",
     chapters: [
-      "Computer Hardware",
-      "Software",
-      "Networking",
-      "Programming"
+      "Information Systems and Its Applications",
+      "Emerging Technologies",
+      "Database Management",
+      "Web Development",
+      "Hardware Troubleshooting and Preventive Maintenance",
+      "Fundamentals of Programming"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -553,10 +605,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCvQu9De9VpbzKWrRkjD3TXs2O8yxtSu5PZqN0",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCvQu9De9VpbzKWrRkjD3TXs2O8yxtSu5PZqN0",
     chapters: [
-      "Computer Hardware",
-      "Software",
-      "Networking",
-      "Programming"
+      "Information Systems and Their Applications",
+      "Emerging Technologies",
+      "Database Management System",
+      "Web Authoring",
+      "Maintenance and Troubleshooting",
+      "Fundamentals of Programming"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -583,11 +637,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCL2uRNPMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCL2uRNPMo8MQtUL7na4JPGNX3uBlOcgZHmIq0",
     chapters: [
-      "Cell Biology",
-      "Genetics",
-      "Ecology",
-      "Human Biology",
-      "Plant Biology"
+      "Introduction to Biology",
+      "Characteristics and Classification of Organisms",
+      "Cells",
+      "Reproduction",
+      "Human Health, Nutrition, and Disease",
+      "Ecology"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -611,11 +666,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCJJiVZ6YGleqZD3uXwVQ1HmAB2ghIoK8LjCrN",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCJJiVZ6YGleqZD3uXwVQ1HmAB2ghIoK8LjCrN",
     chapters: [
-      "Cell Biology",
-      "Genetics",
-      "Ecology",
+      "Sub-fields of Biology",
+      "Plants",
+      "Biochemical molecules",
+      "Cell reproduction",
       "Human Biology",
-      "Plant Biology"
+      "Ecological interaction"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -640,11 +696,11 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCElFqHTeLIuaK8OpUEwlNM5C1FRTkJZ0b2xnm",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCElFqHTeLIuaK8OpUEwlNM5C1FRTkJZ0b2xnm",
     chapters: [
-      "Cell Biology",
+      "Characteristics of animals",
+      "Enzymes",
       "Genetics",
-      "Ecology",
-      "Human Biology",
-      "Plant Biology"
+      "The human body systems",
+      "Population and natural resources"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -670,11 +726,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC5tRXW8U94XsBygoGh3WFTNrkwZ28bPSp7caR",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC5tRXW8U94XsBygoGh3WFTNrkwZ28bPSp7caR",
     chapters: [
-      "Cell Biology",
-      "Genetics",
-      "Ecology",
-      "Human Biology",
-      "Plant Biology"
+      "Application of Biology",
+      "Micro-organisms",
+      "Energy Transformation",
+      "Evolution",
+      "Human Body System",
+      "Climate Change"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -701,11 +758,11 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCtbm3rSAzXJsGf6PKyWr21U5HCT7SMbuF89aO",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCtbm3rSAzXJsGf6PKyWr21U5HCT7SMbuF89aO",
     chapters: [
-      "Matter",
-      "Atoms",
-      "Chemical Reactions",
-      "Acids and Bases",
-      "Organic Chemistry"
+      "Chemistry and It's Importance",
+      "Measurements and Scientific Methods",
+      "Structure of the Atom",
+      "Periodic Classification of Elements",
+      "Checmical Bonding"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -730,11 +787,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMw30NNlMKQDVz97SNsiJqGurTt2EaIywXbRx",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMw30NNlMKQDVz97SNsiJqGurTt2EaIywXbRx",
     chapters: [
-      "Matter",
-      "Atoms",
-      "Chemical Reactions",
-      "Acids and Bases",
-      "Organic Chemistry"
+      "Chemical Reactions and Stoichiometry",
+      "Solutions",
+      "Important Inorganic Compounds",
+      "Energy Changes and Electro-Chemistry",
+      "Metals and Non-Metals",
+      "Hydro-Carbons and Their Natural Sources"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -759,11 +817,12 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCyBMbWTKuBpl3j2NOHxcUw9q1ybeJigrh0PRW",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCyBMbWTKuBpl3j2NOHxcUw9q1ybeJigrh0PRW",
     chapters: [
-      "Matter",
-      "Atoms",
-      "Chemical Reactions",
-      "Acids and Bases",
-      "Organic Chemistry"
+      "Atomic Structure And Periodic Properties Of The Elements",
+      "Chemical Bonding",
+      "Physical State Of Matter",
+      "Chemical Kinetics",
+      "Chemical Equilibrium",
+      "Some Important Oxygen - containing Organic Compounds"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -788,11 +847,11 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCEm3ypyLIuaK8OpUEwlNM5C1FRTkJZ0b2xnmH",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCEm3ypyLIuaK8OpUEwlNM5C1FRTkJZ0b2xnmH",
     chapters: [
-      "Matter",
-      "Atoms",
-      "Chemical Reactions",
-      "Acids and Bases",
-      "Organic Chemistry"
+      "Acid-Base Equilibria",
+      "Electrochemistry",
+      "Industrial Chemistry",
+      "Polymers",
+      "Introduction to Environmental Chemistry",
     ],
     recentlyViewed: true,
     favorite: false,
@@ -819,11 +878,13 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCCCJj6Pvcgo9pPINwD7nZ21iY0jUkTVeCfmGz",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCCCJj6Pvcgo9pPINwD7nZ21iY0jUkTVeCfmGz",
     chapters: [
-      "Governance",
-      "Rights",
-      "Responsibilities",
-      "Ethical Education",
-      "Civic Education"
+      "Ethical Values",
+      "The Culture of Using Digital Technology",
+      "Understanding Inndigenous Knowledge",
+      "Multi-Culturalism in Ethiopia",
+      "National Unity Through Diversity",
+      "Problem-Solving Skills",
+      "Ethiopia's Foreign Relations in East Africa"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -848,11 +909,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCUMU8BEGeZ5tLdCkVrwcTpBn10HRMYNlPQ2ID",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCUMU8BEGeZ5tLdCkVrwcTpBn10HRMYNlPQ2ID",
     chapters: [
-      "Governance",
-      "Rights",
-      "Responsibilities",
-      "Ethical Education",
-      "Civic Education"
+      "Democracy and Democratization",
+      "Citizens in the Digital Technology Age",
+      "Understanding Good Governance",
+      "Peace and Indigenous Conflict Resolution Mechanisms",
+      "Federalism in Africa",
+      "Human Rights",
+      "Partiotism",
+      "Globalization and Global Issues"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -878,11 +942,16 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC51AnvfU94XsBygoGh3WFTNrkwZ28bPSp7caR",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC51AnvfU94XsBygoGh3WFTNrkwZ28bPSp7caR",
     chapters: [
-      "Governance",
-      "Rights",
-      "Responsibilities",
-      "Ethical Education",
-      "Civic Education"
+      "Building a Democratic System",
+      "Rule of Law",
+      "Equality",
+      "Justice",
+      "Patriotism",
+      "Responsibility",
+      "Industriousness",
+      "Self-Reliance",
+      "Saving",
+      "Active Community Participation"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -907,11 +976,17 @@ export const books: Book[] = [
     downloadUrl: "/books/civ-g12.pdf",
     pdfUrl: "https://uploadthing.com/Grade12-civics.pdf",
     chapters: [
-      "Governance",
-      "Rights",
-      "Responsibilities",
-      "Ethical Education",
-      "Civic Education"
+      "Building a Democratic System",
+      "Rule of Law",
+      "Equality",
+      "Justice",
+      "Patriotism",
+      "Responsibility",
+      "Industriousness",
+      "Self-Reliance",
+      "Saving",
+      "Active Community Participation",
+      "The Pursuit of Wisdom"
     ],
     recentlyViewed: true,
 
@@ -938,11 +1013,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCmDuExldHY7sW1efqpDQzLjZvCrxao35FyiRA",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCmDuExldHY7sW1efqpDQzLjZvCrxao35FyiRA",
     chapters: [
-      "Microeconomics",
-      "Macroeconomics",
-      "Economic Systems",
-      "Economic Development",
-      "International Trade"
+      "Introducing Economics",
+      "The Basic Economic Problems and Economic Systems",
+      "Economic Resources and Markets",
+      "Introduction to Demand and Supply",
+      "Introduction to Production and Cost",
+      "Introduction to Money",
+      "Introduction to Macroeconomics",
+      "Basic Entrepreneurship"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -966,11 +1044,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCR5YoD9Cz9goqFQaSPpAxVvli27ycb6GnOIwT",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCR5YoD9Cz9goqFQaSPpAxVvli27ycb6GnOIwT",
     chapters: [
-      "Microeconomics",
-      "Macroeconomics",
-      "Economic Systems",
-      "Economic Development",
-      "International Trade"
+      "Theory of Consumer Behaviour",
+      "Theories of Demand and Supply",
+      "Theories of Production and Cost",
+      "Market Structure",
+      "Banking and Finance",
+      "Economic Growth",
+      "The Ethiopian Economy",
+      "Business Startups and Innovation"
     ],
     recentlyViewed: true,
 
@@ -996,11 +1077,13 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC6Dy4fMunqREUOwgtyz2NS1poruWV7Y6GF0a3",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC6Dy4fMunqREUOwgtyz2NS1poruWV7Y6GF0a3",
     chapters: [
-      "Microeconomics",
-      "Macroeconomics",
-      "Economic Systems",
+      "Theory of Consumer Behavior and Demand",
+      "Market Structure and The Decision of Firms",
+      "National Income Accounting",
+      "Consumption, Saving and Investment",
+      "Trade and Finance",
       "Economic Development",
-      "International Trade"
+      "Main Sectors, Sectorial Policies and Strategies"
     ],
     recentlyViewed: true,
 
@@ -1026,11 +1109,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC6Dy4fMunqREUOwgtyz2NS1poruWV7Y6GF0a3",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC6Dy4fMunqREUOwgtyz2NS1poruWV7Y6GF0a3",
     chapters: [
-      "Microeconomics",
-      "Macroeconomics",
-      "Economic Systems",
-      "Economic Development",
-      "International Trade"
+      "The Fundamental Concepts of Macro-Economics",
+      "Aggregate Demand and Aggregate Supply Analysis",
+      "Market Failure and Consumer Protection",
+      "Macro-Economic Policy Instruments",
+      "Tax Theory and Practice",
+      "Poverty and Inequality",
+      "Macro-Economic Reforms in Ethiopia",
+      "Economy, Environment and Climate Change"
     ],
     recentlyViewed: true,
 
@@ -1057,11 +1143,16 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCHk6DYdTrUi9LPFvS62V8KzgGkMOXJcx0Bj1Z",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCHk6DYdTrUi9LPFvS62V8KzgGkMOXJcx0Bj1Z",
     chapters: [
-      "Early Civilizations",
-      "Medieval History",
-      "The Renaissance",
-      "Modern History",
-      "World War I & II"
+      "The Discipline of History and Human Evolution",
+      "Ancient World Civilizations up to c.500 AD",
+      "Peoples and States in Ethiopia and the Horn to the End of 13th Century",
+      "The Middle Ages and Early Modern World, C. 500 to 1750s",
+      "Peoples and States of Africa to 1500",
+      "Africa and the Outside World 1500-1880s",
+      "States, Principalities, Population Movements &Interactions in Ethiopia 13th to Mid-16th C.",
+      "Political, Social, and Economic Processes in Ethiopia Mid-16th to Mid-19th C.",
+      "The Age of Revolutions 1750s to 1815",
+      "The Discipline of History and Human Evolution",
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1085,11 +1176,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMy8UcgdlMKQDVz97SNsiJqGurTt2EaIywXbR",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCMy8UcgdlMKQDVz97SNsiJqGurTt2EaIywXbR",
     chapters: [
-      "Industrial Revolution",
-      "World War I",
-      "The Interwar Period",
-      "World War II",
-      "Postwar Europe"
+      "Development of Capitalism and Nationalism 1815-1914",
+      "Africa & the Colonial Experience(1880s -1960s)",
+      "Social, Economic & Political Developments in Ethiopia mid-19th C. to 1941",
+      "Society and Politics in the Age of World Wars 1914-1945",
+      "Global and Regional Developments Since 1945",
+      "Ethiopia: Internal Developments and External Influences from 1941 to 1991",
+      "Africa Since 1960",
+      "Post-1991 Developments in Ethiopia",
+      "Indigenous Knowledge and Heritages of Ethiopia"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1113,11 +1208,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCvQ9biGPVpbzKWrRkjD3TXs2O8yxtSu5PZqN0",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCvQ9biGPVpbzKWrRkjD3TXs2O8yxtSu5PZqN0",
     chapters: [
-      "The Cold War",
-      "The Rise of Globalization",
-      "Political Movements",
-      "Social Movements",
-      "Contemporary World History"
+      "History, Historiography, and Human Evolution",
+      "Major Spots of Ancient World Civilizations Up to c.500 A.D",
+      "Peoples, States and Historical Processes in Ethiopia and The Horn to The End of The 13th Century",
+      "The Middle Ages and Early Modern World, C. 500 AD-1789",
+      "Peoples and States of Africa To 1500",
+      "Africa and the Outside World: 1500-1800",
+      "States, Principalities, Population Movements and Interactions in Ethiopia",
+      "Political, Social, and Economic Processes in Ethiopia, Mid 16th to Mid-19th Century",
+      "The Age of Revolutions, 1789 to 1815"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1141,11 +1240,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCJfQzf9YGleqZD3uXwVQ1HmAB2ghIoK8LjCrN",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCJfQzf9YGleqZD3uXwVQ1HmAB2ghIoK8LjCrN",
     chapters: [
-      "Post-Colonial Africa",
-      "The History of Ethiopia",
-      "Global Political Systems",
-      "International Relations",
-      "Contemporary History"
+      "Development of Capitalism and Nationalism from 1815 to 1914",
+      "Africa and the Colonial Experience (1880s - 1960s)",
+      "Social, Economic and Political Developments in Ethiopia, Mid, 19th C. to 1941",
+      "Society and Politics in the Age of World Wars, 1914 - 1945",
+      "Global and Regional Developments Since 1945",
+      "Ethiopia: Internal Developments and External Influences from 1941 to 1991",
+      "Africa since the 1960s",
+      "Post 1991 Developments in Ethiopia",
+      "Indigenous Knowledge Systems and Heritages of Ethiopia"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1171,11 +1274,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC9B3BebI8uZqeSw0R15jrKJzXHNgbxc2lGh3O",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRC9B3BebI8uZqeSw0R15jrKJzXHNgbxc2lGh3O",
     chapters: [
-      "Introduction to Physical Education",
-      "Personal Fitness",
-      "Healthy Living",
-      "Nutrition",
-      "Mental Health"
+      "Sport and Society",
+      "Health and Physical Fitness",
+      "Athletics",
+      "FootBall",
+      "VolleyBall",
+      "BasketBall",
+      "HandBall",
+      "Self-Defense and Sport Ethics"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1199,11 +1305,14 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCsErtSEy2CKDGk0dtSWmPzaBuQxXJi5Nhr1Eo",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCsErtSEy2CKDGk0dtSWmPzaBuQxXJi5Nhr1Eo",
     chapters: [
-      "Advanced Physical Education",
-      "Sports Training",
-      "Nutrition and Health",
-      "Health Education",
-      "Mental and Emotional Health"
+      "Sport and Society",
+      "Health and Physical Fitness",
+      "Athletics",
+      "FootBall",
+      "VolleyBall",
+      "BasketBall",
+      "HandBall",
+      "Self-Defense and Sport Ethics"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1230,11 +1339,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCkV6Jnf7bvDXNE2ShaL1O07Plm8rTHzCVIKoi",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCkV6Jnf7bvDXNE2ShaL1O07Plm8rTHzCVIKoi",
     chapters: [
-      "Reading Comprehension",
-      "Grammar",
-      "Writing Skills",
-      "Literature",
-      "Poetry"
+      "Unit 1: ቋንቋ",
+      "Unit 2: ግብር",
+      "Unit 3: ማዕድን ማውጣት",
+      "Unit 4: ልቦለድ",
+      "Unit 5: ቃላዊ ስነፅሑፍ",
+      "Unit 6: ግጥም",
+      "Unit 7: ኮቪድ -19 (ኮሮና)",
+      "Unit 8: ተውኔት",
+      "Unit 9: ማህበራዊ መገናኛ ብዙኃን እና ተግባቦት"
     ],
     recentlyViewed: true,
     favorite: false,
@@ -1258,11 +1371,15 @@ export const books: Book[] = [
     downloadUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCXdorZDBkChtfvgWnwij7TOJbZLsMmeX50aY2",
     pdfUrl: "https://rhosttuy6t.ufs.sh/f/ZOv8L73t4xRCXdorZDBkChtfvgWnwij7TOJbZLsMmeX50aY2",
     chapters: [
-      "Advanced Grammar",
-      "Literary Criticism",
-      "Poetry and Prose",
-      "Amharic Composition",
-      "Reading and Writing in Context"
+      "ቋንቋና ማህበረሰብ",
+      "ባህላዊ ጋብቻ",
+      "ሴቶች እና እድገት",
+      "በልዩነት ውስጥ ያለ አንድነት",
+      "የቋንቋ ለዛ",
+      "የታላላቆች ሚና",
+      "ረጅም ልቦለድ",
+      "ማህበራዊ መገናኛ ብዙኀን",
+      "ሥራ ፈጠራ"
     ],
     recentlyViewed: true,
     favorite: false,
