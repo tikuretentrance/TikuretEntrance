@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
+  reactStrictMode: true,
   images: { unoptimized: true },
   webpack(config, { isServer }) {
     // Configures webpack to handle SVG files with SVGR. SVGR optimizes and transforms SVG files
