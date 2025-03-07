@@ -2,7 +2,7 @@
 
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
-// import Link from "next/link";
+import Link from "next/link"; // Uncomment and use Link for navigation
 import { ArrowRight, BookOpen, FileText, GraduationCap } from "lucide-react";
 
 export function StudyMaterials() {
@@ -16,6 +16,7 @@ export function StudyMaterials() {
                 chapters: "Complete Coverage",
                 resources: "1000+ Resources",
             },
+            link: "/books",
         },
         {
             title: "Previous Year Exams",
@@ -26,6 +27,7 @@ export function StudyMaterials() {
                 questions: "2000+ Questions",
                 solutions: "Detailed Solutions",
             },
+            link: "/dashboard/exam", 
         },
         {
             title: "Study Materials & Guides",
@@ -36,6 +38,7 @@ export function StudyMaterials() {
                 notes: "Complete Notes",
                 materials: "500+ Resources",
             },
+            link: "/dashboard/study-notes", 
         },
     ];
 
@@ -68,18 +71,18 @@ export function StudyMaterials() {
                                     </div>
                                 ))}
                             </div>
-                            {/* <Link href={`/materials/${material.title.toLowerCase().replace(/\s+/g, '-')}`}> */}
+                            <Link href={material.link}>
                                 <Button className="w-full">
                                     Access Materials
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Button>
-                            {/* </Link> */}
+                            </Link>
                         </div>
                     </Card>
                 ))}
             </div>
             <div className="text-center mt-8">
-                {/* <Link href="/materials"> */}
+                {/* <Link href="/dashboard/study-notes"> */}
                     <Button size="lg" variant="outline">
                         View All Study Materials
                         <ArrowRight className="ml-2 h-4 w-4" />

@@ -100,7 +100,7 @@ export function ExamResults({ exam }: ExamResultsProps) {
                     You haven't completed this exam yet or your results were not saved.
                 </p>
                 <Button asChild>
-                    <Link href={`/exams/${exam.id}`}>Take Exam</Link>
+                    <Link href={`/dashboard/exam/${exam.id}`}>Take Exam</Link>
                 </Button>
             </div>
         )
@@ -278,7 +278,7 @@ export function ExamResults({ exam }: ExamResultsProps) {
                             <Link href={`/exams/${exam.id}`}>Retake Exam</Link>
                         </Button>
                         <Button asChild className="w-full">
-                            <Link href="/exams">Back to Exams</Link>
+                            <Link href="/dashboard/exam">Back to Exams</Link>
                         </Button>
                     </div>
                 </div>

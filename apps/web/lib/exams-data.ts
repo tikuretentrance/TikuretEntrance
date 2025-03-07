@@ -204,7 +204,7 @@ export const exams: Exam[] = [
   {
     id: "natural-math-2024",
     subject: "Mathematics",
-    stream: "Natural Science",
+    stream: "natural",
     year: 2024,
     description: "Grade 12 Natural Science Mathematics Entrance Exam",
     duration: 180,
@@ -216,7 +216,7 @@ export const exams: Exam[] = [
   {
     id: "natural-physics-2024",
     subject: "Physics",
-    stream: "Natural Science",
+    stream: "natural",
     year: 2024,
     description: "Grade 12 Natural Science Physics Entrance Exam",
     duration: 150,
@@ -228,7 +228,7 @@ export const exams: Exam[] = [
   {
     id: "social-history-2024",
     subject: "History",
-    stream: "Social Science",
+    stream: "social",
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
     duration: 120,
@@ -239,7 +239,7 @@ export const exams: Exam[] = [
   {
     id: "social-geography-2024",
     subject: "Geography",
-    stream: "Social Science",
+    stream: "social",
     year: 2024,
     description: "Grade 12 Social Science Geography Entrance Exam",
     duration: 120,

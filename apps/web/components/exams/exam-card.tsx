@@ -49,7 +49,7 @@ return (
       <CardFooter>
         {isSignedIn ? (
           <Button className="w-full gradient-primary hover-lift" asChild>
-            <Link href={`/exams/${exam.id}`}>Start Exam</Link>
+            <Link href={`/dashboard/exam/${exam.id}`}>Start Exam</Link>
           </Button>
         ) : (
           <Button className="w-full gradient-primary hover-lift" asChild>

@@ -66,7 +66,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
         }
 
         localStorage.setItem(`exam_result_${exam.id}`, JSON.stringify(results))
-        router.push(`/exams/${exam.id}/results`)
+        router.push(`/dashboard/exam/${exam.id}/results`)
     }, [answers, exam, questions, timeLeft, router])
 
     const terminateExam = useCallback((reason: string) => {

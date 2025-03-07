@@ -18,12 +18,12 @@ import {
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Books", href: "/books" },
-  // { name: "Courses", href: "/courses" },
-  { name: "Exams", href: "/exams" },
+  { name: "Courses", href: "/courses" },
+  // { name: "Exams", href: "/exams" },
   // { name: "Blog", href: "/blog" },
-  // { name: "About", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "FAQ", href: "/faq" },
-  // { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

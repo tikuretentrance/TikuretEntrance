@@ -1,9 +1,6 @@
 'use client';
 
 import ExamGrid from "@/components/exams/exam-grid"
-import YearFilter from "@/components/exams/year-filter"
-import SubjectFilter from "@/components/exams/subject-filter"
-import StreamFilter from "@/components/exams/stream-filter"
 import ExamStats from "@/components/exams/exam-stats"
 import { Suspense } from "react"
 import { ExamSearch } from "@/components/exams/exam-search"
@@ -11,7 +8,7 @@ import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
 
 export default function ExamPage() {
   return (
-    <div className="container px-4 py-8 mx-auto">
+    <div className="container py-8 mx-auto">
       <div className="grid gap-6 md:grid-cols-[240px_1fr]">
         <DashboardSidebar />
         <div className="flex flex-col gap-6">
@@ -22,23 +19,10 @@ export default function ExamPage() {
             </p>
           </div>
 
-          <Suspense fallback={<div>Loading Exam Search...</div>}>
+          <Suspense fallback={<div>Loading ...</div>}>
+            {/* <ExamStats /> */}
             <ExamSearch />
-          </Suspense>
-
-          <Suspense fallback={<div>Loading Exam Stats...</div>}>
-            <div className="grid gap-6 md:grid-cols-[240px_1fr]">
-              <aside className="space-y-6">
-                <ExamStats />
-                <StreamFilter />
-                <SubjectFilter />
-                <YearFilter />
-              </aside>
-
-              <main>
-                <ExamGrid />
-              </main>
-            </div>
+            <ExamGrid />
           </Suspense>
         </div>
       </div>

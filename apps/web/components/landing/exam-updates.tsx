@@ -24,7 +24,7 @@ const mockUpdates: ExamUpdate[] = [
         type: "new_questions",
         date: "2025-03-15",
         description: "50 new physics questions covering mechanics and thermodynamics",
-        link: "/exams?subject=physics"
+        link: "/dashboard/exam?subject=physics"
     },
     {
         id: "update-2",
@@ -32,7 +32,7 @@ const mockUpdates: ExamUpdate[] = [
         type: "exam_paper",
         date: "2025-03-10",
         description: "Complete exam paper with solutions and explanations",
-        link: "/exams/natural-math-2024"
+        link: "/dashboard/exam/natural-math-2024"
     },
     {
         id: "update-3",

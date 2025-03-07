@@ -60,7 +60,7 @@ export default function Home() {
           </h2>
           <ExamUpdates />
         </section>
-        <CoursePreview />
+        {/* <CoursePreview /> */}
         {/* <Testimonials /> */}
         <FAQ />
         <CTA />
