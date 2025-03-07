@@ -275,7 +275,7 @@ export function ExamResults({ exam }: ExamResultsProps) {
 
                     <div className="flex gap-4">
                         <Button asChild variant="outline" className="w-full">
-                            <Link href={`/exams/${exam.id}`}>Retake Exam</Link>
+                            <Link href={`/dashboard/exam/${exam.id}`}>Retake Exam</Link>
                         </Button>
                         <Button asChild className="w-full">
                             <Link href="/dashboard/exam">Back to Exams</Link>

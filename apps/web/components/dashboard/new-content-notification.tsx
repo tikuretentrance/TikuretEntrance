@@ -25,7 +25,7 @@ const mockNotifications: Notification[] = [
         type: "question",
         date: "2025-03-18",
         isNew: true,
-        link: "/exams?subject=physics"
+        link: "/dashboard/exam?subject=physics"
     },
     {
         id: "notif-2",
@@ -33,7 +33,7 @@ const mockNotifications: Notification[] = [
         type: "exam",
         date: "2025-03-15",
         isNew: true,
-        link: "/exams/natural-math-2024"
+        link: "/dashboard/exam/natural-math-2024"
     },
     {
         id: "notif-3",

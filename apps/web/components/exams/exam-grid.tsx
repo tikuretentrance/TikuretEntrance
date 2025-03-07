@@ -70,7 +70,7 @@ export default function ExamGrid() {
   if (loading) {
     return (
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {Array(4).fill(0).map((_, i) => (
+        {Array(6).fill(0).map((_, i) => (
           <div key={i} className="flex flex-col space-y-3">
             <div className="space-y-2">
               <div className="flex justify-between">

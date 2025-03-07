@@ -3,16 +3,6 @@ import { Test } from "./types";
 export const tests: Test[] = [
   {
     id: "math-entrance-1",
-    title: "Mathematics Exam - 2011",
-    subject: "Mathematics",
-    difficulty: "Medium",
-    duration: 180,
-    questions: 60,
-    averageScore: 72,
-    attempts: 1250,
-  },
-  {
-    id: "math-entrance-1",
     title: "Mathematics Practice Test 1",
     subject: "Mathematics",
     difficulty: "Medium",

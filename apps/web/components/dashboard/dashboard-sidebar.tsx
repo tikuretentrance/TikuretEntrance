@@ -7,10 +7,8 @@ import {
     BookOpen,
     FileText,
     Calendar,
-    GraduationCap,
-    FileQuestionIcon,
-    PinIcon,
-    MicroscopeIcon
+    MicroscopeIcon,
+    AlarmPlus
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -25,6 +23,11 @@ const sidebarItems = [
         title: "Study Plan",
         href: "/dashboard/study-plan",
         icon: Calendar,
+    },
+    {
+        title: "Exam",
+        href: "/dashboard/exam",
+        icon: AlarmPlus,
     },
     {
         title: "Practice Zone",
@@ -46,11 +49,6 @@ const sidebarItems = [
     //     href: "/dashboard/practice-zone",
     //     icon: GraduationCap,
     // },
-    {
-        title: "Exam",
-        href: "/dashboard/exam",
-        icon: FileQuestionIcon,
-    },
     {
         title: "Formula Hub",
         href: "/dashboard/formula-hub",

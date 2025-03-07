@@ -42,9 +42,9 @@ export function FullFooter() {
             <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-4">
               {[
-                { name: "Courses", href: "/courses" },
-                { name: "Practice Exams", href: "/exams" },
                 { name: "Study Materials", href: "/books" },
+                { name: "Practice Exams", href: "#" },
+                { name: "Courses", href: "#" },
                 { name: "FAQ", href: "/faq" },
                 { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/contact" }
@@ -71,7 +71,7 @@ export function FullFooter() {
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <span className="text-muted-foreground">
-                  Bole Road, Addis Ababa, Ethiopia
+                  Addis Ababa, Ethiopia
                 </span>
               </li>
               <li className="flex items-start gap-4">

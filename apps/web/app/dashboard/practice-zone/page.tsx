@@ -182,7 +182,7 @@ export default function PracticePage() {
                                                     </div>
                                                 </div>
                                                 <Button asChild>
-                                                    <Link href={`/dashboard/practice/${set.id}`}>
+                                                    <Link href={`/dashboard/practice-zone/${set.id}`}>
                                                         Start Practice
                                                         <ArrowRight className="ml-2 h-4 w-4" />
                                                     </Link>

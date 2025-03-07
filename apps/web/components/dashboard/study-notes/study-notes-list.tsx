@@ -30,7 +30,7 @@ const mockNotes: StudyNote[] = [
     subject: "Mathematics",
     topic: "Calculus",
     summary: "A comprehensive guide to basic calculus concepts including limits, derivatives, and integrals.",
-    content: "Full content here...",
+    content: "Full content ... coming soon",
     lastUpdated: "2024-03-15",
   },
   {
@@ -39,10 +39,9 @@ const mockNotes: StudyNote[] = [
     subject: "Physics",
     topic: "Mechanics",
     summary: "Study guide covering Newton's laws, momentum, and energy conservation.",
-    content: "Full content here...",
+    content: "Full content ... coming soon",
     lastUpdated: "2024-03-14",
   },
-  // Add more mock notes...
 ];
 
 export function StudyNotesList({ searchQuery }: StudyNotesListProps) {

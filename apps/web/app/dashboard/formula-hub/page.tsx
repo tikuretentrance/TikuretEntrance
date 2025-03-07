@@ -93,7 +93,7 @@ export default function FormulaHubPage() {
 
                         {["all", "Mathematics", "Physics", "Chemistry"].map((subject) => (
                             <TabsContent key={subject} value={subject}>
-                                <div className="grid gap-4">
+                                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                                     {filterFormulas(subject).map((formula) => (
                                         <Card key={formula.id} className="hover:bg-muted/50 transition-colors">
                                             <CardHeader className="pb-2">
