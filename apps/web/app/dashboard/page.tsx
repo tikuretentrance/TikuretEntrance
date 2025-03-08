@@ -1,3 +1,4 @@
+'use client'
 import { DashboardStats } from "@/components/dashboard/stats"
 import { RecentActivity } from "@/components/dashboard/recent-activity"
 import { UpcomingTests } from "@/components/dashboard/upcoming-tests"
