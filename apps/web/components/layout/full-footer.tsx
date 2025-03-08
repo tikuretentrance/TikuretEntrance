@@ -78,7 +78,7 @@ export function FullFooter() {
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
-                <span className="text-muted-foreground">+251 911 234 567</span>
+                <span className="text-muted-foreground">+251 961 343 490</span>
               </li>
               <li className="flex items-start gap-4">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
