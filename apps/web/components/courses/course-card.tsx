@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Clock, Users } from "lucide-react";
+import { BookOpen, Clock, Lock, Users } from "lucide-react";
 import Link from "next/link";
 import { Course } from "@/lib/types";
 
@@ -37,10 +37,15 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full button-gradient" asChild>
+        {/* <Button className="w-full button-gradient" asChild disabled>
           <Link href={`/courses/${course.id}`}>Start Learning</Link>
+        </Button> */}
+        <Button className="w-full button-gradient" disabled>
+          <Link href={`#`}></Link>
+          <Lock className="mr-2 h-4 w-4" />
+          Coming Soon
         </Button>
       </CardFooter>
-    </Card>
+    </Card >
   );
 }
