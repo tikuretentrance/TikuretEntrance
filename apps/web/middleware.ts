@@ -2,13 +2,14 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
 
-export default clerkMiddleware(async (auth, req) => {
-    if (isProtectedRoute(req)) await auth.protect()
-},
-    {
-        authorizedParties: ["https://www.tikuretentrance.com/", "https://www.tikuretentrance.com/"],
-    }
-)
+export default clerkMiddleware({
+    authorizedParties: ["https://www.tikuretentrance.com/", "https://www.tikuretentrance.com/", "http://localhost:3200"],
+    
+});
+
+// export default clerkMiddleware(async (auth, req) => {
+//     if (isProtectedRoute(req)) await auth.protect()
+//   })
 export const config = {
     matcher: [
         // Skip Next.js internals and all static files, unless found in search params
