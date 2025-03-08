@@ -66,8 +66,11 @@ export function UserNav({ isMobile = false }: UserNavProps) {
 
   return (
     <div className="flex items-center space-x-4">
-      <Button variant="ghost" asChild>
+      {/* <Button variant="ghost" asChild>
         <Link href="/sign-in">Login</Link>
+      </Button> */}
+      <Button variant="ghost" asChild>
+        <Link href="/sign-up">Start Now</Link>
       </Button>
     </div>
   );

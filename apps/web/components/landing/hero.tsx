@@ -44,7 +44,7 @@ export default function Hero() {
                                 </Button>
                             </Link>
                         ) : (
-                            <Link href="/sign-in">
+                            <Link href="/sign-up">
                                 <Button size="lg" className="button-gradient">
                                     Start Preparing Now
                                     <ArrowRight className="ml-2 h-4 w-4" />

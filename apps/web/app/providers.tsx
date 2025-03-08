@@ -14,6 +14,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           unsafe_disableDevelopmentModeWarnings: true,
         },
       }}
+      // signUpUrl="/sign-in"
 
     >
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
