@@ -37,11 +37,15 @@ export function AIChatbot() {
         // For now, simulate a response
         setTimeout(() => {
             const responses = [
-                "I can help you with that! Let me find some relevant study materials for you.",
-                "That's a great question about calculus. The key concept to understand is that derivatives measure the rate of change.",
-                "For entrance exam preparation, I recommend focusing on past papers and understanding the exam pattern.",
-                "Physics problems often require applying multiple concepts. Let's break this down step by step.",
-                "I've analyzed your practice test results, and it looks like you should focus more on organic chemistry."
+                // "I can help you with that! Let me find some relevant study materials for you.",
+                // "That's a great question about calculus. The key concept to understand is that derivatives measure the rate of change.",
+                // "For entrance exam preparation, I recommend focusing on past papers and understanding the exam pattern.",
+                // "Physics problems often require applying multiple concepts. Let's break this down step by step.",
+                // "I've analyzed your practice test results, and it looks like you should focus more on organic chemistry."
+                // "This is a sample response from the study assistant. You'll get more detailed responses in the final version. stay tuned!",
+                "I'm still on development mode and will be able to provide more detailed responses in the future. Thanks for your patience!",
+                // In amharic
+                "Coming very soon😊! Stay tuned!",
             ];
 
             const randomResponse = responses[Math.floor(Math.random() * responses.length)];

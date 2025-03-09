@@ -25,7 +25,7 @@ const sidebarItems = [
         icon: Calendar,
     },
     {
-        title: "Exam",
+        title: "EUEE Exam",
         href: "/dashboard/exam",
         icon: AlarmPlus,
     },
