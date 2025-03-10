@@ -4,8 +4,10 @@ import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import Link from "next/link"; // Uncomment and use Link for navigation
 import { ArrowRight, BookOpen, FileText, GraduationCap } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
 
 export function StudyMaterials() {
+    const { isSignedIn, isLoaded } = useUser();
     const materials = [
         {
             title: "Complete Grade 9-12 Curriculum",
@@ -27,7 +29,7 @@ export function StudyMaterials() {
                 questions: "2000+ Questions",
                 solutions: "Detailed Solutions",
             },
-            link: "/dashboard/exam", 
+            link: "/dashboard/exam",
         },
         {
             title: "Study Materials & Guides",
@@ -38,7 +40,7 @@ export function StudyMaterials() {
                 notes: "Complete Notes",
                 materials: "500+ Resources",
             },
-            link: "/dashboard/study-notes", 
+            link: "/dashboard/study-notes",
         },
     ];
 
@@ -82,12 +84,19 @@ export function StudyMaterials() {
                 ))}
             </div>
             <div className="text-center mt-8">
-                {/* <Link href="/dashboard/study-notes"> */}
-                    <Button size="lg" variant="outline">
+                {isSignedIn && isLoaded ? (
+                    <Link href="/dashboard/study-notes">
+                        <Button size="lg" variant="outline">
+                            View All Study Materials
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </Link>
+                ) : (
+                    <Button size="lg" variant="outline" onClick={() => alert("Sign in to access all study materials")}>
                         View All Study Materials
                         <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
-                {/* </Link> */}
+                )}
             </div>
         </section>
     );
