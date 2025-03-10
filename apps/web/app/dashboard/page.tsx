@@ -55,11 +55,11 @@ export default function DashboardPage() {
             <StudyNotesPreview />
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
+          {/* <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
             <StudyGoals userId={userId} />
             <UpcomingTests />
           </div>
-          <ProgressOverview userId={userId} />
+          <ProgressOverview userId={userId} /> */}
 
           <RecentActivity userId={userId} />
 

@@ -62,12 +62,12 @@ export default function FormulaHubPage() {
     };
 
     return (
-        <div className="container py-8 mx-auto">
-            <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+        <div className="container py-8 mx-auto px-4">
+            <div className="grid gap-8 md:grid-cols-[240px_1fr]">
                 <DashboardSidebar />
                 <div className="space-y-6">
                     <div>
-                        <h1 className="text-3xl font-bold mb-2">Formula Hub</h1>
+                        <h1 className="text-3xl font-bold mb-2 text-gradient">Formula Hub</h1>
                         <p className="text-muted-foreground">
                             Quick access to important formulas and equations
                         </p>

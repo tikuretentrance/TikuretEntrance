@@ -97,12 +97,12 @@ export default function PracticePage() {
     };
 
     return (
-        <div className="container mx-auto py-8">
-            <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+        <div className="container mx-auto py-8 px-4">
+            <div className="grid gap-8 md:grid-cols-[240px_1fr]">
                 <DashboardSidebar />
                 <div className="space-y-6">
                     <div>
-                        <h1 className="text-3xl font-bold mb-2">Practice Zone</h1>
+                        <h1 className="text-3xl font-bold mb-2 text-gradient">Practice Zone</h1>
                         <p className="text-muted-foreground">
                             Practice with targeted question sets to improve your understanding
                         </p>
