@@ -22,7 +22,7 @@ const activities = [
   },
 ]
 
-export function RecentActivity() {
+export function RecentActivity({ userId }: any) {
   return (
     <Card>
       <CardHeader>

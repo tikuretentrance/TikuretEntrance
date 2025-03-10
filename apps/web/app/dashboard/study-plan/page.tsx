@@ -26,6 +26,9 @@ import { Input } from "@/components/ui/input";
 import { Calendar, Clock, BookOpen, CheckCircle, AlertCircle, Plus, Edit2 } from "lucide-react";
 import { Subject, Topic, StudyGoal } from "@/lib/types/study";
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
+import { ProgressOverview } from "@/components/dashboard/progress-overview";
+import { StudyGoals } from "@/components/dashboard/study-goal";
+import { UpcomingTests } from "@/components/dashboard/upcoming-tests";
 
 // Mock data - replace with API calls in production
 const mockSubjects: Subject[] = [
@@ -104,6 +107,14 @@ const mockGoals: StudyGoal[] = [
         completedHours: 18,
         deadline: "2025-03-24",
         type: "weekly"
+    },
+    {
+        id: "g3",
+        subjectId: "chem",
+        targetHours: 30,
+        completedHours: 18,
+        deadline: "2025-03-24",
+        type: "monthly"
     }
 ];
 
@@ -122,19 +133,20 @@ export default function StudyPlanPage() {
         setShowAddGoal(false);
     };
 
+    const userId = ""
     return (
         <div className="container mx-auto py-8">
-            <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+            <div className="grid gap-8 md:grid-cols-[240px_1fr] px-4">
                 <DashboardSidebar />
                 <div className="space-y-6">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h1 className="text-3xl font-bold mb-2">Study Plan</h1>
+                            <h1 className="text-3xl font-bold mb-2 text-gradient">Study Plan</h1>
                             <p className="text-muted-foreground">
                                 Track and manage your study progress
                             </p>
                         </div>
-                        <Dialog open={showAddGoal} onOpenChange={setShowAddGoal}>
+                        {/* <Dialog open={showAddGoal} onOpenChange={setShowAddGoal}>
                             <DialogTrigger asChild>
                                 <Button>
                                     <Plus className="mr-2 h-4 w-4" />
@@ -208,12 +220,18 @@ export default function StudyPlanPage() {
                                     <Button onClick={handleAddGoal}>Add Goal</Button>
                                 </DialogFooter>
                             </DialogContent>
-                        </Dialog>
+                        </Dialog> */}
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
+                        <StudyGoals userId={userId} />
+                        <UpcomingTests />
+                    </div>
+                    <ProgressOverview userId={userId} />
+
+                    <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
                         <div className="space-y-6">
-                            <Card>
+                            {/* <Card>
                                 <CardHeader>
                                     <CardTitle>Subject Progress</CardTitle>
                                     <CardDescription>
@@ -246,7 +264,7 @@ export default function StudyPlanPage() {
                                         ))}
                                     </div>
                                 </CardContent>
-                            </Card>
+                            </Card> */}
 
                             <Card>
                                 <CardHeader>
@@ -360,7 +378,7 @@ export default function StudyPlanPage() {
                                 </CardContent>
                             </Card>
 
-                            <Card>
+                            {/* <Card>
                                 <CardHeader>
                                     <CardTitle>Upcoming Deadlines</CardTitle>
                                 </CardHeader>
@@ -381,7 +399,7 @@ export default function StudyPlanPage() {
                                         <AlertCircle className="h-5 w-5 text-amber-500" />
                                     </div>
                                 </CardContent>
-                            </Card>
+                            </Card> */}
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import Header from '@/components/layout/header';
 import { Providers } from './providers';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             {children}
           </main>
         </Providers>
+        <SpeedInsights />
         <Toaster richColors position="bottom-right" />
         <Analytics />
       </body>

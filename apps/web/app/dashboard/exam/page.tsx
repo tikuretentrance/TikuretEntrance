@@ -8,7 +8,7 @@ import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
 
 export default function ExamPage() {
   return (
-    <div className="container py-8 mx-auto">
+    <div className="container py-8 mx-auto px-4">
       <div className="grid gap-6 md:grid-cols-[240px_1fr]">
         <DashboardSidebar />
         <div className="flex flex-col gap-6">

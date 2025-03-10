@@ -16,7 +16,7 @@ export default function StudyNotesPage() {
         <div className="container py-8 mx-auto">
             <div className="grid gap-6 md:grid-cols-[240px_1fr]">
                 <DashboardSidebar />
-                <div className="flex flex-col gap-6">
+                <div className="space-y-6">
                     <div>
                         <h1 className="text-3xl font-bold mb-2">Study Notes & Guides</h1>
                         <p className="text-muted-foreground">

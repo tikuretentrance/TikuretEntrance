@@ -156,7 +156,7 @@ export function QuestionBankPreview() {
             </CardContent>
             <CardFooter>
                 <Button className="w-full" asChild>
-                    <Link href="/dashboard/question-banks">View All Question Banks</Link>
+                    <Link href="/dashboard/practice-zone">View All Question Banks</Link>
                 </Button>
             </CardFooter>
         </Card>

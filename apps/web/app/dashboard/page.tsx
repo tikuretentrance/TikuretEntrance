@@ -11,6 +11,8 @@ import { NewContentNotifications } from "@/components/dashboard/new-content-noti
 import { useUser } from "@clerk/nextjs"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { ProgressOverview } from "@/components/dashboard/progress-overview"
+import { StudyGoals } from "@/components/dashboard/study-goal"
 
 export default function DashboardPage() {
   const { isSignedIn, isLoaded } = useUser();
@@ -24,9 +26,11 @@ export default function DashboardPage() {
   if (!isLoaded || !isSignedIn) {
     return null; // Show a loading state or nothing while checking
   }
+  const userId = "user-1";
+
   return (
     <div className="container py-8 mx-auto">
-      <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+      <div className="grid gap-6 md:grid-cols-[240px_1fr] px-4">
         <DashboardSidebar />
 
         <div className="space-y-6">
@@ -36,13 +40,13 @@ export default function DashboardPage() {
               Track your progress and manage your exam preparation
             </p>
           </div>
-
           <DashboardStats />
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <StudyProgress />
+          {/* <ProgressOverview userId={userId} />
+          <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
+            <StudyGoals userId={userId} />
             <UpcomingTests />
-          </div>
+          </div> */}
 
           <NewContentNotifications />
 
@@ -51,7 +55,13 @@ export default function DashboardPage() {
             <StudyNotesPreview />
           </div>
 
-          <RecentActivity />
+          <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
+            <StudyGoals userId={userId} />
+            <UpcomingTests />
+          </div>
+          <ProgressOverview userId={userId} />
+
+          <RecentActivity userId={userId} />
 
           <div className="fixed bottom-6 right-6 z-50">
             <AIChatbot />
