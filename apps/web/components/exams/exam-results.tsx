@@ -162,7 +162,7 @@ export function ExamResults({ exam }: ExamResultsProps) {
                     </div>
 
                     <Tabs defaultValue="topics" className="w-full">
-                        <TabsList className="grid grid-cols-3 mb-4">
+                        <TabsList className="grid grid-cols-2 mb-4">
                             <TabsTrigger value="topics" className="flex items-center gap-2">
                                 <BookOpen className="h-4 w-4" />
                                 Topics
@@ -170,10 +170,6 @@ export function ExamResults({ exam }: ExamResultsProps) {
                             <TabsTrigger value="difficulty" className="flex items-center gap-2">
                                 <Award className="h-4 w-4" />
                                 Difficulty
-                            </TabsTrigger>
-                            <TabsTrigger value="comparison" className="flex items-center gap-2">
-                                <BarChart2 className="h-4 w-4" />
-                                Comparison
                             </TabsTrigger>
                         </TabsList>
 
@@ -237,39 +233,6 @@ export function ExamResults({ exam }: ExamResultsProps) {
                                     No difficulty data available for this exam.
                                 </p>
                             )}
-                        </TabsContent>
-
-                        <TabsContent value="comparison" className="space-y-4">
-                            <h2 className="font-medium flex items-center gap-2">
-                                <BarChart2 className="h-4 w-4" />
-                                Your Performance vs. Average
-                            </h2>
-                            <div className="space-y-4">
-                                <div className="space-y-2">
-                                    <div className="flex justify-between text-sm">
-                                        <span>Your Score</span>
-                                        <span className={getScoreColor(scorePercentage)}>{scorePercentage}%</span>
-                                    </div>
-                                    <Progress value={scorePercentage} />
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex justify-between text-sm">
-                                        <span>Average Score</span>
-                                        <span>{exam.averageScore}%</span>
-                                    </div>
-                                    <Progress value={exam.averageScore} />
-                                </div>
-                                <div className="p-4 rounded-lg bg-muted/30">
-                                    <p className="text-sm">
-                                        {scorePercentage > exam.averageScore
-                                            ? `Congratulations! You scored ${scorePercentage - exam.averageScore}% higher than the average.`
-                                            : scorePercentage < exam.averageScore
-                                                ? `You scored ${exam.averageScore - scorePercentage}% below the average. Keep practicing!`
-                                                : `You scored exactly the average for this exam.`
-                                        }
-                                    </p>
-                                </div>
-                            </div>
                         </TabsContent>
                     </Tabs>
 

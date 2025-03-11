@@ -358,7 +358,7 @@ export const exams: Exam[] = [
     // questionData: historyQuestions
   },
   {
-    id: "social-economics-2024",
+    id: "social-history-2024",
     subject: "Economics - Coming Soon",
     stream: "social",
     year: 2024,
