@@ -18,7 +18,6 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { useExamSecurity } from "@/lib/hooks/useExamSecurity"
-import { ExplanationSection } from "./explanation"
 import { useExamTimer } from "@/lib/hooks/useExamTimer"
 import { toast } from "sonner"
 import { useUser } from "@clerk/nextjs"
