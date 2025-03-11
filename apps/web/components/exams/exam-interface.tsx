@@ -21,6 +21,7 @@ import { useExamSecurity } from "@/lib/hooks/useExamSecurity"
 import { ExplanationSection } from "./explanation"
 import { useExamTimer } from "@/lib/hooks/useExamTimer"
 import { toast } from "sonner"
+import { useUser } from "@clerk/nextjs"
 
 
 interface ExamInterfaceProps {
@@ -37,6 +38,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
     const [examLocked, setExamLocked] = useState(false)
     const [showTerminationModal, setShowTerminationModal] = useState(false)
     const [terminationReason, setTerminationReason] = useState("")
+    const { user } = useUser()
 
     const questions = useMemo(() => exam.questionData || generateMockQuestions(exam.questions), [exam])
     const progress = useMemo(() => (currentQuestion / questions.length) * 100, [currentQuestion, questions])
@@ -55,7 +57,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
 
         const results = {
             examId: exam.id,
-            userId: "guest",
+            userId: user?.id,
             score,
             totalQuestions: questions.length,
             timeSpent: exam.duration * 60 - timeLeft, // Now timeLeft is available
@@ -130,7 +132,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
                         <div>Total Questions: {questions.length}</div>
                     </div>
                     <Alert>
-                        <AlertCircle className="h-4 w-4" />
+                        <AlertCircle color="red" className="h-4 w-4" />
                         <AlertDescription>
                             Make sure you have a stable internet connection and enough time to complete the exam.
                             Once started, you should not leave this page until you complete the exam.
@@ -208,13 +210,21 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
                     </div>
 
                     {currentQ.imageUrl && (
-                        <div className="relative aspect-[16/9] rounded-lg overflow-hidden border">
-                            <Image
-                                src={currentQ.imageUrl}
-                                alt={currentQ.imageAlt || "Question illustration"}
-                                fill
-                                className="object-cover"
-                            />
+                        <div className="space-y-2">
+                            <div className="relative aspect-[16/9] rounded-lg overflow-hidden border">
+                                <Image
+                                    src={currentQ.imageUrl}
+                                    alt={currentQ.imageAlt || "Question illustration"}
+                                    fill
+                                    className="object-cover" />
+                            </div>
+                            <Alert>
+                                <AlertCircle color="red" className="h-4 w-4" />
+                                <AlertDescription>
+                                    {/* The statistics displayed above are sample data, not actual. They are for inspiration, and we'll keep you posted. */}
+                                    The image above is for illustration purposes only and may not be related to the question. read the question carefully! we'll keep you posted.
+                                </AlertDescription>
+                            </Alert>
                         </div>
                     )}
 

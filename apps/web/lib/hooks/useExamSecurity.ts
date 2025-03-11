@@ -12,7 +12,6 @@ export function useExamSecurity(started: boolean, examLocked: boolean, terminate
 
     const handleVisibilityChange = useCallback(() => {
         if (document.visibilityState === "hidden" && started && !examLocked) {
-            toast.error("Tab switching detected. Exam terminated.", { position: "top-center" })
             terminateExam("Tab switching detected")
         }
     }, [started, examLocked, terminateExam])

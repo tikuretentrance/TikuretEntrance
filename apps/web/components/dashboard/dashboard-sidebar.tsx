@@ -70,7 +70,7 @@ export function DashboardSidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="min-h-screen space-y-4 py-4 h-full bg-gray-100 rounded-md">
+        <div className="min-h-screen space-y-4 py-4 h-full bg-gray-200 rounded-md">
             <div className="px-3 py-2">
                 <h2 className="mb-2 px-4 text-lg font-semibold">Dashboard</h2>
                 <div className="space-y-1">
