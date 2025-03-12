@@ -13,7 +13,7 @@ export default function StudyNotesPage() {
     const [difficulty, setDifficulty] = useState("all");
 
     return (
-        <div className="container py-8 mx-auto">
+        <div className="container py-8 mx-auto px-4">
             <div className="grid gap-8 md:grid-cols-[240px_1fr]">
                 <DashboardSidebar />
                 <div className="space-y-6">

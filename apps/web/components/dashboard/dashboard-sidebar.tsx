@@ -70,9 +70,9 @@ export function DashboardSidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="space-y-4 py-4 h-full bg-gray-200 rounded-md">
+        <div className="space-y-4 py-4 h-full bg-white dark:bg-gray-800 rounded-md">
             <div className="px-3 py-2">
-                <h2 className="mb-2 px-4 text-lg font-semibold">Dashboard</h2>
+                <h2 className="mb-2 px-4 text-lg font-semibold text-gray-900 dark:text-gray-100">Dashboard</h2>
                 <div className="space-y-1">
                     {sidebarItems.map((item) => (
                         <Button
@@ -87,7 +87,7 @@ export function DashboardSidebar() {
                             asChild
                         >
                             <Link href={item.href}>
-                                <item.icon className="mr-2 h-4 w-4" />
+                                <item.icon className="mr-2 h-4 w-4 text-gray-900 dark:text-gray-100" />
                                 {item.title}
                             </Link>
                         </Button>
