@@ -119,19 +119,19 @@ const mockGoals: StudyGoal[] = [
 ];
 
 export default function StudyPlanPage() {
-    const [selectedSubject, setSelectedSubject] = useState(mockSubjects[0]);
-    const [showAddGoal, setShowAddGoal] = useState(false);
-    const [newGoal, setNewGoal] = useState({
-        subject: "",
-        hours: "",
-        type: "daily",
-        deadline: ""
-    });
+    // const [selectedSubject, setSelectedSubject] = useState(mockSubjects[0]);
+    // const [showAddGoal, setShowAddGoal] = useState(false);
+    // const [newGoal, setNewGoal] = useState({
+    //     subject: "",
+    //     hours: "",
+    //     type: "daily",
+    //     deadline: ""
+    // });
 
-    const handleAddGoal = () => {
-        // Add goal logic here
-        setShowAddGoal(false);
-    };
+    // const handleAddGoal = () => {
+    //     // Add goal logic here
+    //     setShowAddGoal(false);
+    // };
 
     const userId = ""
     return (
@@ -229,9 +229,9 @@ export default function StudyPlanPage() {
                     </div>
                     <ProgressOverview userId={userId} />
 
-                    <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
+                    {/* <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
                         <div className="space-y-6">
-                            {/* <Card>
+                             <Card>
                                 <CardHeader>
                                     <CardTitle>Subject Progress</CardTitle>
                                     <CardDescription>
@@ -264,7 +264,7 @@ export default function StudyPlanPage() {
                                         ))}
                                     </div>
                                 </CardContent>
-                            </Card> */}
+                            </Card>
 
                             <Card>
                                 <CardHeader>
@@ -378,7 +378,7 @@ export default function StudyPlanPage() {
                                 </CardContent>
                             </Card>
 
-                            {/* <Card>
+                             <Card>
                                 <CardHeader>
                                     <CardTitle>Upcoming Deadlines</CardTitle>
                                 </CardHeader>
@@ -399,9 +399,9 @@ export default function StudyPlanPage() {
                                         <AlertCircle className="h-5 w-5 text-amber-500" />
                                     </div>
                                 </CardContent>
-                            </Card> */}
+                            </Card>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
