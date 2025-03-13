@@ -6,7 +6,7 @@ import { Exam } from "./types"
 
 export const exams: Exam[] = [
   {
-    id: "natural-physics-2011",
+    id: "natural-physics-2011/2019",
     subject: "Physics",
     stream: "natural",
     year: 2011,
