@@ -6,6 +6,7 @@ import { Providers } from './providers';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <SpeedInsights />
         <Toaster richColors position="bottom-right" />
         <Analytics />
+        <GoogleAnalytics gaId="G-XMGYQ6KSNS" />
       </body>
     </html>
   );
