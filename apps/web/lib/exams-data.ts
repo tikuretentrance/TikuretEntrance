@@ -1,9 +1,22 @@
+import physics2011Questions from "./data/exams/physics/2011";
 import { biologyQuestions } from "./data/exams/sample-exams/bio";
 import { mathQuestions } from "./data/exams/sample-exams/math";
 import { physicsQuestions } from "./data/exams/sample-exams/physics";
 import { Exam } from "./types"
 
 export const exams: Exam[] = [
+  {
+    id: "natural-physics-2011",
+    subject: "Physics",
+    stream: "natural",
+    year: 2011,
+    description: "Grade 12 Natural Science Physics Entrance Exam 2011 E.C",
+    duration: 180,
+    questions: 50,
+    attempts: 980,
+    // averageScore: 68,
+    questionData: physics2011Questions
+  },
   {
     id: "natural-math-2024",
     subject: "Mathematics",

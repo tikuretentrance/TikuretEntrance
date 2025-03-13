@@ -26,14 +26,13 @@ import { Plus } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { studyGoalSchema } from "@/lib/types/dashboard";
-// import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 interface StudyGoalsProps {
     userId: string;
 }
 
 export function StudyGoals({ userId }: StudyGoalsProps) {
-    // const { toast } = useToast();
     const [goals, setGoals] = useState<StudyGoal[]>([]);
     const [loading, setLoading] = useState(true);
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -103,10 +102,7 @@ export function StudyGoals({ userId }: StudyGoalsProps) {
             setDialogOpen(false);
             form.reset();
 
-            // toast({
-            //   title: "Success",
-            //   description: "Study goal has been created.",
-            // });
+            toast.success("Study goal has been created.");
         } catch (error) {
             // toast({
             //   title: "Error",
