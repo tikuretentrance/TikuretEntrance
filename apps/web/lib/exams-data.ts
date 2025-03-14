@@ -1,21 +1,34 @@
 import physics2011Questions from "./data/exams/physics/2011";
-import { physicsQuestions2016 } from "./data/exams/physics/2016";
+import { physicsQuestions2016 } from "./data/exams/2016/physics";
 import { mathQuestions } from "./data/exams/sample-exams/math";
 import { physicsQuestions } from "./data/exams/sample-exams/physics";
 import { Exam } from "./types"
+import mathQuestions2016 from "./data/exams/2016/math";
 
 export const exams: Exam[] = [
   {
-    id: "natural-physics-2011",
-    subject: "Physics  - 2016",
+    id: "natural-physics-2016",
+    subject: "Physics  - 2016/24",
     stream: "natural",
-    year: 2011,
+    year: 2016,
     description: "Grade 12 Natural Science Physics Entrance Exam 2016 E.C",
     duration: 180,
     questions: 60,
     // attempts: 980,
     // averageScore: 68,
     questionData: physicsQuestions2016
+  },
+  {
+    id: "natural-math-2016",
+    subject: "Mathematics  - 2016/24",
+    stream: "natural",
+    year: 2016,
+    description: "Grade 12 Natural Science Mathematics Entrance Exam 2011 E.C",
+    duration: 180,
+    questions: 50,
+    // attempts: 980,
+    // averageScore: 68,
+    questionData: mathQuestions2016
   },
   {
     id: "natural-physics-2011",

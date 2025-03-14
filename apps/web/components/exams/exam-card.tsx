@@ -36,10 +36,10 @@ return (
             <FileText className="mr-2 h-4 w-4 text-primary" />
             {exam.questions} questions
           </div>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <Users className="mr-2 h-4 w-4 text-primary" />
             {exam.attempts} attempts
-          </div>
+          </div> */}
           {/* <div className="flex items-center">
             <Award className="mr-2 h-4 w-4 text-primary" />
             Average score: {exam.averageScore}%
