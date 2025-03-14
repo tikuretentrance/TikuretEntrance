@@ -54,18 +54,18 @@ export const exams: Exam[] = [
   //   // averageScore: 72,
   //   questionData: mathQuestions
   // },
-  {
-    id: "natural-physics-2024",
-    subject: "Physics  - 2016",
-    stream: "natural",
-    year: 2024,
-    description: "Grade 12 Natural Science Physics Entrance Exam",
-    duration: 20,
-    questions: 50,
-    // attempts: 980,
-    // averageScore: 68,
-    questionData: physicsQuestions
-  },
+  // {
+  //   id: "natural-physics-2024",
+  //   subject: "Physics  - 2016",
+  //   stream: "natural",
+  //   year: 2024,
+  //   description: "Grade 12 Natural Science Physics Entrance Exam",
+  //   duration: 20,
+  //   questions: 50,
+  //   // attempts: 980,
+  //   // averageScore: 68,
+  //   questionData: physicsQuestions
+  // },
   {
     id: "natural-biology-2024",
     subject: "Biology  - 2016 - Coming Soon",
