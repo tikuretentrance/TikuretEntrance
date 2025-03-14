@@ -10,7 +10,7 @@ export default function Hero() {
 
     const benefits = [
         "Complete Grade 9-12 curriculum coverage",
-        "Previous year entrance exams included",
+        "Previous year entrance exams",
         "AI-powered personalized learning",
         "Comprehensive study materials and guides",
         "Regular mock tests and assessments",
