@@ -30,30 +30,30 @@ export const exams: Exam[] = [
     // averageScore: 68,
     questionData: mathQuestions2016
   },
-  {
-    id: "natural-physics-2011",
-    subject: "Physics  - 2011",
-    stream: "natural",
-    year: 2011,
-    description: "Grade 12 Natural Science Physics Entrance Exam 2011 E.C",
-    duration: 180,
-    questions: 50,
-    // attempts: 980,
-    // averageScore: 68,
-    questionData: physics2011Questions
-  },
-  {
-    id: "natural-math-2024",
-    subject: "Mathematics  - 2016",
-    stream: "natural",
-    year: 2024,
-    description: "Grade 12 Natural Science Mathematics Entrance Exam",
-    duration: 15,
-    questions: 65,
-    // attempts: 1250,
-    // averageScore: 72,
-    questionData: mathQuestions
-  },
+  // {
+  //   id: "natural-physics-2011",
+  //   subject: "Physics  - 2011",
+  //   stream: "natural",
+  //   year: 2011,
+  //   description: "Grade 12 Natural Science Physics Entrance Exam 2011 E.C",
+  //   duration: 180,
+  //   questions: 50,
+  //   // attempts: 980,
+  //   // averageScore: 68,
+  //   questionData: physics2011Questions
+  // },
+  // {
+  //   id: "natural-math-2024",
+  //   subject: "Mathematics  - 2016",
+  //   stream: "natural",
+  //   year: 2024,
+  //   description: "Grade 12 Natural Science Mathematics Entrance Exam",
+  //   duration: 15,
+  //   questions: 65,
+  //   // attempts: 1250,
+  //   // averageScore: 72,
+  //   questionData: mathQuestions
+  // },
   {
     id: "natural-physics-2024",
     subject: "Physics  - 2016",
