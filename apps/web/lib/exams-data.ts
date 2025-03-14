@@ -7,8 +7,8 @@ import mathQuestions2016 from "./data/exams/2016/math";
 
 export const exams: Exam[] = [
   {
-    id: "natural-physics-2016",
-    subject: "Physics  - 2016/24",
+    id: "natural-physics-2024",
+    subject: "Physics",
     stream: "natural",
     year: 2016,
     description: "Grade 12 Natural Science Physics Entrance Exam 2016 E.C",
@@ -19,8 +19,8 @@ export const exams: Exam[] = [
     questionData: physicsQuestions2016
   },
   {
-    id: "natural-math-2016",
-    subject: "Mathematics  - 2016/24",
+    id: "natural-math-2024",
+    subject: "Mathematics",
     stream: "natural",
     year: 2016,
     description: "Grade 12 Natural Science Mathematics Entrance Exam 2011 E.C",
