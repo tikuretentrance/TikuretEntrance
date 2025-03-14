@@ -48,7 +48,7 @@ export interface Exam {
   description: string
   duration: number
   questions: number
-  attempts: number
+  attempts?: number
   averageScore?: number
   questionData?: ExamQuestion[]
 }
