@@ -19,11 +19,19 @@ interface Notification {
 }
 
 const mockNotifications: Notification[] = [
+    // {
+    //     id: "notif-1",
+    //     title: "50 new Physics questions added",
+    //     type: "question",
+    //     date: "2025-03-18",
+    //     isNew: true,
+    //     link: "/dashboard/exam?subject=physics"
+    // },
     {
         id: "notif-1",
-        title: "50 new Physics questions added",
-        type: "question",
-        date: "2025-03-18",
+        title: "2016/24 Physics Entrance Exam Questions Added",
+        type: "exam",
+        date: "2025-03-16",
         isNew: true,
         link: "/dashboard/exam?subject=physics"
     },
@@ -31,23 +39,23 @@ const mockNotifications: Notification[] = [
         id: "notif-2",
         title: "2024 Mathematics Entrance Exam available",
         type: "exam",
-        date: "2025-03-15",
+        date: "2025-03-16",
         isNew: true,
         link: "/dashboard/exam/natural-math-2024"
     },
-    {
-        id: "notif-3",
-        title: "New study guide: Organic Chemistry Reactions",
-        type: "note",
-        date: "2025-03-10",
-        isNew: false,
-        link: "/dashboard/study-notes/note-3"
-    },
+    // {
+    //     id: "notif-3",
+    //     title: "New study guide: Organic Chemistry Reactions",
+    //     type: "note",
+    //     date: "2025-03-10",
+    //     isNew: false,
+    //     link: "/dashboard/study-notes/note-3"
+    // },
     {
         id: "notif-4",
-        title: "Important: Exam dates announced for 2025",
+        title: "Important: Exam dates announced for 2025, It will be held on June 22, 2025. Be prepared!",
         type: "announcement",
-        date: "2025-03-05",
+        date: "2025-03-16",
         isNew: false
     }
 ];
