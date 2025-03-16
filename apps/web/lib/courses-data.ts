@@ -9,7 +9,7 @@ export const courses: Course[] = [
     subject: "Mathematics",
     duration: "12 weeks",
     lessons: 24,
-    students: 1250,
+    students: 0,
     prerequisites: {
       courses: ["Basic Calculus", "Advanced Algebra"],
       skills: ["Basic algebraic manipulation", "Understanding of functions"]
@@ -95,7 +95,7 @@ export const courses: Course[] = [
     subject: "Mathematics",
     duration: "12 weeks",
     lessons: 24,
-    students: 1250,
+    students: 0,
     prerequisites: {
       courses: ["Basic Algebra", "Intermediate Algebra"],
       skills: ["Understanding of algebraic expressions", "Solving linear equations"]
@@ -153,7 +153,7 @@ export const courses: Course[] = [
     subject: "Science",
     duration: "8 weeks",
     lessons: 16,
-    students: 800,
+    students: 0,
     prerequisites: {
       courses: ["Basic Biology", "Cell Biology"],
       skills: ["Understanding of biological concepts", "Knowledge of cell structure"]
@@ -211,7 +211,7 @@ export const courses: Course[] = [
     subject: "Science",
     duration: "8 weeks",
     lessons: 16,
-    students: 800,
+    students: 0,
     prerequisites: {
       courses: ["Basic Chemistry", "Atomic Structure"],
       skills: ["Understanding of chemical reactions", "Knowledge of atomic structure"]
