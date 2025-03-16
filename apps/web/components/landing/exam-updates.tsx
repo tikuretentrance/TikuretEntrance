@@ -20,17 +20,17 @@ interface ExamUpdate {
 const mockUpdates: ExamUpdate[] = [
     {
         id: "update-1",
-        title: "New Physics Practice Questions Added",
-        type: "new_questions",
-        date: "2025-03-15",
-        description: "50 new physics questions covering mechanics and thermodynamics",
+        title: "2016/24 Physics Entrance Exam Questions Added",
+        type: "exam_paper",
+        date: "2025-03-16",
+        description: "Full set of questions with solutions and explanations",
         link: "/dashboard/exam?subject=physics"
     },
     {
         id: "update-2",
         title: "2024 Mathematics Entrance Exam Now Available",
         type: "exam_paper",
-        date: "2025-03-10",
+        date: "2025-03-16",
         description: "Complete exam paper with solutions and explanations",
         link: "/dashboard/exam/natural-math-2024"
     },
@@ -38,8 +38,8 @@ const mockUpdates: ExamUpdate[] = [
         id: "update-3",
         title: "Important: Exam Date Announcement",
         type: "announcement",
-        date: "2025-03-05",
-        description: "The 2025 entrance exams will be held from July 5-10. Prepare accordingly."
+        date: "2025-03-016",
+        description: "The 2025 entrance exams will be held on June 22, 2025. Be prepared!"
     }
 ];
 
