@@ -22,7 +22,7 @@ const streams = [
 const subjects = {
     natural: ["Mathematics", "Physics", "Chemistry", "Biology", "English"],
     social: ["Geography", "History", "Mathematics", "Economics", "English"],
-    all: ["Mathematics", "Physics", "Chemistry", "Biology", "Geography", "History", "Economics", "English"]
+    all: ["Mathematics", "Physics", "Chemistry", "Biology", "Geography", "History", "Economics", "English", "SAT"]
 }
 
 const years = ["2024", "2023", "2022", "2021", "2020", "2019"]

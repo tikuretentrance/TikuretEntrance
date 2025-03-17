@@ -4,6 +4,9 @@ import { mathQuestions } from "./data/exams/sample-exams/math";
 import { physicsQuestions } from "./data/exams/sample-exams/physics";
 import { Exam } from "./types"
 import mathQuestions2016 from "./data/exams/2016/math";
+import aptitudeQuestions2016 from "./data/exams/2016/sat";
+import chemistryQuestions2016 from "./data/exams/2016/chemistry";
+import biologyQuestions2016 from "./data/exams/2016/biology";
 
 export const exams: Exam[] = [
   {
@@ -23,13 +26,65 @@ export const exams: Exam[] = [
     subject: "Mathematics",
     stream: "natural",
     year: 2024,
-    description: "Grade 12 Natural Science Mathematics Entrance Exam 2011 E.C",
+    description: "Grade 12 Natural Science Mathematics Entrance Exam 2016 E.C",
     duration: 180,
     questions: 50,
     // attempts: 980,
     // averageScore: 68,
     questionData: mathQuestions2016
   },
+  // SAT
+  // {
+  //   id: "sat-2024",
+  //   subject: "SAT",
+  //   stream: "natural",
+  //   year: 2024,
+  //   description: "Grade 12 Scholastic Aptitude Test (SAT) Entrance Exam 2016",
+  //   duration: 120,
+  //   questions: 60,
+  //   // attempts: 980,
+  //   // averageScore: 68,
+  //   questionData: aptitudeQuestions2016
+  // },
+  // Chemistry 2016
+  {
+    id: "natural-chemistry-2024",
+    subject: "Chemistry",
+    stream: "natural",
+    year: 2024,
+    description: "Grade 12 Natural Science Chemistry Entrance Exam 2016 E.C",
+    duration: 150,
+    questions: 80,
+    // attempts: 980,
+    // averageScore: 68,
+    questionData: chemistryQuestions2016
+  },
+  // Biology
+  {
+    id: "natural-biology-2024",
+    subject: "Biology",
+    stream: "natural",
+    year: 2024,
+    description: "Grade 12 Natural Science Biology Entrance Exam 2016 E.C",
+    duration: 150,
+    questions: 100,
+    // attempts: 980,
+    // averageScore: 68,
+    questionData: biologyQuestions2016
+  },
+
+  // {
+  //   id: "sat-english-2024",
+  //   subject: "SAT English",
+  //   stream: "sat",
+  //   year: 2024,
+  //   description: "SAT English Entrance Exam",
+  //   duration: 180,
+  //   questions: 60,
+  //   // attempts: 980,
+  //   // averageScore: 68,
+  //   questionData: mathQuestions
+  // },
   // {
   //   id: "natural-physics-2011",
   //   subject: "Physics  - 2011",
