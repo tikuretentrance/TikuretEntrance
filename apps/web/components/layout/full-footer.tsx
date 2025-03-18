@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Send, ArrowRight } from "lucide-react";
+import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Send, ArrowRight, SendIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export function FullFooter() {
@@ -22,17 +22,20 @@ export function FullFooter() {
               helping students achieve their academic goals through personalized learning.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://facebook.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              {/* <Link href="https://facebook.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link href="https://twitter.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="https://instagram.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              </Link> */}
+              <Link href="https://www.instagram.com/@tikuret_entrance" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link href="https://youtube.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <Youtube className="h-5 w-5" />
+                {/* <TIcon className="h-5 w-5" /> */}
+              </Link>
+              <Link href="https://t.me/tikuretentrance" target="_blank" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                <SendIcon className="h-5 w-5" />
               </Link>
             </div>
           </div>

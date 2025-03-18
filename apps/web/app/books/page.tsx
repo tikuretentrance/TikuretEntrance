@@ -24,7 +24,7 @@ export default function BooksPage() {
                     <div className="grid gap-6 md:grid-cols-[240px_1fr]">
 
                         <aside className="space-y-6">
-                            <BookStats />
+                            {/* <BookStats /> */}
                             <GradeFilter />
                             <SubjectFilter />
                         </aside>

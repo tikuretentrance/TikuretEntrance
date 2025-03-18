@@ -4,14 +4,14 @@ import { Clock, BookOpen, Heart } from "lucide-react"
 
 export function BookStats() {
     return (
-        <Card className="p-4 space-y-4">
+        <Card className="p-2 space-y-4">
             <h3 className="font-medium">Reading Progress</h3>
             <div className="space-y-2">
-                <div className="flex justify-between text-sm">
+                {/* <div className="flex justify-between text-sm">
                     <span>Books Completed</span>
                     <span className="font-medium">12/30</span>
-                </div>
-                <Progress value={40} />
+                </div> */}
+                {/* <Progress value={40} /> */}
             </div>
             <div className="space-y-4">
                 <div className="flex items-center justify-between">

@@ -28,8 +28,16 @@ const mockNotifications: Notification[] = [
     //     link: "/dashboard/exam?subject=physics"
     // },
     {
-        id: "notif-1",
-        title: "2016/24 Physics Entrance Exam Questions Added",
+        id: "notif-4",
+        title: "2016/24 Chemistry Entrance Exam Questions Added",
+        type: "exam",
+        date: "2025-03-16",
+        isNew: true,
+        link: "/dashboard/exam/natural-math-2024"
+    },
+    {
+        id: "notif-3",
+        title: "2016/24 Biology Entrance Exam Questions Added",
         type: "exam",
         date: "2025-03-16",
         isNew: true,
@@ -40,8 +48,16 @@ const mockNotifications: Notification[] = [
         title: "2024 Mathematics Entrance Exam available",
         type: "exam",
         date: "2025-03-16",
-        isNew: true,
+        isNew: false,
         link: "/dashboard/exam/natural-math-2024"
+    },
+    {
+        id: "notif-1",
+        title: "2016/24 Physics Entrance Exam Questions Added",
+        type: "exam",
+        date: "2025-03-16",
+        isNew: false,
+        link: "/dashboard/exam?subject=physics"
     },
     // {
     //     id: "notif-3",

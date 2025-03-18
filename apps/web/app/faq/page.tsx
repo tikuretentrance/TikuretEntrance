@@ -39,10 +39,17 @@ export default function FAQPage() {
                                 </AccordionContent>
                             </AccordionItem>
 
-                            <AccordionItem value="item-2" className="border rounded-lg px-6">
+                            {/* <AccordionItem value="item-2" className="border rounded-lg px-6">
                                 <AccordionTrigger className="text-lg font-medium py-4">Is TikuretEntrance free to use?</AccordionTrigger>
                                 <AccordionContent className="pb-4 pt-2 text-muted-foreground">
                                     TikuretEntrance offers both free and premium content. Basic features like access to some practice questions and study materials are available for free. Premium features, including full practice exams, detailed explanations, and personalized study plans, require a subscription.
+                                </AccordionContent>
+                            </AccordionItem> */}
+
+                            <AccordionItem value="item-2" className="border rounded-lg px-6">
+                                <AccordionTrigger className="text-lg font-medium py-4">Is TikuretEntrance free to use?</AccordionTrigger>
+                                <AccordionContent className="pb-4 pt-2 text-muted-foreground">
+                                    TikuretEntrance is currently free to use. We encourage you to explore all the features, including practice questions, study materials, and personalized learning tools, without any cost.
                                 </AccordionContent>
                             </AccordionItem>
 
@@ -171,12 +178,12 @@ export default function FAQPage() {
                                 </AccordionContent>
                             </AccordionItem>
 
-                            <AccordionItem value="item-4" className="border rounded-lg px-6">
+                            {/* <AccordionItem value="item-4" className="border rounded-lg px-6">
                                 <AccordionTrigger className="text-lg font-medium py-4">How do I upgrade to a premium account?</AccordionTrigger>
                                 <AccordionContent className="pb-4 pt-2 text-muted-foreground">
                                     To upgrade to a premium account, go to your dashboard and click on the "Upgrade" button. You'll see different subscription options with their respective features and prices. We offer monthly, quarterly, and annual plans, with discounts for longer commitments.
                                 </AccordionContent>
-                            </AccordionItem>
+                            </AccordionItem> */}
 
                             <AccordionItem value="item-5" className="border rounded-lg px-6">
                                 <AccordionTrigger className="text-lg font-medium py-4">How can I contact customer support?</AccordionTrigger>
