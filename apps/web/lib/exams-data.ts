@@ -7,6 +7,8 @@ import mathQuestions2016 from "./data/exams/2016/math";
 import aptitudeQuestions2016 from "./data/exams/2016/sat";
 import chemistryQuestions2016 from "./data/exams/2016/chemistry";
 import biologyQuestions2016 from "./data/exams/2016/biology";
+import historyQuestions2016 from "./data/exams/2016/history";
+import economicsQuestions2016 from "./data/exams/2016/economics";
 
 export const exams: Exam[] = [
   {
@@ -135,26 +137,26 @@ export const exams: Exam[] = [
   // },
   {
     id: "social-history-2024",
-    subject: "History  - 2016 - Coming Soon",
+    subject: "History  - 2016",
     stream: "social",
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
-    duration: 20,
+    duration: 150,
     questions: 40,
     // attempts: 800,
     // averageScore: 78,
-    // questionData: historyQuestions
+    questionData: historyQuestions2016
   },
   {
     id: "social-economics-2024",
-    subject: "Economics  - 2016 - Coming Soon",
+    subject: "Economics  - 2016",
     stream: "social",
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
-    duration: 20,
+    duration: 150,
     questions: 40,
     // attempts: 800,
     // averageScore: 78,
-    // questionData: historyQuestions
+    questionData: economicsQuestions2016
   },
 ]

@@ -201,11 +201,11 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
                                 </Badge>
                             )}
                         </div>
-                        {currentQ.topic && (
+                        {/* {currentQ.topic && (
                             <div className="text-sm text-muted-foreground">
                                 Topic: {currentQ.topic}
                             </div>
-                        )}
+                        )} */}
                     </div>
 
                     {currentQ.imageUrl && (
