@@ -80,8 +80,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The granting of Africans British citizens with their political rights.",
             "The use of Africans in their administration of the colonies."
         ],
-        correctAnswer: 1, // B
-        explanation: "British indirect rule relied on local African leaders to administer the colonies under British supervision, often using coercion.",
+        correctAnswer: 3,
+        explanation: "British indirect rule involved using existing African leaders and institutions to administer their colonies, thereby reducing the need for a large European administrative presence.",
         topic: "Colonial Rule",
         difficulty: "medium"
     },
