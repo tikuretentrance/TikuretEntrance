@@ -142,7 +142,7 @@ export const exams: Exam[] = [
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
     duration: 150,
-    questions: 40,
+    questions: 100,
     // attempts: 800,
     // averageScore: 78,
     questionData: historyQuestions2016
@@ -154,7 +154,7 @@ export const exams: Exam[] = [
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
     duration: 150,
-    questions: 40,
+    questions: 80,
     // attempts: 800,
     // averageScore: 78,
     questionData: economicsQuestions2016
