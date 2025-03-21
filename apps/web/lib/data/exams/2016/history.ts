@@ -24,7 +24,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "The shift from coal to water to generate power",
             "The development of banks to lend money to Entrepreneurs"
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 0, // B
         explanation: "The Industrial Revolution was marked by the replacement of human and animal labor with machines, which increased productivity.",
         topic: "Industrial Revolution",
         difficulty: "medium"
