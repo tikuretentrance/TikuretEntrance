@@ -24,8 +24,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The shift from coal to water to generate power",
             "The development of banks to lend money to Entrepreneurs"
         ],
-        correctAnswer: 0, // B
-        explanation: "The Industrial Revolution was marked by the replacement of human and animal labor with machines, which increased productivity.",
+        correctAnswer: 0, // A
+        explanation: "The Industrial Revolution was marked by the transition from small-scale, home-based production to large-scale factory production.",
         topic: "Industrial Revolution",
         difficulty: "medium"
     },
@@ -38,7 +38,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "The economic prosperity of the southern planter class",
             "The acquisition of parts of the US by France"
         ],
-        correctAnswer: 3, // D
+        correctAnswer: 1, // B
         explanation: "The American Civil War led to the abolition of slavery in the United States through the 13th Amendment.",
         topic: "American Civil War",
         difficulty: "medium"
@@ -66,8 +66,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The numerical superiority of white armies than Africans",
             "The discovery of medicinal protection against malaria"
         ],
-        correctAnswer: 2, // C
-        explanation: "The numerical superiority of European armies, combined with advanced weaponry, allowed them to dominate African territories.",
+        correctAnswer: 3, // D
+        explanation: "The discovery of quinine, which provided protection against malaria, was crucial for European colonization in Africa.",
         topic: "European Imperialism",
         difficulty: "medium"
     },
@@ -122,8 +122,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "Ethiopian control over Matama",
             "Continuous Ethiopian war with the Egyptians"
         ],
-        correctAnswer: 2, // C
-        explanation: "The Hewett Treaty led to Ethiopian control over Matama, strengthening its position in the region.",
+        correctAnswer: 1, // B
+        explanation: "The Hewett Treaty led to increased tensions between Ethiopia and the Mahdist Sudan.",
         topic: "Ethiopian History",
         difficulty: "medium"
     },
@@ -164,8 +164,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "It is by the types of iron tools that they made that we differentiate among hominids.",
             "The different hominid species in Africa descended from Lucy (Dinkinesh)."
         ],
-        correctAnswer: 2, // C
-        explanation: "The scientific theory of human evolution states that the earliest human species originated in Africa and spread to other continents.",
+        correctAnswer: 0, // A
+        explanation: "The scientific consensus is that the earliest human species originated in Africa and later migrated to other continents.",
         topic: "Human Evolution",
         difficulty: "medium"
     },
@@ -192,7 +192,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "Afro-Asiatic",
             "Nilo-Saharan"
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 2, // C
         explanation: "The Omotic languages are part of the Afro-Asiatic language family.",
         topic: "Linguistics",
         difficulty: "medium"
@@ -206,7 +206,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "Constructing irrigation canals",
             "The art of mummification"
         ],
-        correctAnswer: 3, // D
+        correctAnswer: 2, // C
         explanation: "Irrigation canals allowed the ancient Egyptians to control the Nile's flooding and produce agricultural surpluses.",
         topic: "Ancient Egypt",
         difficulty: "medium"
@@ -262,8 +262,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The shift of the pilgrimages from the Holy Land to Lalibela.",
             "The development of rules about royal succession."
         ],
-        correctAnswer: 2, // C
-        explanation: "The Zagwe dynasty is known for shifting pilgrimage sites to Lalibela, where they built rock-hewn churches.",
+        correctAnswer: 0, // A
+        explanation: "The Zagwe dynasty maintained Christianity as the state religion and is known for its rock-hewn churches.",
         topic: "Zagwe Dynasty",
         difficulty: "medium"
     },
@@ -276,12 +276,11 @@ const historyQuestions2016: ExamQuestion[] = [
             "Permanent capitals were easy targets for attack by subject populations.",
             "The empire lacked materials to construct permanent settlements."
         ],
-        correctAnswer: 3, // D
+        correctAnswer: 1, // B
         explanation: "Mobile courts allowed the Ethiopian Christian kingdom to effectively administer its vast and diverse territories.",
         topic: "Medieval Ethiopia",
         difficulty: "hard"
     },
-
     {
         id: 21,
         text: "What was the major feature of early capitalism in Europe?",
@@ -291,7 +290,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "Decline in international trade due to internal and external war.",
             "Replacement of human and animal labor to machines in production."
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 0, // A
         explanation: "Early capitalism in Europe was characterized by the increased use of money as capital for investment and profit-making.",
         topic: "Capitalism",
         difficulty: "medium"
@@ -319,8 +318,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "Their integration into the Aksumite economic and politics.",
             "Their success in preserving Christianity elements."
         ],
-        correctAnswer: 0, // A
-        explanation: "The Zagwe dynasty rose to power by effectively mobilizing the Agaw people and consolidating their rule.",
+        correctAnswer: 2, // C
+        explanation: "The Zagwe dynasty rose to power by integrating into the Aksumite economic and political systems.",
         topic: "Zagwe Dynasty",
         difficulty: "hard"
     },
@@ -333,7 +332,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "Religious controversy",
             "Military defeat"
         ],
-        correctAnswer: 2, // C
+        correctAnswer: 0, // A
         explanation: "The Zagwe dynasty fell due to internal succession struggles, which weakened their rule.",
         topic: "Zagwe Dynasty",
         difficulty: "hard"
@@ -361,8 +360,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "By getting support from the Holy Land of Jerusalem.",
             "By blocking the Zagwe from being crowned as emperors at Aksum."
         ],
-        correctAnswer: 1, // B
-        explanation: "Yekuno Amlak restored the Solomonic Dynasty by securing recognition from the Egyptian Coptic Church, which legitimized his rule.",
+        correctAnswer: 0, // A
+        explanation: "Yekuno Amlak restored the Solomonic Dynasty by discrediting the Zagwe as usurpers and gaining support from the Ethiopian nobility.",
         topic: "Ethiopian History",
         difficulty: "hard"
     },
@@ -375,8 +374,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The agency of nomadic pastoralists.",
             "The activities of traders and sheikhs."
         ],
-        correctAnswer: 1, // B
-        explanation: "Islam spread into central and eastern Ethiopia primarily through the migration of Arab clans and the activities of traders and religious leaders (sheikhs).",
+        correctAnswer: 3, // D
+        explanation: "Islam spread into central and eastern Ethiopia primarily through the activities of traders and religious leaders (sheikhs).",
         topic: "Spread of Islam",
         difficulty: "medium"
     },
@@ -431,8 +430,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The weakening of the Hapsburgs both economically and politically.",
             "The mobilization of liberals, conservatives, and the papal states by Piedmont-Sardinia for the cause."
         ],
-        correctAnswer: 3, // D
-        explanation: "Italian unification succeeded due to the efforts of Piedmont-Sardinia, which mobilized various factions, including liberals and conservatives, to achieve unification.",
+        correctAnswer: 0, // A
+        explanation: "Italian unification succeeded due to a combination of armed uprisings and diplomatic efforts, particularly led by Piedmont-Sardinia.",
         topic: "Italian Unification",
         difficulty: "medium"
     },
@@ -445,8 +444,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "Europeans' military and technological superiority over the pre-colonial African states.",
             "The absence of centralized state structures among many African populations at the time."
         ],
-        correctAnswer: 1, // B
-        explanation: "Internal divisions within African societies, along with European support for certain factions, facilitated colonial occupation.",
+        correctAnswer: 2, // C
+        explanation: "European colonial occupation was facilitated by their military and technological superiority over African states.",
         topic: "Colonialism in Africa",
         difficulty: "medium"
     },
@@ -459,8 +458,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "Jallaba",
             "Afkala"
         ],
-        correctAnswer: 0, // A
-        explanation: "The Saffare traders were prominent in long-distance trade in the Southwestern region during the 19th century.",
+        correctAnswer: 3, // D
+        explanation: "The Afkala traders were prominent in long-distance trade in the Southwestern region during the 19th century.",
         topic: "Trade in Africa",
         difficulty: "medium"
     },
@@ -473,8 +472,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "He lacked consistency in his approach to local rulers.",
             "He was influenced by his religious thought in his administration."
         ],
-        correctAnswer: 2, // C
-        explanation: "The Liche Treaty demonstrates Yohannes IV's inconsistency in dealing with local rulers, as he alternated between negotiation and coercion.",
+        correctAnswer: 0, // A
+        explanation: "The Liche Treaty demonstrates Yohannes IV's preference for negotiation and power-sharing to consolidate his authority.",
         topic: "Ethiopian History",
         difficulty: "medium"
     },
@@ -487,8 +486,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The recognition of Ethiopia as an independent country.",
             "The end of Italian colonial aspirations in the Horn of Africa."
         ],
-        correctAnswer: 1, // B
-        explanation: "The Battle of Adwa ended Ethiopia's encirclement by hostile powers and solidified its independence.",
+        correctAnswer: 2, // C
+        explanation: "The Battle of Adwa led to the international recognition of Ethiopia as an independent nation.",
         topic: "Battle of Adwa",
         difficulty: "medium"
     },
@@ -501,8 +500,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The introduction of major political and constitutional reforms.",
             "Rapid penetration of foreign capital into the country."
         ],
-        correctAnswer: 2, // C
-        explanation: "The Diarchy period was marked by the introduction of political and constitutional reforms, as Ethiopia modernized its governance.",
+        correctAnswer: 1, // B
+        explanation: "The Diarchy period was marked by power struggles among different factions within the ruling class.",
         topic: "Ethiopian Politics",
         difficulty: "hard"
     },
@@ -515,8 +514,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "She began to reverse the modernization steps of Emperor Menelik.",
             "She demonstrated a lack of judgment in making decisions."
         ],
-        correctAnswer: 3, // D
-        explanation: "Empress Taytu was removed from power because the Shaan nobility felt she lacked judgment in her decision-making.",
+        correctAnswer: 0, // A
+        explanation: "Empress Taytu was removed from power because the Shaan nobility felt she was undermining their dominance.",
         topic: "Ethiopian Politics",
         difficulty: "hard"
     },
@@ -529,7 +528,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "The appointment of local administrators on the basis of merit to the central administration office.",
             "The decision that the payment of tithe (avrat) should be on the basis of actual produce."
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 3, // D
         explanation: "Lij Iyasu's decision to base tithe payments on actual produce eased the tax burden on the peasantry.",
         topic: "Ethiopian History",
         difficulty: "medium"
@@ -543,8 +542,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "It reduced the power of nobilities not to challenge his power.",
             "It enhanced the image of the emperor as a progressive leader."
         ],
-        correctAnswer: 0, // A
-        explanation: "The 1931 Constitution granted Haile Selassie extensive powers, including the right to pardon crimes, which consolidated his autocratic rule.",
+        correctAnswer: 2, // C
+        explanation: "The 1931 Constitution reduced the power of the nobility, consolidating Haile Selassie's autocratic rule.",
         topic: "Ethiopian Constitution",
         difficulty: "medium"
     },
@@ -557,8 +556,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "The resistance of the Ashanti kingdom",
             "The resistance of the Mandinka Empire"
         ],
-        correctAnswer: 3, // D
-        explanation: "The Mandinka Empire's resistance was partly driven by opposition to forced labor on colonial cotton plantations.",
+        correctAnswer: 1, // B
+        explanation: "The Maji Maji rebellion in Tanganyika was partly a response to forced labor on colonial cotton plantations.",
         topic: "African Resistance",
         difficulty: "medium"
     },
@@ -571,7 +570,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "To support the Ottoman Empire against Russian expansion",
             "To secure protection for Germany against French hostility"
         ],
-        correctAnswer: 2, // C
+        correctAnswer: 3, // D
         explanation: "Bismarck organized the alliance system to protect Germany from potential French hostility after the Franco-Prussian War.",
         topic: "European Alliances",
         difficulty: "medium"
@@ -585,7 +584,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "The withdrawal of Russia from international politics until the beginning of WWII.",
             "The shift of Russian modernization efforts from the cities to the countryside."
         ],
-        correctAnswer: 2, // C
+        correctAnswer: 1, // B
         explanation: "The 1917 Revolution led to the establishment of Communism in Russia, which later influenced other parts of the world.",
         topic: "Russian Revolution",
         difficulty: "medium"
@@ -599,7 +598,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "British decision to occupy the port of Danzig as a pre-emptive action against German invasion.",
             "Germany’s invasion of Poland threatened both Britain and France."
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 3, // D
         explanation: "Germany's invasion of Poland in 1939 prompted Britain and France to declare war, marking the start of WWII.",
         topic: "World War II",
         difficulty: "medium"
@@ -613,7 +612,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "The International Court of Justice",
             "The UN Secretariat"
         ],
-        correctAnswer: 0, // A
+        correctAnswer: 1, // B
         explanation: "The Trusteeship Council was established to oversee the administration of trust territories and facilitate their independence.",
         topic: "United Nations",
         difficulty: "medium"
@@ -655,7 +654,7 @@ const historyQuestions2016: ExamQuestion[] = [
             "West Germany",
             "Hungary"
         ],
-        correctAnswer: 1, // B
+        correctAnswer: 2, // C
         explanation: "West Germany was part of NATO, not the Warsaw Pact, which was a Soviet-led military alliance.",
         topic: "Cold War",
         difficulty: "easy"
@@ -697,8 +696,8 @@ const historyQuestions2016: ExamQuestion[] = [
             "It was preoccupied with peasant rebellions in Gojjam and Bale.",
             "It feared that there would be strong opposition from the big landowners."
         ],
-        correctAnswer: 2, // C
-        explanation: "The Imperial government was preoccupied with peasant rebellions in Gojjam and Bale, which hindered land reform efforts.",
+        correctAnswer: 3, // D
+        explanation: "The Imperial government feared strong opposition from powerful landowners, which hindered land reform efforts.",
         topic: "Ethiopian Land Reform",
         difficulty: "hard"
     },
