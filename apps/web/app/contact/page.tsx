@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
     const [loading, setLoading] = useState(false);
@@ -21,12 +22,21 @@ export default function ContactPage() {
         e.preventDefault();
         setLoading(true);
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+                formData,
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
+            );
 
-        toast.success("Message sent successfully! We'll get back to you soon.");
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setLoading(false);
+            toast.success("Message sent successfully! We'll get back to you soon.");
+            setFormData({ name: '', email: '', subject: '', message: '' });
+        } catch (error) {
+            toast.error("Failed to send the message. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
