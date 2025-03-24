@@ -9,6 +9,7 @@ import chemistryQuestions2016 from "./data/exams/2016/chemistry";
 import biologyQuestions2016 from "./data/exams/2016/biology";
 import historyQuestions2016 from "./data/exams/2016/history";
 import economicsQuestions2016 from "./data/exams/2016/economics";
+import geographyQuestions2016 from "./data/exams/2016/geography";
 
 export const exams: Exam[] = [
   {
@@ -158,5 +159,17 @@ export const exams: Exam[] = [
     // attempts: 800,
     // averageScore: 78,
     questionData: economicsQuestions2016
+  },
+  {
+    id: "social-geography-2024",
+    subject: "Geography  - 2016",
+    stream: "social",
+    year: 2024,
+    description: "Grade 12 Social Science Entrance Exam (2016 E.C)",
+    duration: 150,
+    questions: 100,
+    // attempts: 1500,
+    // averageScore: 65,
+    questionData: geographyQuestions2016,
   },
 ]
