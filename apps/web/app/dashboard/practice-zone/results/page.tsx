@@ -1,4 +1,4 @@
-import { tests } from "@/lib/tests-data"
+import { tests } from "@/lib/practice-data"
 import { notFound } from "next/navigation"
 import { PracticeTestResults } from "@/components/dashboard/practice-zone/practice-test-results"
 

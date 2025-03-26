@@ -161,7 +161,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
                         </DialogDescription>
                     </DialogHeader>
                     <div className="flex justify-end">
-                        <Button onClick={() => router.push("/exams")}>
+                        <Button onClick={() => router.push("/dashboard/exams")}>
                             Return to Exams
                         </Button>
                     </div>

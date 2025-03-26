@@ -15,48 +15,8 @@ import {
 } from "@/components/ui/select";
 import { Search, Clock, Users, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { PracticeSet } from "@/lib/types/practice";
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
-
-// Mock data - replace with API call in production
-const mockPracticeSets: PracticeSet[] = [
-    {
-        id: "p1",
-        title: "Calculus Fundamentals",
-        subject: "Mathematics",
-        topic: "Calculus",
-        difficulty: "medium",
-        questionCount: 20,
-        timeLimit: 45,
-        questions: [],
-        attempts: 156,
-        averageScore: 72
-    },
-    {
-        id: "p2",
-        title: "Newton's Laws Practice",
-        subject: "Physics",
-        topic: "Mechanics",
-        difficulty: "easy",
-        questionCount: 15,
-        timeLimit: 30,
-        questions: [],
-        attempts: 234,
-        averageScore: 68
-    },
-    {
-        id: "p3",
-        title: "Organic Chemistry Challenge",
-        subject: "Chemistry",
-        topic: "Organic Chemistry",
-        difficulty: "hard",
-        questionCount: 25,
-        timeLimit: 60,
-        questions: [],
-        attempts: 89,
-        averageScore: 65
-    }
-];
+import { practiceData } from "@/lib/practice-data";;
 
 export default function PracticePage() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -64,7 +24,7 @@ export default function PracticePage() {
     const [selectedDifficulty, setSelectedDifficulty] = useState("all");
     const [questionCount, setQuestionCount] = useState("all");
 
-    const filteredSets = mockPracticeSets.filter(set => {
+    const filteredSets = practiceData.filter(set => {
         if (searchQuery && !set.title.toLowerCase().includes(searchQuery.toLowerCase())) {
             return false;
         }
