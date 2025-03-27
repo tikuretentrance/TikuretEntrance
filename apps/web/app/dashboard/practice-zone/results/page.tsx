@@ -1,4 +1,4 @@
-import { tests } from "@/lib/practice-data"
+import { practiceData } from "@/lib/practice-data"
 import { notFound } from "next/navigation"
 import { PracticeTestResults } from "@/components/dashboard/practice-zone/practice-test-results"
 
@@ -9,7 +9,7 @@ interface ResultsPageProps {
 }
 
 export default function ResultsPage({ params }: ResultsPageProps) {
-    const test = tests.find((t) => t.id === params.id)
+    const test = practiceData.find((t) => t.id === params.id)
 
     if (!test) {
         notFound()
