@@ -1,4 +1,4 @@
-import { tests } from "@/lib/tests-data"
+import { practiceData } from "@/lib/practice-data"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import { PracticeTestInterface } from "@/components/dashboard/practice-zone/practice-test-interface"
@@ -10,36 +10,36 @@ interface PracticeTestPageProps {
 }
 
 export function generateStaticParams() {
-    return tests.map((test) => ({
-        id: test.id,
+    return practiceData.map((practice) => ({
+        id: practice.id,
     }))
 }
 
 export function generateMetadata({ params }: PracticeTestPageProps): Metadata {
-    const test = tests.find((t) => t.id === params.id)
+    const practice = practiceData.find((t) => t.id === params.id)
 
-    if (!test) {
+    if (!practice) {
         return {
-            title: 'Test Not Found',
+            title: 'Practice Test Not Found',
         }
     }
 
     return {
-        title: `${test.title} - Practice Test`,
-        description: `Practice test for ${test.subject}`,
+        title: `${practice.title} - Practice Test`,
+        description: `Practice test for ${practice.subject}`,
     }
 }
 
 export default function PracticeTestPage({ params }: PracticeTestPageProps) {
-    const test = tests.find((t) => t.id === params.id)
+    const practice = practiceData.find((t) => t.id === params.id)
 
-    if (!test) {
+    if (!practice) {
         notFound()
     }
 
     return (
-        <div className="container px-4 py-8">
-            <PracticeTestInterface test={test} />
+        <div className="container px-4 py-8 mx-auto">
+            <PracticeTestInterface practiceSet={practice} />
         </div>
     )
 }

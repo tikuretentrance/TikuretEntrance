@@ -29,16 +29,16 @@ export interface CourseTopic {
   description?: string
 }
 
-export interface Test {
-  id: string
-  title: string
-  subject: string
-  difficulty: string
-  duration: number
-  questions: number
-  averageScore: number
-  attempts: number
-}
+// export interface Test {
+//   id: string
+//   title: string
+//   subject: string
+//   difficulty: string
+//   duration: number
+//   questions: number
+//   averageScore: number
+//   attempts: number
+// }
 
 export interface Exam {
   id: string

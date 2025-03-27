@@ -5,12 +5,12 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Timer, AlertCircle, CheckCircle, XCircle } from "lucide-react"
-import { Test } from "@/lib/types"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useRouter } from "next/navigation"
+import { PracticeSet } from "@/lib/types/practice"
 
 interface PracticeTestInterfaceProps {
-    test: Test
+    practiceSet: PracticeSet
 }
 
 // Mock questions for demonstration
@@ -30,11 +30,11 @@ const mockQuestions = [
     // Add more mock questions as needed
 ]
 
-export function PracticeTestInterface({ test }: PracticeTestInterfaceProps) {
+export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProps) {
     const router = useRouter()
     const [started, setStarted] = useState(false)
     const [currentQuestion, setCurrentQuestion] = useState(0)
-    const [timeLeft, setTimeLeft] = useState(test.duration * 60) // Convert to seconds
+    const [timeLeft, setTimeLeft] = useState(practiceSet.timeLimit * 60) // Convert to seconds
     const [answers, setAnswers] = useState<Record<number, number>>({})
     const [submitted, setSubmitted] = useState(false)
 
@@ -68,17 +68,17 @@ export function PracticeTestInterface({ test }: PracticeTestInterfaceProps) {
         }, 0)
 
         // Store results in localStorage for now
-        localStorage.setItem(`test_result_${test.id}`, JSON.stringify({
-            testId: test.id,
+        localStorage.setItem(`test_result_${practiceSet.id}`, JSON.stringify({
+            testId: practiceSet.id,
             score,
             totalQuestions: mockQuestions.length,
-            timeSpent: test.duration * 60 - timeLeft,
+            timeSpent: practiceSet.timeLimit * 60 - timeLeft,
             answers,
             submittedAt: new Date().toISOString()
         }))
 
         // Navigate to results page (to be implemented)
-        router.push(`/dashboard/practice/${test.id}/results`)
+        router.push(`/dashboard/practice/${practiceSet.id}/results`)
     }
 
     const formatTime = (seconds: number) => {
@@ -92,16 +92,16 @@ export function PracticeTestInterface({ test }: PracticeTestInterfaceProps) {
             <Card className="max-w-2xl mx-auto p-6">
                 <div className="space-y-6">
                     <div>
-                        <h1 className="text-2xl font-bold mb-2">{test.title}</h1>
-                        <p className="text-muted-foreground">{test.subject}</p>
+                        <h1 className="text-2xl font-bold mb-2">{practiceSet.title}</h1>
+                        <p className="text-muted-foreground">{practiceSet.subject}</p>
                     </div>
 
                     <div className="space-y-2">
                         <div className="flex items-center gap-2">
                             <Timer className="h-4 w-4" />
-                            <span>Duration: {test.duration} minutes</span>
+                            <span>Duration: {practiceSet.timeLimit} minutes</span>
                         </div>
-                        <div>Total Questions: {test.questions}</div>
+                        <div>Total Questions: {practiceSet.questions.length}</div>
                     </div>
 
                     <Alert>
@@ -112,7 +112,7 @@ export function PracticeTestInterface({ test }: PracticeTestInterfaceProps) {
                     </Alert>
 
                     <Button onClick={handleStart} className="w-full">
-                        Start Test
+                        Start Practice Test
                     </Button>
                 </div>
             </Card>
@@ -169,8 +169,8 @@ export function PracticeTestInterface({ test }: PracticeTestInterfaceProps) {
                                         )
                                     ) : (
                                         <div className={`h-5 w-5 rounded-full border-2 ${answers[currentQuestion] === index
-                                                ? "border-primary bg-primary/30"
-                                                : "border-muted-foreground/30"
+                                            ? "border-primary bg-primary/30"
+                                            : "border-muted-foreground/30"
                                             }`} />
                                     )}
                                     <span>{option}</span>

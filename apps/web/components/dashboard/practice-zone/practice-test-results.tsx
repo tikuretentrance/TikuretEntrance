@@ -4,12 +4,12 @@ import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { Test } from "@/lib/types"
+import { PracticeSet } from "@/lib/types/practice"
 import { CheckCircle2, XCircle, Clock } from "lucide-react"
 import Link from "next/link"
 
 interface PracticeTestResultsProps {
-    test: Test
+    test: PracticeSet;
 }
 
 interface TestResult {
