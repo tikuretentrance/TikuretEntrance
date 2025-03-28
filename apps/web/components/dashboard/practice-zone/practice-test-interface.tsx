@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Timer, AlertCircle, CheckCircle, XCircle } from "lucide-react"
+import { Timer, AlertCircle, CheckCircle, XCircle, BookOpen } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useRouter } from "next/navigation"
 import { PracticeSet } from "@/lib/types/practice"
@@ -13,22 +14,7 @@ interface PracticeTestInterfaceProps {
     practiceSet: PracticeSet
 }
 
-// Mock questions for demonstration
-const mockQuestions = [
-    {
-        id: 1,
-        text: "What is the derivative of f(x) = x²?",
-        options: ["x", "2x", "x³", "2"],
-        correctAnswer: 1
-    },
-    {
-        id: 2,
-        text: "What is the value of sin(30°)?",
-        options: ["1/2", "√3/2", "1", "0"],
-        correctAnswer: 0
-    },
-    // Add more mock questions as needed
-]
+
 
 export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProps) {
     const router = useRouter()
@@ -38,7 +24,8 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
     const [answers, setAnswers] = useState<Record<number, number>>({})
     const [submitted, setSubmitted] = useState(false)
 
-    const progress = (currentQuestion / mockQuestions.length) * 100
+    const questions = useMemo(() => practiceSet.questions || [], [practiceSet])
+    const progress = (currentQuestion / questions.length) * 100
 
     const handleStart = () => {
         setStarted(true)
@@ -63,7 +50,7 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
         setSubmitted(true)
         // Calculate score
         const score = Object.entries(answers).reduce((acc, [qId, answer]) => {
-            const question = mockQuestions[parseInt(qId)]
+            const question = questions[parseInt(qId)]
             return acc + (answer === question.correctAnswer ? 1 : 0)
         }, 0)
 
@@ -71,21 +58,31 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
         localStorage.setItem(`test_result_${practiceSet.id}`, JSON.stringify({
             testId: practiceSet.id,
             score,
-            totalQuestions: mockQuestions.length,
+            totalQuestions: questions.length,
             timeSpent: practiceSet.timeLimit * 60 - timeLeft,
             answers,
             submittedAt: new Date().toISOString()
         }))
 
-        // Navigate to results page (to be implemented)
-        router.push(`/dashboard/practice/${practiceSet.id}/results`)
+        router.push(`/dashboard/practice-zone/${practiceSet.id}/results`)
     }
 
     const formatTime = (seconds: number) => {
-        const minutes = Math.floor(seconds / 60)
-        const remainingSeconds = seconds % 60
-        return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`
+        const hours = Math.floor(seconds / 3600)
+        const minutes = Math.floor((seconds % 3600) / 60)
+        const secs = seconds % 60
+        return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
     }
+
+    const getDifficultyColor = useCallback((difficulty?: string) => {
+        switch (difficulty) {
+            case "easy": return "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300"
+            case "medium": return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300"
+            case "hard": return "bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300"
+            default: return "bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
+        }
+    }, [])
+
 
     if (!started) {
         return (
@@ -119,14 +116,14 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
         )
     }
 
-    const currentQ = mockQuestions[currentQuestion]
+    const currentQ = questions[currentQuestion]
 
     return (
         <div className="max-w-3xl mx-auto space-y-6">
             <div className="sticky top-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-10 pb-4">
                 <div className="flex justify-between items-center mb-4">
                     <div className="font-medium">
-                        Question {currentQuestion + 1} of {mockQuestions.length}
+                        Question {currentQuestion + 1} of {questions.length}
                     </div>
                     <div className="flex items-center gap-2">
                         <Timer className="h-4 w-4" />
@@ -140,8 +137,25 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
 
             <Card className="p-6">
                 <div className="space-y-6">
-                    <h2 className="text-lg font-medium">{currentQ.text}</h2>
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-lg font-medium">{currentQ.text}</h2>
+                            {currentQ.difficulty && (
+                                <Badge className={getDifficultyColor(currentQ.difficulty)}>
+                                    {currentQ.difficulty.charAt(0).toUpperCase() + currentQ.difficulty.slice(1)}
+                                </Badge>
+                            )}
+                        </div>
+                        {/* {currentQ.topic && (
+                            <div className="mt-4 pt-4 border-t border-primary/10">
+                                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                    <BookOpen className="h-4 w-4" />
+                                    <span>Related topic: <span className="font-medium">{currentQ.topic}</span></span>
+                                </div>
+                            </div>
+                        )} */}
 
+                    </div>
                     <div className="space-y-3">
                         {currentQ.options.map((option, index) => (
                             <button
@@ -188,10 +202,10 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                             Previous
                         </Button>
 
-                        {currentQuestion === mockQuestions.length - 1 ? (
+                        {currentQuestion === questions.length - 1 ? (
                             <Button
                                 onClick={handleSubmit}
-                                disabled={Object.keys(answers).length !== mockQuestions.length}
+                                disabled={Object.keys(answers).length !== questions.length}
                             >
                                 Submit Test
                             </Button>

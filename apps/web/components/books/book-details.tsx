@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FileText, Info, BookOpen, Download, Heart } from "lucide-react"
-import { Book as BookType } from "@/lib/types"
+import { Book as BookType } from "@/lib/types/book"
 import Image from "next/image"
 import { Document, Page, pdfjs } from "react-pdf"
 import { Viewer, SpecialZoomLevel, ProgressBar, ViewMode } from '@react-pdf-viewer/core';

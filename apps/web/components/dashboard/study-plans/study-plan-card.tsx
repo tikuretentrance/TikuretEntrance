@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen } from "lucide-react";
-import { StudyPlan } from "@/lib/types";
+import { StudyPlan } from "@/lib/types/study-plan";
 
 interface StudyPlanCardProps {
     plan: StudyPlan;

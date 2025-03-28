@@ -1,4 +1,4 @@
-import { Exam, ExamQuestion } from "@/lib/types";
+import { Exam, ExamQuestion } from "@/lib/types/exam";
 
 const biologyQuestions: ExamQuestion[] = [
     {

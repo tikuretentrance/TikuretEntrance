@@ -1,4 +1,4 @@
-import { ExamQuestion } from "@/lib/types";
+import { ExamQuestion } from "@/lib/types/exam";
 
 export const physicsQuestions2016: ExamQuestion[] = [
     {

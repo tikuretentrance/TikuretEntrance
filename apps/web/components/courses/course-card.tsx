@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Clock, Lock, Users } from "lucide-react";
 import Link from "next/link";
-import { Course } from "@/lib/types";
+import { Course } from "@/lib/types/course";
 
 interface CourseCardProps {
   course: Course;

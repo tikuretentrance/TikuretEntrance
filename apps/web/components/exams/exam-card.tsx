@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Clock, FileText, Users, Award, GraduationCap } from "lucide-react"
 import Link from "next/link"
-import { Exam } from "@/lib/types"
+import { Exam } from "@/lib/types/exam"
 import { useAuth } from "@clerk/nextjs"
 
 

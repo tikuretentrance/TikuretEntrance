@@ -16,7 +16,7 @@ export default function ResultsPage({ params }: ResultsPageProps) {
     }
 
     return (
-        <div className="container px-4 py-8">
+        <div className="container px-4 py-8 mx-auto">
             <PracticeTestResults test={test} />
         </div>
     )
