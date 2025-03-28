@@ -38,7 +38,7 @@ export function FullFooter() {
               {/* <Link href="https://twitter.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>  */}
-              <Link href="https://youtube.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              <Link href="https://www.tiktok.com/@tikuretentrance" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <IconBrandTiktok />
               </Link>
 
