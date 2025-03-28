@@ -1,4 +1,4 @@
-import { ExamQuestion } from "@/lib/types";
+import { ExamQuestion } from "@/lib/types/exam";
 
 // Sample exam questions for Physics
 export const physicsQuestions: ExamQuestion[] = [

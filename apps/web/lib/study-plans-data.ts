@@ -1,4 +1,4 @@
-import { StudyPlan } from "./types";
+import { StudyPlan } from "./types/study-plan";
 
 export const studyPlans: StudyPlan[] = [
   {
