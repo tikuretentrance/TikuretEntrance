@@ -13,10 +13,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Search, Clock, Users, Award, ArrowRight } from "lucide-react";
+import { Search, Clock, Users, Award, FileText } from "lucide-react";
 import Link from "next/link";
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
-import { practiceData } from "@/lib/practice-data";;
+import { practiceData } from "@/lib/practice-data";import { IconBook, IconFilterQuestion, IconPaperBag, IconPencilHeart, IconPencilPause, IconPencilX } from "@tabler/icons-react";
+;
 
 
 
@@ -153,13 +154,17 @@ export default function PracticePage() {
                           <span>{practiceSet.timeLimit}m</span>
                         </div>
                         <div className="flex items-center gap-1 text-muted-foreground">
+                          <FileText className="h-4 w-4" />
+                          <span>{practiceSet.questionCount}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-muted-foreground">
                           <Users className="h-4 w-4" />
                           <span>{practiceSet.attempts}</span>
                         </div>
-                        <div className="flex items-center gap-1 text-muted-foreground">
+                        {/* <div className="flex items-center gap-1 text-muted-foreground">
                           <Award className="h-4 w-4" />
                           <span>{practiceSet.averageScore}%</span>
-                        </div>
+                        </div> */}
                       </div>
                       <Button className="mt-3 w-full gradient-primary hover-lift" asChild>
                         <Link href={`/dashboard/practice-zone/${practiceSet.id}`}>
