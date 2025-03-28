@@ -5,7 +5,7 @@ import { ExamCard } from "./exam-card"
 import { exams } from "@/lib/exams-data"
 import { useEffect, useState } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
-import { Exam } from "@/lib/types"
+import { Exam } from "@/lib/types/exam"
 
 export default function ExamGrid() {
   const searchParams = useSearchParams()

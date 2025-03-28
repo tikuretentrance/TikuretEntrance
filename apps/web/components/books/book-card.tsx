@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Book, BookOpen, Download } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Book as BookType } from "@/lib/types"
+import { Book as BookType } from "@/lib/types/book"
 
 interface BookCardProps {
     book: BookType
