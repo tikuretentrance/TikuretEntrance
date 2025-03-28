@@ -2,7 +2,7 @@ import physics2011Questions from "./data/exams/physics/2011";
 import { physicsQuestions2016 } from "./data/exams/2016/physics";
 import { mathQuestions } from "./data/exams/sample-exams/math";
 import { physicsQuestions } from "./data/exams/sample-exams/physics";
-import { Exam } from "./types"
+import { Exam } from "./types/exam";
 import mathQuestions2016 from "./data/exams/2016/math";
 import aptitudeQuestions2016 from "./data/exams/2016/sat";
 import chemistryQuestions2016 from "./data/exams/2016/chemistry";

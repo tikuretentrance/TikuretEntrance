@@ -1,3 +1,4 @@
+import biologyQuestions2017 from "./data/practice-questions/biology";
 import { PracticeSet } from "./types/practice";
 
 export const practiceData: PracticeSet[] = [
@@ -14,14 +15,14 @@ export const practiceData: PracticeSet[] = [
     averageScore: 72,
   },
   {
-    id: "physics-mechanics-1",
-    title: "Physics: Mechanics",
+    id: "biology-micro-organisms-1",
+    title: "Biology: Micro-organisms",
     subject: "Physics",
     topic: "Mechanics",
     difficulty: "hard",
     questionCount: 50,
     timeLimit: 180,
-    questions: [],
+    questions: biologyQuestions2017,
     attempts: 980,
     averageScore: 68,
   },

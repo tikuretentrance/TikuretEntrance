@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { PracticeSet } from "@/lib/types/practice"
+import { PracticeSet, PracticeTestResult } from "@/lib/types/practice"
 import { CheckCircle2, XCircle, Clock } from "lucide-react"
 import Link from "next/link"
 
@@ -12,17 +12,8 @@ interface PracticeTestResultsProps {
     test: PracticeSet;
 }
 
-interface TestResult {
-    testId: string
-    score: number
-    totalQuestions: number
-    timeSpent: number
-    answers: Record<number, number>
-    submittedAt: string
-}
-
 export function PracticeTestResults({ test }: PracticeTestResultsProps) {
-    const [results, setResults] = useState<TestResult | null>(null)
+    const [results, setResults] = useState<PracticeTestResult | null>(null)
 
     useEffect(() => {
         const storedResults = localStorage.getItem(`test_result_${test.id}`)
@@ -39,7 +30,7 @@ export function PracticeTestResults({ test }: PracticeTestResultsProps) {
                     You haven't completed this test yet or your results were not saved.
                 </p>
                 <Button asChild>
-                    <Link href={`/dashboard/practice/${test.id}`}>Take Test</Link>
+                    <Link href={`/dashboard/practice-zone/${test.id}`}>Take Test</Link>
                 </Button>
             </div>
         )
@@ -48,6 +39,7 @@ export function PracticeTestResults({ test }: PracticeTestResultsProps) {
     const scorePercentage = Math.round((results.score / results.totalQuestions) * 100)
     const timeSpentMinutes = Math.floor(results.timeSpent / 60)
     const timeSpentSeconds = results.timeSpent % 60
+    const timeSpentHours = Math.floor(timeSpentMinutes / 60)
 
     const getScoreColor = (score: number) => {
         if (score >= 80) return "text-green-500"
@@ -98,7 +90,7 @@ export function PracticeTestResults({ test }: PracticeTestResultsProps) {
                                 <Clock className="h-5 w-5" />
                             </div>
                             <div className="font-medium">
-                                {timeSpentMinutes}:{timeSpentSeconds.toString().padStart(2, '0')}
+                                {timeSpentHours}:{timeSpentMinutes}:{timeSpentSeconds.toString().padStart(2, '0')}
                             </div>
                             <div className="text-sm text-muted-foreground">Time Spent</div>
                         </div>
@@ -106,10 +98,10 @@ export function PracticeTestResults({ test }: PracticeTestResultsProps) {
 
                     <div className="flex gap-4">
                         <Button asChild variant="outline" className="w-full">
-                            <Link href={`/dashboard/practice/${test.id}`}>Retake Test</Link>
+                            <Link href={`/dashboard/practice-zone/${test.id}`}>Retake Test</Link>
                         </Button>
                         <Button asChild className="w-full">
-                            <Link href="/dashboard/practice">Back to Practice Tests</Link>
+                            <Link href="/dashboard/practice-zone">Back to Practice Zone</Link>
                         </Button>
                     </div>
                 </div>

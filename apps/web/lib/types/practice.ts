@@ -7,12 +7,12 @@ export interface PracticeSet {
     questionCount: number;
     timeLimit: number;
     questions: PracticeQuestion[];
-    attempts: number;
+    attempts?: number;
     averageScore: number;
 }
 
 export interface PracticeQuestion {
-    id: string;
+    id: number;
     text: string;
     options: string[];
     correctAnswer: number;
@@ -22,6 +22,16 @@ export interface PracticeQuestion {
     difficulty: 'easy' | 'medium' | 'hard';
     imageUrl?: string;
     imageAlt?: string;
+}
+
+
+export interface PracticeTestResult {
+    testId: string
+    score: number
+    totalQuestions: number
+    timeSpent: number
+    answers: Record<number, number>
+    submittedAt: string
 }
 
 export interface PracticeAttempt {

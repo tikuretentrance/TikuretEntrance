@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Send, ArrowRight, SendIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandTelegram, IconBrandTiktok, IconBrandYoutube } from '@tabler/icons-react';
 
 export function FullFooter() {
   return (
@@ -18,25 +19,30 @@ export function FullFooter() {
               <span className="text-2xl font-bold">TikuretEntrance</span>
             </div>
             <p className="text-muted-foreground text-md">
-              Comprehensive preparation platform for Ethiopian university entrance exams, 
+              Comprehensive preparation platform for Ethiopian university entrance exams,
               helping students achieve their academic goals through personalized learning.
             </p>
             <div className="flex space-x-4">
-              {/* <Link href="https://facebook.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="https://twitter.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </Link> */}
               <Link href="https://www.instagram.com/@tikuret_entrance" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="https://youtube.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                {/* <TIcon className="h-5 w-5" /> */}
+                <IconBrandInstagram />
               </Link>
               <Link href="https://t.me/tikuretentrance" target="_blank" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-                <SendIcon className="h-5 w-5" />
+                <IconBrandTelegram />
               </Link>
+              <Link href="https://www.youtube.com/@tikuretentrance" target="_blank" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                <IconBrandYoutube />
+              </Link>
+              <Link href="https://facebook.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                <IconBrandFacebook />
+              </Link>
+              {/* <Link href="https://twitter.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                <Twitter className="h-5 w-5" />
+              </Link>  */}
+              <Link href="https://youtube.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                <IconBrandTiktok />
+              </Link>
+
+
             </div>
           </div>
 
@@ -53,8 +59,8 @@ export function FullFooter() {
                 { name: "Contact", href: "/contact" }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-muted-foreground hover:text-primary transition-colors flex items-center group"
                   >
                     <ArrowRight className="h-4 w-4 mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -123,7 +129,7 @@ export function FullFooter() {
               <li><Link href="/exams?subject=biology" className="hover:text-primary transition-colors">Biology</Link></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-medium">Social Sciences</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -133,7 +139,7 @@ export function FullFooter() {
               <li><Link href="/exams?subject=economics" className="hover:text-primary transition-colors">Economics</Link></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-medium">Languages</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -143,7 +149,7 @@ export function FullFooter() {
               <li><Link href="/exams?subject=tigrinya" className="hover:text-primary transition-colors">Tigrinya</Link></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-medium">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -153,7 +159,7 @@ export function FullFooter() {
               <li><Link href="/dashboard/question-banks" className="hover:text-primary transition-colors">Question Banks</Link></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-medium">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -163,7 +169,7 @@ export function FullFooter() {
               <li><Link href="/feedback" className="hover:text-primary transition-colors">Feedback</Link></li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h4 className="font-medium">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
