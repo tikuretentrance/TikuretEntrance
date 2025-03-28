@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="google-adsense-account" content={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} />
       </head>
       <body className={inter.className}>
         <Providers>
