@@ -19,7 +19,7 @@ export interface PracticeQuestion {
     explanation: string;
     topic: string;
     subtopic?: string;
-    difficulty: 'easy' | 'medium' | 'hard';
+    difficulty?: 'easy' | 'medium' | 'hard';
     imageUrl?: string;
     imageAlt?: string;
 }

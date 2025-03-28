@@ -1,10 +1,11 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Timer, AlertCircle, CheckCircle, XCircle } from "lucide-react"
+import { Timer, AlertCircle, CheckCircle, XCircle, BookOpen } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useRouter } from "next/navigation"
 import { PracticeSet } from "@/lib/types/practice"
@@ -66,12 +67,22 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
         router.push(`/dashboard/practice-zone/${practiceSet.id}/results`)
     }
 
-        const formatTime = (seconds: number) => {
-            const hours = Math.floor(seconds / 3600)
-            const minutes = Math.floor((seconds % 3600) / 60)
-            const secs = seconds % 60
-            return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+    const formatTime = (seconds: number) => {
+        const hours = Math.floor(seconds / 3600)
+        const minutes = Math.floor((seconds % 3600) / 60)
+        const secs = seconds % 60
+        return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+    }
+
+    const getDifficultyColor = useCallback((difficulty?: string) => {
+        switch (difficulty) {
+            case "easy": return "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300"
+            case "medium": return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300"
+            case "hard": return "bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300"
+            default: return "bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
         }
+    }, [])
+
 
     if (!started) {
         return (
@@ -126,8 +137,25 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
 
             <Card className="p-6">
                 <div className="space-y-6">
-                    <h2 className="text-lg font-medium">{currentQ.text}</h2>
+                    <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-lg font-medium">{currentQ.text}</h2>
+                            {currentQ.difficulty && (
+                                <Badge className={getDifficultyColor(currentQ.difficulty)}>
+                                    {currentQ.difficulty.charAt(0).toUpperCase() + currentQ.difficulty.slice(1)}
+                                </Badge>
+                            )}
+                        </div>
+                        {/* {currentQ.topic && (
+                            <div className="mt-4 pt-4 border-t border-primary/10">
+                                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                    <BookOpen className="h-4 w-4" />
+                                    <span>Related topic: <span className="font-medium">{currentQ.topic}</span></span>
+                                </div>
+                            </div>
+                        )} */}
 
+                    </div>
                     <div className="space-y-3">
                         {currentQ.options.map((option, index) => (
                             <button
