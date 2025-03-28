@@ -27,11 +27,14 @@ export interface PracticeQuestion {
 
 export interface PracticeTestResult {
     testId: string
+    userId: string;
     score: number
     totalQuestions: number
     timeSpent: number
     answers: Record<number, number>
     submittedAt: string
+    completed: boolean
+    attemptId: string
 }
 
 export interface PracticeAttempt {

@@ -37,9 +37,9 @@ export function PracticeTestResults({ test }: PracticeTestResultsProps) {
     }
 
     const scorePercentage = Math.round((results.score / results.totalQuestions) * 100)
-    const timeSpentMinutes = Math.floor(results.timeSpent / 60)
-    const timeSpentSeconds = results.timeSpent % 60
-    const timeSpentHours = Math.floor(timeSpentMinutes / 60)
+    const timeSpentMinutes = Math.floor(results.timeSpent / 60); // Total minutes
+    const timeSpentSeconds = results.timeSpent % 60; // Remaining seconds
+    const timeSpentHours = Math.floor(timeSpentMinutes / 60); // Total hours
 
     const getScoreColor = (score: number) => {
         if (score >= 80) return "text-green-500"
