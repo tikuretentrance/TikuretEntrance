@@ -1,6 +1,6 @@
-import biologyQuestions2017 from "./data/practice-questions/biology";
 import chemistryQuestions from "./data/practice-questions/chemistry/chemistry-25";
 import chemistryG12Questions from "./data/practice-questions/chemistry/chemistry-u1-and-2";
+import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
 import { PracticeSet } from "./types/practice";
 
 export const practiceData: PracticeSet[] = [
@@ -11,7 +11,7 @@ export const practiceData: PracticeSet[] = [
     topic: "General Chemistry",
     difficulty: "medium",
     questionCount: 30,
-    timeLimit: 40, // Time limit in minutes
+    timeLimit: 40,
     questions: chemistryQuestions,
     attempts: 850,
     averageScore: 68,
@@ -23,21 +23,33 @@ export const practiceData: PracticeSet[] = [
     topic: "General Chemistry",
     difficulty: "medium",
     questionCount: 10,
-    timeLimit: 15, // Time limit in minutes
+    timeLimit: 15,
     questions: chemistryG12Questions,
     attempts: 850,
     averageScore: 68,
   },
   {
-    id: "biology-micro-organisms-1",
-    title: "Biology: Micro-organisms",
-    subject: "Biology",
-    topic: "Mechanics",
-    difficulty: "hard",
-    questionCount: 50,
-    timeLimit: 180,
-    questions: biologyQuestions2017,
-    attempts: 980,
-    averageScore: 68,
+    id: "history-g11-u1",
+    title: "History G11 Unit 1",
+    subject: "History",
+    topic: "Historiography & Human Evolution",
+    difficulty: "medium",
+    questionCount: 20,
+    timeLimit: 30, // Time limit in minutes
+    questions: historyQuestionsUnit1,
+    attempts: 0,
+    averageScore: 0,
   },
+  {
+    id: "history-g11-u2",
+    title: "History G11 Unit 2",
+    subject: "History",
+    topic: "Major Spots of Ancient World Civilizations",
+    difficulty: "medium",
+    questionCount: 30,
+    timeLimit: 45,
+    questions: historyQuestionsUnit2,
+    attempts: 0,
+    averageScore: 0,
+  }
 ];
