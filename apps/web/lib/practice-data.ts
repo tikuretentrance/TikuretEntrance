@@ -31,7 +31,7 @@ export const practiceData: PracticeSet[] = [
   {
     id: "biology-micro-organisms-1",
     title: "Biology: Micro-organisms",
-    subject: "Physics",
+    subject: "Biology",
     topic: "Mechanics",
     difficulty: "hard",
     questionCount: 50,

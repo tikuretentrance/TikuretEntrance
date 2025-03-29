@@ -23,7 +23,7 @@ export function FullFooter() {
               helping students achieve their academic goals through personalized learning.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://www.instagram.com/@tikuret_entrance" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              <Link href="https://www.instagram.com/tikuret_entrance" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <IconBrandInstagram />
               </Link>
               <Link href="https://t.me/tikuretentrance" target="_blank" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
@@ -32,7 +32,7 @@ export function FullFooter() {
               <Link href="https://www.youtube.com/@tikuretentrance" target="_blank" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <IconBrandYoutube />
               </Link>
-              <Link href="https://facebook.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              <Link href="https://facebook.com/" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
                 <IconBrandFacebook />
               </Link>
               {/* <Link href="https://twitter.com" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
