@@ -145,7 +145,7 @@ export function FullFooter() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="hover:text-primary transition-colors">English</li>
               <li className="hover:text-primary transition-colors">Amharic</li>
-              <li className="hover:text-primary transition-colors">Afaanink</li>
+              <li className="hover:text-primary transition-colors">Afaan Oromo</li>
               <li className="hover:text-primary transition-colors">Tigrinya</li>
             </ul>
           </div>
