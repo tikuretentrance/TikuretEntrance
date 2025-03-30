@@ -1,3 +1,4 @@
+import { AdComponent } from "@/components/ads/ad-component"
 import { BookGrid } from "@/components/books/book-grid"
 import { BookSearch } from "@/components/books/book-search"
 import { BookStats } from "@/components/books/book-stats"
@@ -19,7 +20,7 @@ export default function BooksPage() {
                 <Suspense fallback={<div>Loading...</div>}>
                     <BookSearch />
                 </Suspense>
-                
+
                 <Suspense fallback={<div>Loading...</div>}>
                     <div className="grid gap-6 md:grid-cols-[240px_1fr]">
 
@@ -27,10 +28,22 @@ export default function BooksPage() {
                             {/* <BookStats /> */}
                             <GradeFilter />
                             <SubjectFilter />
+                            {/* Responsive ad placement */}
+                            <AdComponent
+                                adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
+                                adFormat="horizontal"
+                                className="my-6"
+                            />
                         </aside>
 
                         <main>
                             <BookGrid />
+                            {/* Responsive ad placement */}
+                            <AdComponent
+                                adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
+                                adFormat="horizontal"
+                                className="my-6"
+                            />
                         </main>
                     </div>
                 </Suspense>

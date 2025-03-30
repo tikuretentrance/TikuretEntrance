@@ -13,6 +13,7 @@ import { Card } from "@/components/ui/card";
 import { BookMarked, BookOpen, Brain, Clock, GraduationCap, HelpCircle, Link, Target } from "lucide-react";
 import { ExamUpdates } from "@/components/landing/exam-updates";
 import { FullFooter } from "@/components/layout/full-footer";
+import { AdComponent } from "@/components/ads/ad-component";
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
 
 
         <Statistics />
-        <FeaturesSection />        
+        <FeaturesSection />
         {/* <HowItWorks /> */}
         <StudyMaterials />
         <section className="py-12">
@@ -66,6 +67,11 @@ export default function Home() {
         <CTA />
         <FullFooter />
       </div>
+      <AdComponent
+        adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
+        adFormat="rectangle"
+        className="my-6"
+      />
     </div>
   );
 }
