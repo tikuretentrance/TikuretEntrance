@@ -115,42 +115,79 @@ export function QuestionBankPreview() {
                         <Skeleton className="h-20 w-full" />
                     </div>
                 ) : (
-                    <Tabs defaultValue="mathematics">
-                        <TabsList className="grid grid-cols-3 mb-4">
-                            <TabsTrigger value="mathematics">Mathematics</TabsTrigger>
-                            <TabsTrigger value="physics">Physics</TabsTrigger>
-                            <TabsTrigger value="chemistry">Chemistry</TabsTrigger>
-                        </TabsList>
+                    <Tabs defaultValue="all">
 
-                        {Object.entries(mockQuestionBanks).map(([subject, banks]) => (
-                            <TabsContent key={subject} value={subject} className="space-y-4">
-                                {banks.map((bank) => (
-                                    <div
-                                        key={bank.id}
-                                        className="flex justify-between items-center p-3 border rounded-lg hover:bg-muted/50 transition-colors"
-                                    >
-                                        <div className="space-y-1">
-                                            <div className="flex items-center gap-2">
-                                                <FileText className="h-4 w-4 text-primary" />
-                                                <span className="font-medium">{bank.title}</span>
-                                                <Badge className={getDifficultyColor(bank.difficulty)}>
-                                                    {bank.difficulty}
-                                                </Badge>
+                        <Tabs defaultValue="all">
+                            <TabsList className="grid grid-cols-4 mb-4">
+                                <TabsTrigger value="all">All</TabsTrigger>
+                                <TabsTrigger value="mathematics">Mathematics</TabsTrigger>
+                                <TabsTrigger value="physics">Physics</TabsTrigger>
+                                <TabsTrigger value="chemistry">Chemistry</TabsTrigger>
+                            </TabsList>
+
+                            <TabsContent value="all" className="space-y-4">
+                                {Object.entries(mockQuestionBanks).map(([subject, banks]) => (
+                                    <div className="space-y-2" key={subject}>
+                                        <h3 className="text-lg font-semibold">{subject.charAt(0).toUpperCase() + subject.slice(1)}</h3>
+                                        {banks.map((bank) => (
+                                            <div
+                                                key={bank.id}
+                                                className="flex justify-between items-center p-3 border rounded-lg hover:bg-muted/50 transition-colors"
+                                            >
+                                                <div className="space-y-2">
+                                                    <div className="flex items-center gap-2">
+                                                        <FileText className="h-4 w-4 text-primary" />
+                                                        <span className="font-medium">{bank.title}</span>
+                                                        <Badge className={getDifficultyColor(bank.difficulty)}>
+                                                            {bank.difficulty}
+                                                        </Badge>
+                                                    </div>
+                                                    <div className="text-sm text-muted-foreground">
+                                                        {bank.completedCount}/{bank.questionCount} questions completed
+                                                    </div>
+                                                </div>
+                                                <Button variant="ghost" size="sm" className="gap-1" asChild>
+                                                    <Link href={`/dashboard/question-banks/${bank.id}`}>
+                                                        Practice
+                                                        <ArrowRight className="h-4 w-4" />
+                                                    </Link>
+                                                </Button>
                                             </div>
-                                            <div className="text-sm text-muted-foreground">
-                                                {bank.completedCount}/{bank.questionCount} questions completed
-                                            </div>
-                                        </div>
-                                        <Button variant="ghost" size="sm" className="gap-1" asChild>
-                                            <Link href={`/dashboard/question-banks/${bank.id}`}>
-                                                Practice
-                                                <ArrowRight className="h-4 w-4" />
-                                            </Link>
-                                        </Button>
+                                        ))}
                                     </div>
                                 ))}
                             </TabsContent>
-                        ))}
+
+                            {Object.entries(mockQuestionBanks).map(([subject, banks]) => (
+                                <TabsContent key={subject} value={subject} className="space-y-4">
+                                    {banks.map((bank) => (
+                                        <div
+                                            key={bank.id}
+                                            className="flex justify-between items-center p-3 border rounded-lg hover:bg-muted/50 transition-colors"
+                                        >
+                                            <div className="space-y-1">
+                                                <div className="flex items-center gap-2">
+                                                    <FileText className="h-4 w-4 text-primary" />
+                                                    <span className="font-medium">{bank.title}</span>
+                                                    <Badge className={getDifficultyColor(bank.difficulty)}>
+                                                        {bank.difficulty}
+                                                    </Badge>
+                                                </div>
+                                                <div className="text-sm text-muted-foreground">
+                                                    {bank.completedCount}/{bank.questionCount} questions completed
+                                                </div>
+                                            </div>
+                                            <Button variant="ghost" size="sm" className="gap-1" asChild>
+                                                <Link href={`/dashboard/question-banks/${bank.id}`}>
+                                                    Practice
+                                                    <ArrowRight className="h-4 w-4" />
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    ))}
+                                </TabsContent>
+                            ))}
+                        </Tabs>
                     </Tabs>
                 )}
             </CardContent>

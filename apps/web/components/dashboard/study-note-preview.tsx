@@ -7,42 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BookOpen, Star, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-interface StudyNote {
-    id: string;
-    title: string;
-    subject: string;
-    lastUpdated: string;
-    isFavorite: boolean;
-    isNew: boolean;
-}
-
-const mockStudyNotes: StudyNote[] = [
-    {
-        id: "note-1",
-        title: "Calculus Formula Sheet",
-        subject: "Mathematics",
-        lastUpdated: "2025-03-15",
-        isFavorite: true,
-        isNew: false,
-    },
-    {
-        id: "note-2",
-        title: "Physics Key Concepts",
-        subject: "Physics",
-        lastUpdated: "2025-03-18",
-        isFavorite: false,
-        isNew: true,
-    },
-    {
-        id: "note-3",
-        title: "Organic Chemistry Reactions",
-        subject: "Chemistry",
-        lastUpdated: "2025-03-10",
-        isFavorite: true,
-        isNew: false,
-    },
-];
+import { StudyNote } from "@/lib/types/study-note";
+import { mockStudyNotes } from "@/lib/study-notes";
 
 export function StudyNotesPreview() {
     const [loading, setLoading] = useState(true);
