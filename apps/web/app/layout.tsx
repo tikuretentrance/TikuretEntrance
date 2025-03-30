@@ -139,7 +139,7 @@ export default function RootLayout({
         />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="TikuretEntrance -  #1 Ethiopian University Entrance Exam Preparation" />
+        <meta property="og:title" content="TikuretEntrance -  #1 Ethiopian University Entrance Exam Preparation Platform" />
         <meta property="og:description" content="Personalized learning platform for Ethiopian high school students preparing for university entrance exams" />
         <meta property="og:image" content="https://tikuretentrance.com/favicon.ico" />
         <meta property="og:url" content="https://tikuretentrance.com" />
