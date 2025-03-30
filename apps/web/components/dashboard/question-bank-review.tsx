@@ -143,11 +143,12 @@ export function QuestionBankPreview() {
                                                         </Badge>
                                                     </div>
                                                     <div className="text-sm text-muted-foreground">
-                                                        {bank.completedCount}/{bank.questionCount} questions completed
+                                                        {bank.questionCount} questions available
+                                                        {/* {bank.completedCount}/{bank.questionCount} questions completed */}
                                                     </div>
                                                 </div>
                                                 <Button variant="ghost" size="sm" className="gap-1" asChild>
-                                                    <Link href={`/dashboard/question-banks/${bank.id}`}>
+                                                    <Link href={`/dashboard/practice-zone/`}> {/*${bank.id} */}
                                                         Practice
                                                         <ArrowRight className="h-4 w-4" />
                                                     </Link>
@@ -174,11 +175,12 @@ export function QuestionBankPreview() {
                                                     </Badge>
                                                 </div>
                                                 <div className="text-sm text-muted-foreground">
-                                                    {bank.completedCount}/{bank.questionCount} questions completed
+                                                    {bank.questionCount} questions available
+                                                    {/* {bank.completedCount}/{bank.questionCount} questions completed */}
                                                 </div>
                                             </div>
                                             <Button variant="ghost" size="sm" className="gap-1" asChild>
-                                                <Link href={`/dashboard/question-banks/${bank.id}`}>
+                                                <Link href={`/dashboard/practice-zone/`}>
                                                     Practice
                                                     <ArrowRight className="h-4 w-4" />
                                                 </Link>
