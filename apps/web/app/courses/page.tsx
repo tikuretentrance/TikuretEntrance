@@ -22,7 +22,7 @@ export default function CoursesPage() {
             <GradeFilter />
             <SubjectFilter />
             <AdComponent
-              adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || "1156166978"}
+              adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
               adFormat="horizontal"
               className="my-6"
             />
@@ -32,7 +32,7 @@ export default function CoursesPage() {
             <CourseGrid />
 
             <AdComponent
-              adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || "1156166978"}
+              adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
               adFormat="horizontal"
               className="my-6"
             />
