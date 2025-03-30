@@ -123,30 +123,30 @@ export function FullFooter() {
           <div className="space-y-4">
             <h4 className="font-medium">Natural Sciences</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/exams?subject=mathematics" className="hover:text-primary transition-colors">Mathematics</Link></li>
-              <li><Link href="/exams?subject=physics" className="hover:text-primary transition-colors">Physics</Link></li>
-              <li><Link href="/exams?subject=chemistry" className="hover:text-primary transition-colors">Chemistry</Link></li>
-              <li><Link href="/exams?subject=biology" className="hover:text-primary transition-colors">Biology</Link></li>
+              <li className="hover:text-primary transition-colors">Mathematics</li>
+              <li className="hover:text-primary transition-colors">Physics</li>
+              <li className="hover:text-primary transition-colors">Chemistry</li>
+              <li className="hover:text-primary transition-colors">Biology</li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-medium">Social Sciences</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/exams?subject=history" className="hover:text-primary transition-colors">History</Link></li>
-              <li><Link href="/exams?subject=geography" className="hover:text-primary transition-colors">Geography</Link></li>
-              <li><Link href="/exams?subject=civics" className="hover:text-primary transition-colors">Civics</Link></li>
-              <li><Link href="/exams?subject=economics" className="hover:text-primary transition-colors">Economics</Link></li>
+              <li className="hover:text-primary transition-colors">History</li>
+              <li className="hover:text-primary transition-colors">Geography</li>
+              <li className="hover:text-primary transition-colors">Civics</li>
+              <li className="hover:text-primary transition-colors">Economics</li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-medium">Languages</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/exams?subject=english" className="hover:text-primary transition-colors">English</Link></li>
-              <li><Link href="/exams?subject=amharic" className="hover:text-primary transition-colors">Amharic</Link></li>
-              <li><Link href="/exams?subject=afaan-oromo" className="hover:text-primary transition-colors">Afaan Oromo</Link></li>
-              <li><Link href="/exams?subject=tigrinya" className="hover:text-primary transition-colors">Tigrinya</Link></li>
+              <li className="hover:text-primary transition-colors">English</li>
+              <li className="hover:text-primary transition-colors">Amharic</li>
+              <li className="hover:text-primary transition-colors">Afaan Oromo</li>
+              <li className="hover:text-primary transition-colors">Tigrinya</li>
             </ul>
           </div>
 
@@ -154,9 +154,10 @@ export function FullFooter() {
             <h4 className="font-medium">Resources</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/books" className="hover:text-primary transition-colors">Textbooks</Link></li>
-              <li><Link href="/practice" className="hover:text-primary transition-colors">Practice Tests</Link></li>
-              <li><Link href="/dashboard/study-notes" className="hover:text-primary transition-colors">Study Notes</Link></li>
-              <li><Link href="/dashboard/question-banks" className="hover:text-primary transition-colors">Question Banks</Link></li>
+              <li className="hover:text-primary transition-colors">Practice Tests</li>
+              <li className="hover:text-primary transition-colors">Study Notes</li>
+              <li className="hover:text-primary transition-colors">Question Banks</li>
+              {/* <li><Link href="/dashboard/question-banks" className="hover:text-primary transition-colors">Question Banks</Link></li> */}
             </ul>
           </div>
 

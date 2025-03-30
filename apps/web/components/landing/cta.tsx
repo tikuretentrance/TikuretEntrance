@@ -13,7 +13,7 @@ export default function CTA() {
                     Start your journey today!
                 </p>
                 {isSignedIn ? (
-                    <Link href="/exams">
+                    <Link href="/dashboard/exam">
                         <Button size="lg" className="gradient-secondary hover-lift" variant="secondary">
                             Explore Exams
                         </Button>
