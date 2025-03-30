@@ -98,7 +98,7 @@ export const exams: Exam[] = [
   // },
   // {
   //   id: "natural-math-2024",
-  //   subject: "Mathematics  - 2016",
+  //   subject: "Mathematics",
   //   stream: "natural",
   //   year: 2024,
   //   description: "Grade 12 Natural Science Mathematics Entrance Exam",
@@ -110,7 +110,7 @@ export const exams: Exam[] = [
   // },
   // {
   //   id: "natural-physics-2024",
-  //   subject: "Physics  - 2016",
+  //   subject: "Physics",
   //   stream: "natural",
   //   year: 2024,
   //   description: "Grade 12 Natural Science Physics Entrance Exam",
@@ -122,7 +122,7 @@ export const exams: Exam[] = [
   // },
   // {
   //   id: "natural-biology-2024",
-  //   subject: "Biology  - 2016 - Coming Soon",
+  //   subject: "Biology - Coming Soon",
   //   stream: "natural",
   //   year: 2024,
   //   description: "Grade 12 Natural Science Biology Entrance Exam (2010 E.C)",
@@ -134,7 +134,7 @@ export const exams: Exam[] = [
   // },
   {
     id: "social-history-2024",
-    subject: "History  - 2016",
+    subject: "History",
     stream: "social",
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
@@ -146,7 +146,7 @@ export const exams: Exam[] = [
   },
   {
     id: "social-economics-2024",
-    subject: "Economics  - 2016",
+    subject: "Economics",
     stream: "social",
     year: 2024,
     description: "Grade 12 Social Science History Entrance Exam",
@@ -158,7 +158,7 @@ export const exams: Exam[] = [
   },
   {
     id: "social-geography-2024",
-    subject: "Geography  - 2016",
+    subject: "Geography",
     stream: "social",
     year: 2024,
     description: "Grade 12 Social Science Entrance Exam (2016 E.C)",

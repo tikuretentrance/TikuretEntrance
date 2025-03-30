@@ -29,51 +29,69 @@ const mockNotifications: Notification[] = [
     // },
     {
         id: "notif-4",
-        title: "2016/24 Chemistry Entrance Exam Questions Added",
+        title: "2016/24 History Entrance Exam Avaliable",
         type: "exam",
-        date: "2025-03-16",
+        date: "2025-03-29",
         isNew: true,
-        link: "/dashboard/exam/natural-math-2024"
+        link: "/dashboard/exam?subject=history"
     },
     {
         id: "notif-3",
-        title: "2016/24 Biology Entrance Exam Questions Added",
+        title: "2024 Geography Entrance Exam available",
         type: "exam",
-        date: "2025-03-16",
+        date: "2025-03-24",
         isNew: true,
-        link: "/dashboard/exam?subject=physics"
+        link: "/dashboard/exam?subject=geography"
+    },
+    {
+        id: "notif-6",
+        title: "Physics From G11 Unit 1 & 2 Practice Questions Added",
+        type: "question",
+        date: "2025-03-29",
+        isNew: true,
+        link: "/dashboard/practice-zone/"
+    },
+    {
+        id: "notif-6",
+        title: "Chemistry From G11 Unit 1 & 2 Practice Questions Added",
+        type: "question",
+        date: "2025-03-29",
+        isNew: true,
+        link: "/dashboard/practice-zone/"
+    },
+    {
+        id: "notif-6",
+        title: "History From G11 Unit 1 & 2 Practice Questions Added",
+        type: "question",
+        date: "2025-03-29",
+        isNew: true,
+        link: "/dashboard/practice-zone/"
     },
     {
         id: "notif-2",
-        title: "2024 Mathematics Entrance Exam available",
+        title: "2016/24 Economics Entrance Exam Avaliable",
         type: "exam",
-        date: "2025-03-16",
+        date: "2025-03-21",
         isNew: false,
-        link: "/dashboard/exam/natural-math-2024"
+        link: "/dashboard/exam?subject=economics"
     },
     {
         id: "notif-1",
         title: "2016/24 Physics Entrance Exam Questions Added",
         type: "exam",
-        date: "2025-03-16",
+        date: "2025-03-13",
         isNew: false,
         link: "/dashboard/exam?subject=physics"
     },
-    // {
-    //     id: "notif-3",
-    //     title: "New study guide: Organic Chemistry Reactions",
-    //     type: "note",
-    //     date: "2025-03-10",
-    //     isNew: false,
-    //     link: "/dashboard/study-notes/note-3"
-    // },
     {
-        id: "notif-4",
+        id: "notif-5",
         title: "Important: Exam dates announced for 2025, It will be held on June 22, 2025. Be prepared!",
         type: "announcement",
         date: "2025-03-16",
         isNew: false
-    }
+    },
+    // Practice Questions Added
+    // Chemistry, History and Physics
 ];
 
 export function NewContentNotifications() {
