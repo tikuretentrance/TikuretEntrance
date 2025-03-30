@@ -67,6 +67,11 @@ export default function Home() {
         <CTA />
         <FullFooter />
       </div>
+      <AdComponent
+        adSlot={process.env.NEXT_PUBLIC_GOOGLE_ADS_SLOT || ""}
+        adFormat="rectangle"
+        className="my-6"
+      />
     </div>
   );
 }
