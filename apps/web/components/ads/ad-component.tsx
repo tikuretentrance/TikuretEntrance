@@ -24,7 +24,7 @@ export function AdComponent({ adSlot, adFormat = 'auto', className }: AdComponen
             <ins
                 className="adsbygoogle"
                 style={{ display: 'block' }}
-                data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT || ''}
+                data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || ''}
                 data-ad-slot={adSlot}
                 data-ad-format={adFormat}
                 data-full-width-responsive="true"
