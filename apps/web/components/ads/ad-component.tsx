@@ -20,7 +20,7 @@ export function AdComponent({ adSlot, adFormat = 'auto', className }: AdComponen
     }, []);
 
     return (
-        <div className={cn('w-full rounded-lg bg-card', className)}>
+        <div className={cn('w-full rounded-lg', className)}> {/* bg-card */}
             <ins
                 className="adsbygoogle"
                 style={{ display: 'block' }}
