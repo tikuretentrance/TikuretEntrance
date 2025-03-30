@@ -55,7 +55,7 @@ export function FullFooter() {
                 { name: "Practice Exams", href: "#" },
                 { name: "Courses", href: "#" },
                 { name: "FAQ", href: "/faq" },
-                { name: "About Us", href: "/about" },
+                // { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/contact" }
               ].map((link) => (
                 <li key={link.name}>
