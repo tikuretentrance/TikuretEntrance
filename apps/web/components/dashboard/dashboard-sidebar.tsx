@@ -9,10 +9,12 @@ import {
     Calendar,
     MicroscopeIcon,
     AlarmPlus,
-    Clock
+    Clock,
+    HelpCircle
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { IconMessage } from "@tabler/icons-react";
 
 const sidebarItems = [
     {
@@ -65,11 +67,16 @@ const sidebarItems = [
     //     href: "/dashboard/settings",
     //     icon: Settings,
     // },
-    // {
-    //     title: "Help & Support",
-    //     href: "/dashboard/support",
-    //     icon: HelpCircle,
-    // },
+    {
+        title: "Feedback",
+        href: "/dashboard/feedback",
+        icon: IconMessage
+    },
+    {
+        title: "Help & Support",
+        href: "/dashboard/support",
+        icon: HelpCircle,
+    }
 ];
 
 export function DashboardSidebar() {
