@@ -127,6 +127,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
 
         {/*  Google Adsense */}
         <meta name="google-adsense-account" content={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || ''} />
