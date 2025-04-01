@@ -25,7 +25,7 @@ export function StudyMaterials() {
             description: "Practice with actual entrance exams from the past 10 years with detailed solutions",
             image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
             stats: {
-                papers: "10+ Years",
+                papers: "Previous Year exams [ New ]",
                 questions: "2000+ Questions",
                 solutions: "Detailed Solutions",
             },
