@@ -9,7 +9,7 @@ interface BookPageProps {
     }
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
     return books.map((book) => ({
         id: book.id,
     }))

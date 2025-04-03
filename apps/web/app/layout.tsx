@@ -147,15 +147,18 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
 
         {/* Schema Markup  */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "TikuretEntrance",
-            "url": "https://tikuretentrance.com",
-            "logo": "https://tikuretentrance.com/favicon.ico",
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "TikuretEntrance",
+              "url": "https://tikuretentrance.com",
+              "logo": "https://tikuretentrance.com/favicon.ico",
+            }),
+          }}
+        />
       </head>
       <body className={inter.className}>
         <Providers>

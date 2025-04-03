@@ -8,6 +8,12 @@ interface ResultsPageProps {
     }
 }
 
+export function generateStaticParams() {
+    return exams.map((exam) => ({
+        id: exam.id,
+    }))
+}
+
 export default function ResultsPage({ params }: ResultsPageProps) {
     const exam = exams.find((e) => e.id === params.id)
 

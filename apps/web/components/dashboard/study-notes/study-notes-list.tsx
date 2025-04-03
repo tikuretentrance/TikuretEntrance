@@ -8,54 +8,16 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { BookOpen, ArrowRight, Bookmark } from "lucide-react"
 import Link from "next/link"
 import { toast } from "sonner"
-
-interface StudyNote {
-  id: string
-  title: string
-  subject: string
-  topic: string
-  summary: string
-  lastUpdated: string
-  bookmarked?: boolean
-}
+import { StudyNoteListInterface } from "@/lib/types/study-note"
+import { noteListData } from "@/lib/study-notes"
 
 interface StudyNotesListProps {
   searchQuery: string
 }
 
-// Mock data - replace with API call in production
-const mockNotes: StudyNote[] = [
-  {
-    id: "note1",
-    title: "Calculus Fundamentals",
-    subject: "Mathematics",
-    topic: "Calculus",
-    summary: "A comprehensive guide to basic calculus concepts including limits, derivatives, and integrals.",
-    lastUpdated: "2024-03-15",
-    bookmarked: true
-  },
-  // {
-  //   id: "note2",
-  //   title: "Physics Mechanics",
-  //   subject: "Physics",
-  //   topic: "Mechanics",
-  //   summary: "Study guide covering Newton's laws, momentum, and energy conservation.",
-  //   lastUpdated: "2024-03-14",
-  //   bookmarked: false
-  // },
-  // {
-  //   id: "note3",
-  //   title: "World War II",
-  //   subject: "History",
-  //   topic: "World History",
-  //   summary: "Detailed notes on the causes, events, and consequences of World War II.",
-  //   lastUpdated: "2024-03-12",
-  //   bookmarked: false
-  // },
-]
 
 export function StudyNotesList({ searchQuery }: StudyNotesListProps) {
-  const [notes, setNotes] = useState<StudyNote[]>([])
+  const [notes, setNotes] = useState<StudyNoteListInterface[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -63,7 +25,7 @@ export function StudyNotesList({ searchQuery }: StudyNotesListProps) {
       try {
         // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 1000))
-        setNotes(mockNotes)
+        setNotes(noteListData)
       } catch (error: any) {
         toast.error("Error fetching notes:", error)
       } finally {

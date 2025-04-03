@@ -7,14 +7,13 @@ import {
     BookOpen,
     FileText,
     Calendar,
-    MicroscopeIcon,
-    AlarmPlus,
     Clock,
-    HelpCircle
+    HelpCircle,
+    GraduationCapIcon
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { IconMessage } from "@tabler/icons-react";
+import { IconCalculator, IconMessage } from "@tabler/icons-react";
 
 const sidebarItems = [
     {
@@ -30,7 +29,7 @@ const sidebarItems = [
     {
         title: "ESSLCE Exam",
         href: "/dashboard/exam",
-        icon: AlarmPlus,
+        icon: GraduationCapIcon,
     },
     {
         title: "Exam Countdown",
@@ -60,7 +59,7 @@ const sidebarItems = [
     {
         title: "Formula Hub",
         href: "/dashboard/formula-hub",
-        icon: MicroscopeIcon,
+        icon: IconCalculator,
     },
     // {
     //     title: "Settings",

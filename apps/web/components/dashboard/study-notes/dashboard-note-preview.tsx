@@ -7,16 +7,16 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BookOpen, Star, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { StudyNote } from "@/lib/types/study-note";
-import { mockStudyNotes } from "@/lib/study-notes";
+import { StudyNoteListDashboard } from "@/lib/types/study-note";
+import { notesOnDashboardSection } from "@/lib/study-notes";
 
-export function StudyNotesPreview() {
+export function DashboardNotesPreview() {
     const [loading, setLoading] = useState(true);
-    const [notes, setNotes] = useState<StudyNote[]>([]);
+    const [notes, setNotes] = useState<StudyNoteListDashboard[]>([]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setNotes(mockStudyNotes);
+            setNotes(notesOnDashboardSection);
             setLoading(false);
         }, 1200);
 

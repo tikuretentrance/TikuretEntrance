@@ -174,10 +174,10 @@ export function FullFooter() {
           <div className="space-y-4">
             <h4 className="font-medium">Company</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/careers" className="hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/partners" className="hover:text-primary transition-colors">Partners</Link></li>
+              <li><Link href="/#" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/#" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link href="/#" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/#" className="hover:text-primary transition-colors">Partners</Link></li>
             </ul>
           </div>
         </div>
