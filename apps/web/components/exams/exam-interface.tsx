@@ -48,27 +48,33 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
     })
 
     const handleSubmitExam = useCallback(() => {
-        setExamLocked(true)
+        setExamLocked(true);
         const score = Object.entries(answers).reduce((acc, [qId, answer]) => {
-            const question = questions[parseInt(qId)]
-            return acc + (answer === question.correctAnswer ? 1 : 0)
-        }, 0)
+            const question = questions[parseInt(qId)];
+            return acc + (answer === question.correctAnswer ? 1 : 0);
+        }, 0);
 
+        // Save results to localStorage (works in static SPAs)
         const results = {
             examId: exam.id,
             userId: user?.id,
             score,
             totalQuestions: questions.length,
-            timeSpent: exam.duration * 60 - timeLeft, // Now timeLeft is available
+            timeSpent: exam.duration * 60 - timeLeft,
             answers,
             submittedAt: new Date().toISOString(),
             completed: true,
             attemptId: `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-        }
+        };
 
-        localStorage.setItem(`exam_result_${exam.id}`, JSON.stringify(results))
-        router.push(`/dashboard/exam/${exam.id}/results`)
-    }, [answers, exam, questions, timeLeft, router])
+        try {
+            localStorage.setItem(`exam_result_${exam.id}`, JSON.stringify(results));
+            router.push(`/dashboard/exam/${exam.id}/results`);
+        } catch (error) {
+            toast.error("Failed to save exam results. Try again.");
+            console.error("LocalStorage error:", error);
+        }
+    }, [answers, exam, questions, timeLeft, router, user?.id]);
 
     const terminateExam = useCallback((reason: string) => {
         stopTimer()
