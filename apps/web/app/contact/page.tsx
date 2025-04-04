@@ -15,6 +15,7 @@ export default function ContactPage() {
         name: '',
         email: '',
         subject: '',
+        phoneNumber: '',
         message: ''
     });
 
@@ -31,7 +32,7 @@ export default function ContactPage() {
             );
 
             toast.success("Message sent successfully! We'll get back to you soon.");
-            setFormData({ name: '', email: '', subject: '', message: '' });
+            setFormData({ name: '', email: '', subject: '', phoneNumber: "", message: '' });
         } catch (error) {
             toast.error("Failed to send the message. Please try again later.");
         } finally {
@@ -108,6 +109,8 @@ export default function ContactPage() {
                                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                                         required
                                         placeholder="Your name"
+                                        minLength={4}
+                                        maxLength={50}
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -119,10 +122,26 @@ export default function ContactPage() {
                                         type="email"
                                         value={formData.email}
                                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                                        required
+                                        // required
                                         placeholder="your@email.com"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label htmlFor="phoneNumber" className="text-sm font-medium">
+                                    Phone Number
+                                </label>
+                                <Input
+                                    type="tel"
+                                    id="phoneNumber"
+                                    value={formData.phoneNumber}
+                                    onChange={(e) => setFormData(prev => ({ ...prev, phoneNumber: e.target.value }))}
+                                    required
+                                    placeholder="Your phone number"
+                                    pattern="(\+2519\d{8}|09\d{8})"
+                                    title="Phone number must be in the format +251911234567 or 0911234567"
+                                />
                             </div>
 
                             <div className="space-y-2">
@@ -135,6 +154,8 @@ export default function ContactPage() {
                                     onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
                                     required
                                     placeholder="How can we help?"
+                                    minLength={4}
+                                    maxLength={80}
                                 />
                             </div>
 
@@ -149,6 +170,8 @@ export default function ContactPage() {
                                     required
                                     placeholder="Your message..."
                                     className="min-h-[150px]"
+                                    minLength={30}
+                                    maxLength={500}
                                 />
                             </div>
 

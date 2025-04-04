@@ -68,6 +68,8 @@ export default function FeedbackPage() {
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             required
+                                            minLength={4}
+                                            maxLength={50}
                                         />
                                     </div>
                                     <div className="mb-4">
@@ -81,6 +83,8 @@ export default function FeedbackPage() {
                                             value={formData.phoneNumber}
                                             onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                                             required
+                                            pattern="(\+2519\d{8}|09\d{8})"
+                                            title="Phone number must be in the format +251911234567 or 0911234567"
                                         />
                                     </div>
                                 </div>
@@ -96,6 +100,8 @@ export default function FeedbackPage() {
                                         value={formData.feedback}
                                         onChange={(e) => setFormData({ ...formData, feedback: e.target.value })}
                                         required
+                                        minLength={30}
+                                        maxLength={500}
                                     />
                                 </div>
 

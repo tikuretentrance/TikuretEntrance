@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	output: 'export',
-	trailingSlash: true,
-	skipTrailingSlashRedirect: true,
+	// trailingSlash: true,
+	// skipTrailingSlashRedirect: true,
 	distDir: 'dist',
 	eslint: {
 		ignoreDuringBuilds: true,
@@ -10,8 +10,15 @@ const nextConfig = {
 	reactStrictMode: false,
 	images: {
 		unoptimized: true, // Disables Image Optimization (required for static)
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'img.clerk.com',
+				port: '',
+			},
+		],
 	},
-	webpack(config, { isServer }) {
+	webpack(config) {
 		// Configures webpack to handle SVG files with SVGR. SVGR optimizes and transforms SVG files
 		// into React components. See https://react-svgr.com/docs/next/
 
