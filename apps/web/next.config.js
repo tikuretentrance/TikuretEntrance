@@ -10,13 +10,13 @@ const nextConfig = {
 	reactStrictMode: false,
 	images: {
 		unoptimized: true, // Disables Image Optimization (required for static)
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'img.clerk.com',
-				port: '',
-			},
-		],
+		// remotePatterns: [
+		// 	{
+		// 		protocol: 'https',
+		// 		hostname: 'img.clerk.com',
+		// 		port: '',
+		// 	},
+		// ],
 	},
 	webpack(config) {
 		// Configures webpack to handle SVG files with SVGR. SVGR optimizes and transforms SVG files
