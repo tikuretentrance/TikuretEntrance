@@ -1,10 +1,36 @@
 import chemistryQuestions from "./data/practice-questions/chemistry/chemistry-25";
 import chemistryG12Questions from "./data/practice-questions/chemistry/chemistry-u1-and-2";
+import economicsUnit1Questions from "./data/practice-questions/economics/grade12-unit-1";
+import economicsUnit2Questions from "./data/practice-questions/economics/grade12-unit-2";
 import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
 import { PracticeSet } from "./types/practice";
 
 export const practiceData: PracticeSet[] = [
+  {
+    id: "economics-u1",
+    title: "Economics G-12 Unit 1",
+    subject: "Economics",
+    topic: "Fundamental Concepts of Macroeconomics",
+    difficulty: "medium",
+    questionCount: 20,
+    timeLimit: 30,
+    questions: economicsUnit1Questions,
+    attempts: 0,
+    averageScore: 0,
+  },
+  {
+    id: "economics-u2",
+    title: "Economics G-12 Unit 2",
+    subject: "Economics",
+    topic: "Aggregate Demand and Aggregate Supply Analysis",
+    difficulty: "medium",
+    questionCount: 20,
+    timeLimit: 30,
+    questions: economicsUnit2Questions,
+    attempts: 0,
+    averageScore: 0,
+  },
   {
     id: "chemistry-entrance-1",
     title: "Chemistry Entrance Exam Practice",
