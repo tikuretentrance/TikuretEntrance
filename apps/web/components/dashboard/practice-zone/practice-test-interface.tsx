@@ -1,97 +1,112 @@
-"use client"
+"use client";
 
-import { useCallback, useMemo, useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
-import { Timer, AlertCircle, CheckCircle, XCircle, BookOpen } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { useRouter } from "next/navigation"
-import { PracticeSet } from "@/lib/types/practice"
-import confetti from "canvas-confetti"
+import { useCallback, useMemo, useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Timer, AlertCircle, CheckCircle, XCircle } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useRouter } from "next/navigation";
+import { PracticeSet } from "@/lib/types/practice";
+import confetti from "canvas-confetti";
 
 interface PracticeTestInterfaceProps {
-    practiceSet: PracticeSet
+    practiceSet: PracticeSet;
 }
 
+export function PracticeTestInterface({
+    practiceSet,
+}: PracticeTestInterfaceProps) {
+    const router = useRouter();
+    const [started, setStarted] = useState(false);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(practiceSet.timeLimit * 60); // Convert to seconds
+    const [answers, setAnswers] = useState<Record<number, number>>({});
+    const [submitted, setSubmitted] = useState(false);
 
-
-export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProps) {
-    const router = useRouter()
-    const [started, setStarted] = useState(false)
-    const [currentQuestion, setCurrentQuestion] = useState(0)
-    const [timeLeft, setTimeLeft] = useState(practiceSet.timeLimit * 60) // Convert to seconds
-    const [answers, setAnswers] = useState<Record<number, number>>({})
-    const [submitted, setSubmitted] = useState(false)
-
-    const questions = useMemo(() => practiceSet.questions || [], [practiceSet])
-    const progress = (currentQuestion / questions.length) * 100
+    const questions = useMemo(() => practiceSet.questions || [], [practiceSet]);
+    const progress = (currentQuestion / questions.length) * 100;
 
     const handleStart = () => {
-        setStarted(true)
+        setStarted(true);
         // Start timer
         const timer = setInterval(() => {
             setTimeLeft((prev) => {
                 if (prev <= 1) {
-                    clearInterval(timer)
-                    handleSubmit()
-                    return 0
+                    clearInterval(timer);
+                    handleSubmit();
+                    return 0;
                 }
-                return prev - 1
-            })
-        }, 1000)
-    }
+                return prev - 1;
+            });
+        }, 1000);
+    };
 
     const handleAnswer = (questionId: number, answer: number) => {
-        setAnswers(prev => ({ ...prev, [questionId]: answer }))
-        //  show confetti animation if the answer is correct
-        if (answer === questions[questionId].correctAnswer) {
+        setAnswers((prev) => ({ ...prev, [questionId]: answer }));
+    };
+
+    const handleNext = () => {
+        // Show confetti when moving to the next question if the answer is correct
+        if (answers[currentQuestion] === questions[currentQuestion].correctAnswer) {
             confetti({
                 particleCount: 100,
                 spread: 70,
-                origin: { y: 0.6 }
-            })
+                origin: { y: 0.6 },
+            });
         }
-    }
+        setCurrentQuestion((prev) => prev + 1);
+    };
 
     const handleSubmit = () => {
-        setSubmitted(true)
+        setSubmitted(true);
         // Calculate score
         const score = Object.entries(answers).reduce((acc, [qId, answer]) => {
-            const question = questions[parseInt(qId)]
-            return acc + (answer === question.correctAnswer ? 1 : 0)
-        }, 0)
+            const question = questions[parseInt(qId)];
+            return acc + (answer === question.correctAnswer ? 1 : 0);
+        }, 0);
 
         // Store results in localStorage for now
-        localStorage.setItem(`test_result_${practiceSet.id}`, JSON.stringify({
-            testId: practiceSet.id,
-            score,
-            totalQuestions: questions.length,
-            timeSpent: practiceSet.timeLimit * 60 - timeLeft,
-            answers,
-            submittedAt: new Date().toISOString()
-        }))
+        localStorage.setItem(
+            `test_result_${practiceSet.id}`,
+            JSON.stringify({
+                testId: practiceSet.id,
+                score,
+                totalQuestions: questions.length,
+                timeSpent: practiceSet.timeLimit * 60 - timeLeft,
+                answers,
+                submittedAt: new Date().toISOString(),
+            })
+        );
 
-        router.push(`/dashboard/practice-zone/${practiceSet.id}/results`)
-    }
+        router.push(`/dashboard/practice-zone/${practiceSet.id}/results`);
+    };
 
     const formatTime = (seconds: number) => {
-        const hours = Math.floor(seconds / 3600)
-        const minutes = Math.floor((seconds % 3600) / 60)
-        const secs = seconds % 60
-        return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
-    }
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        return `${hours}:${minutes.toString().padStart(2, "0")}:${secs
+            .toString()
+            .padStart(2, "0")}`;
+    };
 
-    const getDifficultyColor = useCallback((difficulty?: string) => {
-        switch (difficulty) {
-            case "easy": return "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300"
-            case "medium": return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300"
-            case "hard": return "bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300"
-            default: return "bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-300"
-        }
-    }, [])
-
+    const getDifficultyColor = useCallback(
+        (difficulty?: string) => {
+            switch (difficulty) {
+                case "easy":
+                    return "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300";
+                case "medium":
+                    return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300";
+                case "hard":
+                    return "bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300";
+                default:
+                    return "bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-300";
+            }
+        },
+        []
+    );
 
     if (!started) {
         return (
@@ -113,7 +128,8 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                     <Alert>
                         <AlertCircle className="h-4 w-4" />
                         <AlertDescription>
-                            Make sure you have enough time to complete the test. Once started, you cannot pause or leave the test.
+                            Make sure you have enough time to complete the test. Once started,
+                            you cannot pause or leave the test.
                         </AlertDescription>
                     </Alert>
 
@@ -122,10 +138,10 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                     </Button>
                 </div>
             </Card>
-        )
+        );
     }
 
-    const currentQ = questions[currentQuestion]
+    const currentQ = questions[currentQuestion];
 
     return (
         <div className="max-w-3xl mx-auto space-y-6">
@@ -151,20 +167,13 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                             <h2 className="text-lg font-medium">{currentQ.text}</h2>
                             {currentQ.difficulty && (
                                 <Badge className={getDifficultyColor(currentQ.difficulty)}>
-                                    {currentQ.difficulty.charAt(0).toUpperCase() + currentQ.difficulty.slice(1)}
+                                    {currentQ.difficulty.charAt(0).toUpperCase() +
+                                        currentQ.difficulty.slice(1)}
                                 </Badge>
                             )}
                         </div>
-                        {/* {currentQ.topic && (
-                            <div className="mt-4 pt-4 border-t border-primary/10">
-                                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                    <BookOpen className="h-4 w-4" />
-                                    <span>Related topic: <span className="font-medium">{currentQ.topic}</span></span>
-                                </div>
-                            </div>
-                        )} */}
-
                     </div>
+
                     <div className="space-y-3">
                         {currentQ.options.map((option, index) => (
                             <button
@@ -174,8 +183,7 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                                         ? "border-primary bg-primary/5"
                                         : "hover:bg-muted"
                                     }
-                  ${submitted ? "cursor-not-allowed" : ""}
-                `}
+                  ${submitted ? "cursor-not-allowed" : ""}`}
                                 onClick={() => handleAnswer(currentQuestion, index)}
                                 disabled={submitted}
                             >
@@ -183,18 +191,18 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                                     {submitted ? (
                                         index === currentQ.correctAnswer ? (
                                             <CheckCircle className="h-5 w-5 text-green-500" />
+                                        ) : answers[currentQuestion] === index ? (
+                                            <XCircle className="h-5 w-5 text-red-500" />
                                         ) : (
-                                            answers[currentQuestion] === index ? (
-                                                <XCircle className="h-5 w-5 text-red-500" />
-                                            ) : (
-                                                <div className="h-5 w-5 rounded-full border-2 border-muted-foreground/30" />
-                                            )
+                                            <div className="h-5 w-5 rounded-full border-2 border-muted-foreground/30" />
                                         )
                                     ) : (
-                                        <div className={`h-5 w-5 rounded-full border-2 ${answers[currentQuestion] === index
-                                            ? "border-primary bg-primary/30"
-                                            : "border-muted-foreground/30"
-                                            }`} />
+                                        <div
+                                            className={`h-5 w-5 rounded-full border-2 ${answers[currentQuestion] === index
+                                                ? "border-primary bg-primary/30"
+                                                : "border-muted-foreground/30"
+                                                }`}
+                                        />
                                     )}
                                     <span>{option}</span>
                                 </div>
@@ -205,7 +213,7 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                     <div className="flex justify-between pt-4">
                         <Button
                             variant="outline"
-                            onClick={() => setCurrentQuestion(prev => prev - 1)}
+                            onClick={() => setCurrentQuestion((prev) => prev - 1)}
                             disabled={currentQuestion === 0}
                         >
                             Previous
@@ -219,7 +227,7 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                                 Submit Test
                             </Button>
                         ) : (
-                            <Button onClick={() => setCurrentQuestion(prev => prev + 1)}>
+                            <Button onClick={handleNext}>
                                 Next
                             </Button>
                         )}
@@ -227,5 +235,5 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
                 </div>
             </Card>
         </div>
-    )
+    );
 }
