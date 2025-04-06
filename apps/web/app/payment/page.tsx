@@ -31,8 +31,12 @@ export default function PaymentPage() {
     };
 
     const handleCopy = (text: string) => {
-        navigator.clipboard.writeText(text);
-        toast.success("Copied to clipboard!");
+        try {
+            navigator.clipboard.writeText(text);
+            toast.success("Copied to clipboard!");
+        } catch (error) {
+            toast.error("Failed to copy to clipboard. Please try again.");
+        }
     };
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
