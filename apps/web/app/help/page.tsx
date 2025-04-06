@@ -21,7 +21,7 @@ export default function HelpPage() {
                 <h3 className="font-medium mb-2">Phone Support</h3>
                 <p className="text-sm text-muted-foreground mb-4">Available 9 AM - 6 PM EAT</p>
                 <Button variant="outline" className="w-full" asChild>
-                  <a href="tel:+251961343490">+251 961 343 490</a>
+                  <a href="tel:+251912018482">+251 912 018 482</a>
                 </Button>
               </Card>
 
