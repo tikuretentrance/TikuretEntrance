@@ -9,6 +9,7 @@ import { Timer, AlertCircle, CheckCircle, XCircle, BookOpen } from "lucide-react
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useRouter } from "next/navigation"
 import { PracticeSet } from "@/lib/types/practice"
+import confetti from "canvas-confetti"
 
 interface PracticeTestInterfaceProps {
     practiceSet: PracticeSet
@@ -44,6 +45,14 @@ export function PracticeTestInterface({ practiceSet }: PracticeTestInterfaceProp
 
     const handleAnswer = (questionId: number, answer: number) => {
         setAnswers(prev => ({ ...prev, [questionId]: answer }))
+        //  show confetti animation if the answer is correct
+        if (answer === questions[questionId].correctAnswer) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            })
+        }
     }
 
     const handleSubmit = () => {

@@ -21,7 +21,7 @@ import { useExamSecurity } from "@/lib/hooks/useExamSecurity"
 import { useExamTimer } from "@/lib/hooks/useExamTimer"
 import { toast } from "sonner"
 import { useUser } from "@clerk/nextjs"
-
+import confetti from "canvas-confetti"
 
 interface ExamInterfaceProps {
     exam: Exam
@@ -100,7 +100,62 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
         const questionId = currentQuestion
         setSubmittedAnswers((prev) => ({ ...prev, [questionId]: true }))
         setShowExplanation((prev) => ({ ...prev, [questionId]: true }))
-    }, [currentQuestion])
+        // Check if answer is correct
+        if (answers[questionId] === questions[questionId].correctAnswer) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            })
+        }
+    }, [currentQuestion, questions, answers])
+
+    /**
+     * More Animation
+     * const handleSubmitAnswer = useCallback(() => {
+        const questionId = currentQuestion
+        const currentQ = questions[questionId]
+        const userAnswer = answers[questionId]
+        const isCorrect = userAnswer === currentQ.correctAnswer
+
+        setSubmittedAnswers((prev) => ({ ...prev, [questionId]: true }))
+        setShowExplanation((prev) => ({ ...prev, [questionId]: true }))
+
+        if (isCorrect) {
+            // Celebration for correct answer
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            })
+            toast.success("Correct! 🎉", {
+                position: "top-center",
+                duration: 2000
+            })
+        } else {
+            // Feedback for wrong answer
+            toast.warning(`Incorrect. The right answer is ${String.fromCharCode(65 + currentQ.correctAnswer)}`, {
+                position: "top-center",
+                duration: 3000
+            })
+
+            // Optional: Shake animation for wrong answer
+            const answerElement = document.getElementById(`answer-${userAnswer}`)
+            if (answerElement) {
+                answerElement.animate([
+                    { transform: 'translateX(0)' },
+                    { transform: 'translateX(-10px)' },
+                    { transform: 'translateX(10px)' },
+                    { transform: 'translateX(0)' }
+                ], {
+                    duration: 500,
+                    iterations: 2
+                })
+            }
+        }
+    }, [currentQuestion, answers, questions])
+     * 
+     */
 
     const formatTime = useCallback((seconds: number) => {
         const minutes = Math.floor(seconds / 60)
@@ -167,7 +222,7 @@ export function ExamInterface({ exam }: ExamInterfaceProps) {
                         </DialogDescription>
                     </DialogHeader>
                     <div className="flex justify-end">
-                        <Button onClick={() => router.push("/dashboard/exams")}>
+                        <Button onClick={() => router.push("/dashboard/exam")}>
                             Return to Exams
                         </Button>
                     </div>
