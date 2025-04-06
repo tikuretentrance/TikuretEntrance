@@ -14,26 +14,26 @@ export function DashboardStats() {
   const stats = [
     {
       title: "Study Hours",
-      value: "42",
-      change: "+12%",
+      value: "0", // 42 hours
+      change: "0%", // +12%
       icon: Clock,
     },
     {
       title: "Tests Completed",
-      value: "24",
-      change: "+8%",
+      value: "0", // 42 tests
+      change: "0%", // +12%
       icon: Target,
     },
     {
       title: "Average Score",
-      value: "76%",
-      change: "+5%",
+      value: "0", // 42%
+      change: "0%", // +12%
       icon: Brain,
     },
     {
       title: "Topics Mastered",
-      value: "18",
-      change: "+3",
+      value: "0", // 42 topics
+      change: "0%", // +12%
       icon: TrendingUp,
     },
   ]
