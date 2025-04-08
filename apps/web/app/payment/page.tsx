@@ -24,10 +24,11 @@ export default function PaymentPage() {
     const [isUploading, setIsUploading] = useState(false);
 
     const bankDetails = {
-        name: "TikuretEntrance Education PLC",
-        accountNumber: "1000123456789",
+        // name: "TikuretEntrance Education PLC",
+        name: "Dagim Wallelgne Yitayew",
+        accountNumber: "1000501476548",
         bankName: "Commercial Bank of Ethiopia",
-        branch: "Bole Branch"
+        branch: "Shola Branch"
     };
 
     const handleCopy = (text: string) => {
