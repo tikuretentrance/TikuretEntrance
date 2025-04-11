@@ -5,8 +5,22 @@ import economicsUnit2Questions from "./data/practice-questions/economics/grade12
 import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
 import { PracticeSet } from "./types/practice";
+import {biologyQuestionsUnit1_and_2} from "@/lib/data/practice-questions/biology/grade11";
 
 export const practiceData: PracticeSet[] = [
+  // biologyQuestionsUnit1_and_2 Unit 1 (Biology and Technology and 2 (Animals)
+  {
+    id: "biology-u1-and-2",
+    title: "Biology G-12 Unit 1 and 2",
+    subject: "Biology",
+    topic: "Biology and Technology & Animals",
+    difficulty: "easy",
+    questionCount: 50,
+    timeLimit: 60,
+    questions: biologyQuestionsUnit1_and_2.flat(),
+    attempts: 0,
+    averageScore: 0,
+  },
   {
     id: "economics-u1",
     title: "Economics G-12 Unit 1",
