@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { PaymentModule } from './modules/payment/payment.module';
 import * as Joi from 'joi';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ZoomModule } from './modules/zoom/zoom.module';
 import { MailerModule } from './modules/email/mail.module';
 import { UsersModule } from './modules/user/user.module';
 import { ExamsModule } from './modules/exams/exams.module';
@@ -42,7 +41,6 @@ import { ExamsModule } from './modules/exams/exams.module';
     }),
 
     PaymentModule,
-    ZoomModule,
     MailerModule,
     UsersModule,
     ExamsModule,

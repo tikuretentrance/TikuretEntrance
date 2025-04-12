@@ -38,223 +38,217 @@ export class MailerService {
         });
     }
 
-    private getClientEmailTemplate(meetingDetails: any) {
+    private getFeedbackEmailTemplate(data: {
+        name: string;
+        phoneNumber: string;
+        feedback: string;
+    }) {
         return `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                    .header { background: #00A3B8; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-                    .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-                    .meeting-details { background: #f7f9fc; padding: 15px; border-radius: 6px; margin: 20px 0; }
-                    .button { display: inline-block; padding: 12px 24px; background: #00A3B8; color: white; text-decoration: none; border-radius: 6px; margin: 20px 0; }
-                    .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
-                    .important-note { color: #e74c3c; margin: 15px 0; }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="header">
-                        <h1>Your Consultation is Confirmed! 🎉</h1>
-                    </div>
-                    <div class="content">
-                        <p>Dear Valued Client,</p>
-                        <p>Your consultation meeting has been successfully scheduled. We're looking forward to meeting with you!</p>
-                        
-                        <div class="meeting-details">
-                            <h3>📅 Meeting Details</h3>
-                            <p><strong>Date & Time:</strong> ${new Date(meetingDetails.start_time).toLocaleString('en-US', {
-            timeZone: 'Africa/Addis_Ababa',
-            dateStyle: 'full',
-            timeStyle: 'long'
-        })}</p>
-                            <p><strong>Duration:</strong> ${meetingDetails.duration} minutes</p>
-                            <p><strong>Meeting ID:</strong> ${meetingDetails.id}</p>
-                            <p><strong>Password:</strong> ${meetingDetails.password}</p>
-                        </div>
-
-                        <a href="${meetingDetails.join_url}" class="button">Join Meeting</a>
-
-                        <div class="important-note">
-                            <p>⚠️ Important Notes:</p>
-                            <ul>
-                                <li>Please join 5 minutes before the scheduled time</li>
-                                <li>Ensure you have a stable internet connection</li>
-                                <li>Find a quiet place for the consultation</li>
-                            </ul>
-                        </div>
-
-                        <p>If you need to reschedule or have any questions, please contact us at support@wellnesscenter.com</p>
-
-                        <div class="footer">
-                            <p>© ${new Date().getFullYear()} Wellness Center. All rights reserved.</p>
-                            <p>This is an automated message, please do not reply directly to this email.</p>
-                        </div>
-                    </div>
-                </div>
-            </body>
-            </html>
-        `;
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #4f46e5; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+          .details { background: #f7f9fc; padding: 15px; border-radius: 6px; margin: 20px 0; }
+          .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>New Feedback Received</h1>
+          </div>
+          <div class="content">
+            <p>Hello Support Team,</p>
+            <p>A user has submitted feedback through the platform. Here are the details:</p>
+            
+            <div class="details">
+              <h3>User Details</h3>
+              <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Phone Number:</strong> ${data.phoneNumber}</p>
+              <p><strong>Feedback:</strong></p>
+              <p>${data.feedback}</p>
+            </div>
+  
+            <p>Please follow up with the user if necessary.</p>
+  
+            <div class="footer">
+              <p>© ${new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
     }
 
-    private getProviderEmailTemplate(meetingDetails: any) {
+    private getContactEmailTemplate(data: {
+        name: string;
+        email: string;
+        subject: string;
+        message: string;
+    }) {
         return `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                    .header { background: #2c3e50; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-                    .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-                    .meeting-details { background: #f7f9fc; padding: 15px; border-radius: 6px; margin: 20px 0; }
-                    .button { display: inline-block; padding: 12px 24px; background: #2c3e50; color: white; text-decoration: none; border-radius: 6px; margin: 20px 0; }
-                    .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
-                    .checklist { background: #e8f5e9; padding: 15px; border-radius: 6px; margin: 15px 0; }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="header">
-                        <h1>New Consultation Scheduled</h1>
-                    </div>
-                    <div class="content">
-                        <p>Hello Doctor,</p>
-                        <p>A new consultation has been scheduled with a client.</p>
-                        
-                        <div class="meeting-details">
-                            <h3>📅 Consultation Details</h3>
-                            <p><strong>Date & Time:</strong> ${new Date(meetingDetails.start_time).toLocaleString('en-US', {
-            timeZone: 'Africa/Addis_Ababa',
-            dateStyle: 'full',
-            timeStyle: 'long'
-        })}</p>
-                            <p><strong>Duration:</strong> ${meetingDetails.duration} minutes</p>
-                            <p><strong>Meeting ID:</strong> ${meetingDetails.id}</p>
-                        </div>
-
-                        <a href="${meetingDetails.join_url}" class="button">Start Meeting</a>
-
-                        <div class="checklist">
-                            <h4>🔍 Pre-consultation Checklist:</h4>
-                            <ul>
-                                <li>Review any available patient history</li>
-                                <li>Ensure your device is fully charged</li>
-                                <li>Test your camera and microphone</li>
-                                <li>Have your consultation materials ready</li>
-                            </ul>
-                        </div>
-
-                        <div class="footer">
-                            <p>© ${new Date().getFullYear()} Wellness Center. All rights reserved.</p>
-                            <p>For technical support, contact IT at support@wellnesscenter.com</p>
-                        </div>
-                    </div>
-                </div>
-            </body>
-            </html>
-        `;
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #4f46e5; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+          .details { background: #f7f9fc; padding: 15px; border-radius: 6px; margin: 20px 0; }
+          .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>New Contact Form Submission</h1>
+          </div>
+          <div class="content">
+            <p>Hello Support Team,</p>
+            <p>A user has contacted you through the platform. Here are the details:</p>
+            
+            <div class="details">
+              <h3>Contact Details</h3>
+              <p><strong>Name:</strong> ${data.name}</p>
+              <p><strong>Email:</strong> ${data.email}</p>
+              <p><strong>Subject:</strong> ${data.subject}</p>
+              <p><strong>Message:</strong></p>
+              <p>${data.message}</p>
+            </div>
+  
+            <p>Please respond to the user as soon as possible.</p>
+  
+            <div class="footer">
+              <p>© ${new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
     }
 
-    private getAdminEmailTemplate(meetingDetails: any) {
+    private getConfirmationEmailTemplate(type: 'feedback' | 'contact') {
+        const action = type === 'feedback' ? 'feedback' : 'message';
         return `
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <style>
-                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                    .header { background: #34495e; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
-                    .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-                    .meeting-details { background: #f7f9fc; padding: 15px; border-radius: 6px; margin: 20px 0; }
-                    .status { display: inline-block; padding: 5px 10px; background: #27ae60; color: white; border-radius: 4px; }
-                    .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
-                    .system-info { background: #f8f9fa; padding: 15px; border-radius: 6px; margin: 15px 0; font-family: monospace; }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="header">
-                        <h1>New Booking Confirmation</h1>
-                    </div>
-                    <div class="content">
-                        <p>Hello Admin,</p>
-                        <p>A new consultation meeting has been successfully booked.</p>
-                        
-                        <div class="meeting-details">
-                            <p class="status">✓ CONFIRMED</p>
-                            <h3>📅 Meeting Information</h3>
-                            <p><strong>Date & Time:</strong> ${new Date(meetingDetails.start_time).toLocaleString('en-US', {
-            timeZone: 'Africa/Addis_Ababa',
-            dateStyle: 'full',
-            timeStyle: 'long'
-        })}</p>
-                            <p><strong>Duration:</strong> ${meetingDetails.duration} minutes</p>
-                            <p><strong>Meeting ID:</strong> ${meetingDetails.id}</p>
-                        </div>
-
-                        <div class="system-info">
-                            <p><strong>System Details:</strong></p>
-                            <p>Transaction ID: ${meetingDetails.id}</p>
-                            <p>Zoom Meeting URL: ${meetingDetails.join_url}</p>
-                            <p>Status: Active</p>
-                        </div>
-
-                        <p>This meeting has been automatically added to the system calendar.</p>
-
-                        <div class="footer">
-                            <p>© ${new Date().getFullYear()} Wellness Center - Admin Portal</p>
-                            <p>Generated automatically by the Wellness Center Booking System</p>
-                        </div>
-                    </div>
-                </div>
-            </body>
-            </html>
-        `;
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #10b981; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+          .content { background: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+          .footer { text-align: center; margin-top: 20px; color: #666; font-size: 12px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Thank You for Your ${type === 'feedback' ? 'Feedback' : 'Message'}</h1>
+          </div>
+          <div class="content">
+            <p>Dear Valued User,</p>
+            <p>We've successfully received your ${action} and appreciate you taking the time to reach out to us.</p>
+            <p>Our team will review your ${action} and respond if necessary.</p>
+            <p>For reference, here's what we received:</p>
+            
+            <p>If you have any urgent inquiries, please don't hesitate to contact our support team at support@yourcompany.com.</p>
+  
+            <div class="footer">
+              <p>© ${new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
     }
 
-    async sendAppointmentEmail(clientEmail: string, providerEmail: string, adminEmail: string, meetingDetails: any): Promise<void> {
+    async sendFeedbackEmail(
+        feedbackData: {
+            name: string;
+            phoneNumber: string;
+            feedback: string;
+        },
+        adminEmail: string
+    ): Promise<void> {
         try {
             if (!this.transporter) {
                 throw new BadRequestException('Email transporter is not initialized');
             }
 
-            // Client email
-            const clientMailOptions = {
-                from: `"Mela Wellness Center" <${process.env.EMAIL_USER}>`,
-                to: clientEmail,
-                subject: '🎉 Your Consultation Meeting is Confirmed!',
-                html: this.getClientEmailTemplate(meetingDetails)
-            };
-
-            // Provider email
-            const providerMailOptions = {
-                from: `"Mela Wellness Center" <${process.env.EMAIL_USER}>`,
-                to: providerEmail,
-                subject: '📅 New Consultation Scheduled',
-                html: this.getProviderEmailTemplate(meetingDetails)
-            };
-
-            // Admin email
+            // Email to admin
             const adminMailOptions = {
-                from: `"Mela Wellness Center System" <${process.env.EMAIL_USER}>`,
+                from: `"Feedback System" <${process.env.EMAIL_USER}>`,
                 to: adminEmail,
-                subject: '🔔 New Meeting Booking Confirmation',
-                html: this.getAdminEmailTemplate(meetingDetails)
+                subject: 'New Feedback Submission',
+                html: this.getFeedbackEmailTemplate(feedbackData)
+            };
+
+            // Confirmation email to user (if you have their email)
+            // const userMailOptions = {
+            //   from: `"Your Company" <${process.env.EMAIL_USER}>`,
+            //   to: userEmail,
+            //   subject: 'Thank You for Your Feedback',
+            //   html: this.getConfirmationEmailTemplate('feedback')
+            // };
+
+            await this.transporter.sendMail(adminMailOptions);
+            // await this.transporter.sendMail(userMailOptions);
+
+            this.logger.log('Feedback email sent successfully');
+        } catch (error) {
+            this.logger.error('Error sending feedback email:', error);
+            throw new Error('Failed to send feedback email');
+        }
+    }
+
+    async sendContactEmail(
+        contactData: {
+            name: string;
+            email: string;
+            subject: string;
+            message: string;
+        },
+        adminEmail: string
+    ): Promise<void> {
+        try {
+            if (!this.transporter) {
+                throw new BadRequestException('Email transporter is not initialized');
+            }
+
+            // Email to admin
+            const adminMailOptions = {
+                from: `"Contact System" <${process.env.EMAIL_USER}>`,
+                to: adminEmail,
+                subject: `New Contact Form: ${contactData.subject}`,
+                html: this.getContactEmailTemplate(contactData)
+            };
+
+            // Confirmation email to user
+            const userMailOptions = {
+                from: `"Your Company" <${process.env.EMAIL_USER}>`,
+                to: contactData.email,
+                subject: 'We Received Your Message',
+                html: this.getConfirmationEmailTemplate('contact')
             };
 
             await Promise.all([
-                this.transporter.sendMail(clientMailOptions),
-                this.transporter.sendMail(providerMailOptions),
-                this.transporter.sendMail(adminMailOptions)
+                this.transporter.sendMail(adminMailOptions),
+                this.transporter.sendMail(userMailOptions)
             ]);
 
-            this.logger.log('All appointment emails sent successfully');
+            this.logger.log('Contact emails sent successfully');
         } catch (error) {
-            this.logger.error('Error sending emails:', error);
-            throw new Error('Failed to send appointment emails');
+            this.logger.error('Error sending contact emails:', error);
+            throw new Error('Failed to send contact emails');
         }
     }
 }

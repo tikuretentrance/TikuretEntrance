@@ -14,6 +14,7 @@ import { BookMarked, BookOpen, Brain, Clock, GraduationCap, HelpCircle, Link, Ta
 import { ExamUpdates } from "@/components/landing/exam-updates";
 import { FullFooter } from "@/components/layout/full-footer";
 import { AdComponent } from "@/components/ads/ad-component";
+import { PricingSection } from "@/components/landing/pricing";
 // import { PricingSection } from "@/components/landing/pricing";
 
 export default function Home() {
@@ -60,7 +61,7 @@ export default function Home() {
           </h2>
           <ExamUpdates />
         </section>
-        {/* <PricingSection /> */}
+        <PricingSection />
         {/* <CoursePreview /> */}
         {/* <Testimonials /> */}
         <FAQ />

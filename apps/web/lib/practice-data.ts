@@ -5,9 +5,22 @@ import economicsUnit2Questions from "./data/practice-questions/economics/grade12
 import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
 import { PracticeSet } from "./types/practice";
-import {biologyQuestionsUnit1_and_2} from "@/lib/data/practice-questions/biology/grade11";
+import { biologyQuestionsUnit1_and_2, biologyQuestionsUnit3and4_2024 } from "@/lib/data/practice-questions/biology/grade11";
 
 export const practiceData: PracticeSet[] = [
+  // biologyQuestionsUnit3and4_2024 (Enzymes and Genetics) 100 questions
+  {
+    id: "biology-u3-and-4",
+    title: "Biology G-12 Unit 3 and 4",
+    subject: "Biology",
+    topic: "Enzymes & Genetics",
+    difficulty: "medium",
+    questionCount: 100,
+    timeLimit: 120,
+    questions: biologyQuestionsUnit3and4_2024.flat(),
+    attempts: 0,
+    averageScore: 0,
+  },
   // biologyQuestionsUnit1_and_2 Unit 1 (Biology and Technology and 2 (Animals)
   {
     id: "biology-u1-and-2",

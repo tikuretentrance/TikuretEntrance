@@ -7,17 +7,11 @@ import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from 'uploadthing/server';
+import { ourFileRouter } from './api/uploadthing/core';
 
 const inter = Inter({ subsets: ['latin'] });
-
-// export const metadata: Metadata = {
-//   title: 'TikuretEntrance - Ethiopian University Entrance Exam Preparation',
-//   description: 'Personalized learning platform for Ethiopian high school students preparing for university entrance exams',
-//   other: {
-//     'google-adsense-account': `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || ''}`,
-//   },
-// };
-
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tikuretentrance.com'),
@@ -164,6 +158,15 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className="min-h-screen bg-background">
+            <NextSSRPlugin
+              /**
+               * The `extractRouterConfig` will extract **only** the route configs
+               * from the router to prevent additional information from being
+               * leaked to the client. The data passed to the client is the same
+               * as if you were to fetch `/api/uploadthing` directly.
+               */
+              routerConfig={extractRouterConfig(ourFileRouter)}
+            />
             {children}
           </main>
         </Providers>

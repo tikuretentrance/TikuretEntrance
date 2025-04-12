@@ -704,7 +704,7 @@ export const biologyQuestionsUnit1_and_2: PracticeQuestion[] = [
 ];
 
 
-const biologyQuestionsUnit3and4_2024: PracticeQuestion[] = [
+export const biologyQuestionsUnit3and4_2024: PracticeQuestion[] = [
     {
         id: 1,
         text: "Enzymes are biological catalysts that accelerate reactions by:",
@@ -2107,5 +2107,3 @@ const biologyQuestionsUnit3and4_2024: PracticeQuestion[] = [
         difficulty: "medium"
     }
 ];
-
-// export default [biologyQuestionsUnit1_and_2, biologyQuestionsUnit3and4_2024];

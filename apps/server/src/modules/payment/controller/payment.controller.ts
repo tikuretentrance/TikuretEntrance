@@ -1,97 +1,39 @@
-import { Controller, Post, Body, Param, Get, Headers, Req, Logger, BadRequestException, RawBodyRequest, Res, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
-import { PaymentService } from '../service/payment.service';
-import { PaymentDto } from '../dto/payment.dto';
-import { Request, Response } from 'express';
-import * as crypto from 'crypto';
+import { Controller, Get, Post, Body, Query, Param, Patch } from '@nestjs/common';
+import { PaymentsService } from '../service/payment.service';
+import { CreatePaymentDto } from '../dto/payment.dto';
 
-@Controller('payment')
-@UseInterceptors(ClassSerializerInterceptor)
-export class PaymentController {
-    private readonly logger = new Logger(PaymentController.name);
-    private CHAPA_SECRET = process.env.CHAPA_WEBHOOK_SECRET_HASH || '';
-    constructor(
-        private readonly paymentService: PaymentService
-    ) { }
+@Controller('payments')
+export class PaymentsController {
+    constructor(private readonly paymentsService: PaymentsService) { }
 
-    @Post('initialize')
-    async initializePayment(@Body() paymentDto: PaymentDto) {
-        const checkoutUrl = await this.paymentService.initializePayment(paymentDto);
-        return { checkoutUrl };
-    } 
-
-    @Get('verify/:tx_ref')
-    async verifyPayment(@Param('tx_ref') tx_ref: string) {
-        const result = await this.paymentService.verifyPayment(tx_ref);
-        return result;
+    @Post()
+    create(@Body() createPaymentDto: CreatePaymentDto) {
+        return this.paymentsService.create(createPaymentDto);
     }
 
-    @Post('webhook')
-    async handleWebhook(
-        @Req() req: Request,
-        @Res() res: Response,
-        @Headers('Chapa-Signature') chapaSignature: string,
-        @Headers('x-chapa-signature') xChapaSignature: string
+    @Get()
+    findAll(
+        @Query('status') status: string,
+        @Query('page') page = 1,
+        @Query('limit') limit = 10,
     ) {
-        const rawBody = JSON.stringify(req.body);
+        return this.paymentsService.findAll(
+            status ? { status } : undefined,
+            Number(page),
+            Number(limit),
+        );
+    }
 
-        // Generate hash using the raw body and secret key
-        const generatedHash = crypto.createHmac('sha256', this.CHAPA_SECRET)
-            .update(rawBody)
-            .digest('hex');
+    @Patch(':id/approve')
+    approve(@Param('id') id: string) {
+        return this.paymentsService.updateStatus(id, {
+            status: 'approved',
+            // Add userId assignment when Clerk is ready
+        });
+    }
 
-        this.logger.log('Generated Hash:', generatedHash);
-        this.logger.log('Chapa Signature:', chapaSignature);
-        this.logger.log('x-chapa-signature:', xChapaSignature);
-
-        /**
-         * checking if either signature matches
-         */
-        if (generatedHash === chapaSignature || generatedHash === xChapaSignature) {
-            this.logger.log('Signature verified, processing event:', req.body);
-
-            // Extract the event from the request body
-            const event = req.body;
-
-            try {
-                switch (event.event) {
-                    case 'charge.success':
-                        this.logger.log('Payment successful:', {
-                            first_name: event.first_name,
-                            last_name: event.last_name,
-                            email: event.email,
-                            amount: event.amount,
-                            currency: event.currency,
-                            reference: event.reference,
-                            status: event.status,
-                        });
-                        break;
-
-                    case 'charge.failed/cancelled':
-                        this.logger.error('Payment failed:', event);
-                        break;
-                    case 'charge.refunded':
-                        this.logger.warn('Payment refunded:', event);
-                        break;
-                    case 'charge.reversed':
-                        this.logger.warn('Payment reversed:', event);
-                        break;
-
-                    default:
-                        this.logger.debug('Unknown event type:', event.event);
-                        break;
-                }
-
-                // acknowledge the webhook after processing the event
-                res.status(200).send('Webhook processed successfully');
-            } catch (error) {
-                this.logger.error('Error processing event:', error);
-                res.status(500).send('Internal server error');
-            }
-        } else {
-            this.logger.error('Invalid webhook signature, discarding request.');
-            res.status(400).send('Invalid signature');
-        }
-        return;
-
+    @Patch(':id/reject')
+    reject(@Param('id') id: string) {
+        return this.paymentsService.updateStatus(id, { status: 'rejected' });
     }
 }
