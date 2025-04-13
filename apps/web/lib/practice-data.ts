@@ -3,11 +3,24 @@ import chemistryG12Questions from "./data/practice-questions/chemistry/chemistry
 import economicsUnit1Questions from "./data/practice-questions/economics/grade12-unit-1";
 import economicsUnit2Questions from "./data/practice-questions/economics/grade12-unit-2";
 import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
+import historyQuestionsUnit1_and_2 from "./data/practice-questions/history/grade12-unit1-and-2";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
 import { PracticeSet } from "./types/practice";
 import { biologyQuestionsUnit1_and_2, biologyQuestionsUnit3and4_2024 } from "@/lib/data/practice-questions/biology/grade11";
 
 export const practiceData: PracticeSet[] = [
+  {
+    id: "history-u1-and-2",
+    title: "History G-12 Unit 1 and 2",
+    subject: "History",
+    topic: "Development of Capitalism, Nationalism, and Colonialism",
+    difficulty: "medium",
+    questionCount: historyQuestionsUnit1_and_2.length,
+    timeLimit: 120,
+    questions: historyQuestionsUnit1_and_2.flat(),
+    attempts: 0,
+    averageScore: 0,
+  },
   // biologyQuestionsUnit3and4_2024 (Enzymes and Genetics) 100 questions
   {
     id: "biology-u3-and-4",

@@ -1,38 +1,28 @@
-# Use multi-stage build to reduce image size
-FROM node:20-alpine AS base
+FROM node:20.0.0 AS base
 
-# Install pnpm globally
-RUN npm install -g pnpm
-
-# Build stage
 FROM base AS build
-WORKDIR /app
 
-# Copy only package files for better layer caching
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY apps/server/package.json ./apps/server/package.json
-COPY packages/ ./packages/
+WORKDIR /tikuretentrance-base
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile
+COPY package.json package-lock.json ./
+RUN npm ci --legacy-peer-deps
 
-# Copy source files
-COPY . .
+COPY . . 
+COPY .env .env
 
-# Build the server app
-RUN pnpm run build --filter=server
+RUN npm run build
 
-# Production stage
-FROM base AS production
-WORKDIR /app
+FROM node:20.0.0 AS production
 
-# Copy production dependencies
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/apps/server/dist ./dist
-COPY --from=build /app/apps/server/package.json ./
+WORKDIR /tikuretentrance-base
 
-# Environment variables
+COPY --from=build /tikuretentrance-base/package.json /tikuretentrance-base/package-lock.json ./
+RUN npm ci --only=production --legacy-peer-deps
+
+COPY --from=build /tikuretentrance-base/dist ./dist
+
 ENV NODE_ENV=production
-EXPOSE 4636
+
+EXPOSE 4635
 
 CMD ["npm", "run", "start:prod"]
