@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MailerModule } from './modules/email/mail.module';
 import { UsersModule } from './modules/user/user.module';
 import { ExamsModule } from './modules/exams/exams.module';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -21,6 +22,10 @@ import { ExamsModule } from './modules/exams/exams.module';
         PORT: Joi.number(),
       }),
     }),
+    ThrottlerModule.forRoot([{
+      ttl: 60000, // 1 minute
+      limit: 10, // 10 requests per minute
+    }]),
 
     TypeOrmModule.forRoot({
       type: 'postgres',
