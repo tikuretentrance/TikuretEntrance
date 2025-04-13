@@ -46,8 +46,8 @@ export default function AdminPaymentsPage() {
 
     const handleApprove = async (paymentId: string) => {
         try {
-            const response = await fetch(`/api/admin/payments/${paymentId}/approve`, {
-                method: 'POST',
+            const response = await fetch(`http://localhost:4636/payments/${paymentId}/approve`, {
+                method: 'PATCH',
             });
 
             if (!response.ok) throw new Error('Failed to approve payment');
@@ -62,11 +62,11 @@ export default function AdminPaymentsPage() {
 
     const handleDecline = async (paymentId: string) => {
         try {
-            const response = await fetch(`/api/admin/payments/${paymentId}/decline`, {
-                method: 'POST',
+            const response = await fetch(`http://localhost:4636/payments/${paymentId}/reject`, {
+                method: 'PATCH',
             });
 
-            if (!response.ok) throw new Error('Failed to decline payment');
+            if (!response.ok) throw new Error('Failed to reject payment');
 
             toast.success('Payment declined');
             // Refresh payments list
@@ -76,147 +76,18 @@ export default function AdminPaymentsPage() {
         }
     };
 
-    // const fetchPayments = async () => {
-    //     try {
-    //         const response = await fetch(`/api/admin/payments?page=${page}&filter=${filter}&search=${search}`);
-    //         const data = await response.json();
-    //         setPayments(data.payments);
-    //         setTotalPages(data.totalPages);
-    //     } catch (error) {
-    //         toast.error('Failed to fetch payments');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-
     const fetchPayments = async () => {
-        // Mock data for testing
-        const mockPayments: PaymentProof[] = [
-            {
-                id: '1',
-                fullName: 'John Doe',
-                phone: '123456789',
-                amount: 500,
-                screenshotUrl: 'https://imgv2-2-f.scribdassets.com/img/document/685286177/original/ba6297feaa/1?v=1',
-                status: 'pending',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Bank Transfer',
-            },
-            {
-                id: '2',
-                fullName: 'Jane Smith',
-                phone: '987654321',
-                amount: 1000,
-                screenshotUrl: 'https://vddvoadwm7.ufs.sh/f/Z6DTGpdYpjKRnR2ByxesyNRLaCmGkOvVFwrB5UQ9KYS78MpI',
-                status: 'approved',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Credit Card',
-            },
-            {
-                id: '3',
-                fullName: 'Alice Johnson',
-                phone: '555555555',
-                amount: 750,
-                screenshotUrl: '/mock-screenshot-3.jpg',
-                status: 'declined',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Mobile Payment',
-            },
-            {
-                id: '1',
-                fullName: 'John Doe',
-                phone: '123456789',
-                amount: 500,
-                screenshotUrl: 'https://imgv2-2-f.scribdassets.com/img/document/685286177/original/ba6297feaa/1?v=1',
-                status: 'pending',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Bank Transfer',
-            },
-            {
-                id: '2',
-                fullName: 'Jane Smith',
-                phone: '987654321',
-                amount: 1000,
-                screenshotUrl: 'https://vddvoadwm7.ufs.sh/f/Z6DTGpdYpjKRnR2ByxesyNRLaCmGkOvVFwrB5UQ9KYS78MpI',
-                status: 'approved',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Credit Card',
-            },
-            {
-                id: '3',
-                fullName: 'Alice Johnson',
-                phone: '555555555',
-                amount: 750,
-                screenshotUrl: '/mock-screenshot-3.jpg',
-                status: 'declined',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Mobile Payment',
-            },
-            {
-                id: '1',
-                fullName: 'John Doe',
-                phone: '123456789',
-                amount: 500,
-                screenshotUrl: 'https://imgv2-2-f.scribdassets.com/img/document/685286177/original/ba6297feaa/1?v=1',
-                status: 'pending',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Bank Transfer',
-            },
-            {
-                id: '2',
-                fullName: 'Jane Smith',
-                phone: '987654321',
-                amount: 1000,
-                screenshotUrl: 'https://vddvoadwm7.ufs.sh/f/Z6DTGpdYpjKRnR2ByxesyNRLaCmGkOvVFwrB5UQ9KYS78MpI',
-                status: 'approved',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Credit Card',
-            },
-            {
-                id: '3',
-                fullName: 'Alice Johnson',
-                phone: '555555555',
-                amount: 750,
-                screenshotUrl: '/mock-screenshot-3.jpg',
-                status: 'declined',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Mobile Payment',
-            },
-            {
-                id: '1',
-                fullName: 'John Doe',
-                phone: '123456789',
-                amount: 500,
-                screenshotUrl: 'https://imgv2-2-f.scribdassets.com/img/document/685286177/original/ba6297feaa/1?v=1',
-                status: 'pending',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Bank Transfer',
-            },
-            {
-                id: '2',
-                fullName: 'Jane Smith',
-                phone: '987654321',
-                amount: 1000,
-                screenshotUrl: 'https://vddvoadwm7.ufs.sh/f/Z6DTGpdYpjKRnR2ByxesyNRLaCmGkOvVFwrB5UQ9KYS78MpI',
-                status: 'approved',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Credit Card',
-            },
-            {
-                id: '3',
-                fullName: 'Alice Johnson',
-                phone: '555555555',
-                amount: 750,
-                screenshotUrl: '/mock-screenshot-3.jpg',
-                status: 'declined',
-                submittedAt: new Date().toISOString(),
-                paymentMethod: 'Mobile Payment',
-            },
-        ];
+        try {
+            const response = await fetch(`http://localhost:4636/payments/?page=${page}&filter=${filter}&search=${search}`);
+            const data = await response.json();
 
-        setPayments(mockPayments);
-        setTotalPages(1);
-        setLoading(false);
+            setPayments(data?.data || []);
+            setTotalPages(data?.last_page || 1);
+        } catch (error) {
+            toast.error('Failed to fetch payments');
+        } finally {
+            setLoading(false);
+        }
     };
 
     useEffect(() => {
@@ -227,7 +98,7 @@ export default function AdminPaymentsPage() {
         switch (status) {
             case 'approved':
                 return 'text-green-600 bg-green-100 dark:bg-green-900/20';
-            case 'declined':
+            case 'rejected':
                 return 'text-red-600 bg-red-100 dark:bg-red-900/20';
             default:
                 return 'text-yellow-600 bg-yellow-100 dark:bg-yellow-900/20';
@@ -238,7 +109,7 @@ export default function AdminPaymentsPage() {
         switch (status) {
             case 'approved':
                 return <CheckCircle2 className="h-4 w-4" />;
-            case 'declined':
+            case 'rejected':
                 return <XCircle className="h-4 w-4" />;
             default:
                 return <Clock className="h-4 w-4" />;
@@ -283,6 +154,7 @@ export default function AdminPaymentsPage() {
                     <table className="w-full">
                         <thead>
                             <tr className="border-b">
+                                {/* <th className="text-left p-4">No.</th> */}
                                 <th className="text-left p-4">Name</th>
                                 <th className="text-left p-4">Phone</th>
                                 <th className="text-left p-4">Amount</th>
@@ -293,8 +165,9 @@ export default function AdminPaymentsPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {payments.map((payment) => (
+                            {payments?.length > 0 ? payments.map((payment) => (
                                 <tr key={payment.id} className="border-b hover:bg-muted/50">
+                                    {/* <td className="p-4"> {payments.indexOf(payment) + 1}</td> */}
                                     <td className="p-4">{payment.fullName}</td>
                                     <td className="p-4">{payment.phone}</td>
                                     <td className="p-4">ETB {payment.amount}</td>
@@ -381,15 +254,22 @@ export default function AdminPaymentsPage() {
                                         </Dialog>
                                     </td>
                                 </tr>
-                            ))}
+                            )) : []}
                         </tbody>
+                        {payments?.length === 0 && (
+                            <tr>
+                                <td colSpan={7} className="text-center p-4">
+                                    No payments found.
+                                </td>
+                            </tr>
+                        )}
                     </table>
                 </div>
             </Card>
 
             <div className="flex justify-between items-center mt-6">
                 <p className="text-sm text-muted-foreground">
-                    Showing {payments.length} payments
+                    Showing {payments?.length} payments
                 </p>
                 <div className="flex gap-2">
                     <Button

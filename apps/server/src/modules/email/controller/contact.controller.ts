@@ -1,21 +1,17 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { MailerService } from '../service/mail.service';
+import { ContactDto } from '../dto/contact.dto';
 
 @Controller('contact')
 export class ContactController {
     constructor(private readonly mailerService: MailerService) { }
 
     @Post()
-    async submitContactForm(@Body() contactData: {
-        name: string;
-        email: string;
-        subject: string;
-        message: string;
-    }) {
+    async submitContactForm(@Body() contactData: ContactDto) {
         try {
             await this.mailerService.sendContactEmail(
                 contactData,
-                process.env.ADMIN_EMAIL // or your support email
+                process.env.ADMIN_EMAIL
             );
             return { success: true, message: 'Message sent successfully' };
         } catch (error) {

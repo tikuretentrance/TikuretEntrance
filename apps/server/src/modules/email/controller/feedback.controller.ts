@@ -1,24 +1,21 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, BadRequestException } from '@nestjs/common';
 import { MailerService } from '../service/mail.service';
+import { FeedbackDto } from '../dto/feedback.dto';
 
 @Controller('feedback')
 export class FeedbackController {
     constructor(private readonly mailerService: MailerService) { }
 
     @Post()
-    async submitFeedback(@Body() feedbackData: {
-        name: string;
-        phoneNumber: string;
-        feedback: string;
-    }) {
+    async submitFeedback(@Body() feedbackData: FeedbackDto) {
         try {
             await this.mailerService.sendFeedbackEmail(
                 feedbackData,
-                process.env.ADMIN_EMAIL // or your support email
+                process.env.ADMIN_EMAIL
             );
             return { success: true, message: 'Feedback submitted successfully' };
         } catch (error) {
-            throw new Error('Failed to submit feedback');
+            throw new BadRequestException('Failed to submit feedback');
         }
     }
 }

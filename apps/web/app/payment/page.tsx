@@ -26,6 +26,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { UploadDropzone } from "@/lib/uploadthing";
 import "@uploadthing/react/styles.css";
+import { useAuth } from '@clerk/nextjs';
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -39,7 +40,7 @@ export default function PaymentPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [language, setLanguage] = useState<'en' | 'am'>('en');
   const [isUploading, setIsUploading] = useState(false);
-
+  const { userId } = useAuth();
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema)
   });
@@ -116,6 +117,8 @@ export default function PaymentPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
+          paymentMethod: 'cbe', // or 'awash' or 'telebirr'
+          userId: userId,
           screenshotUrl: selectedFile,
           submittedAt: new Date().toISOString()
         })

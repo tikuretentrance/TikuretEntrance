@@ -15,7 +15,7 @@ export class PaymentsService {
     async create(createPaymentDto: CreatePaymentDto) {
         const payment = this.paymentRepo.create({
             ...createPaymentDto,
-            amount: 999, // Fixed amount
+            amount: 499, // Fixed amount
         });
         return await this.paymentRepo.save(payment);
     }

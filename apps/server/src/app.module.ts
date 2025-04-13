@@ -19,8 +19,6 @@ import { ExamsModule } from './modules/exams/exams.module';
         PSQL_PASSWORD: Joi.string().required(),
         PSQL_DB: Joi.string().required(),
         PORT: Joi.number(),
-        CHAPA_WEBHOOK_SECRET_HASH: Joi.string().required(),
-        CHAPA_SECRET_KEY: Joi.string().required(),
       }),
     }),
 
