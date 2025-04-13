@@ -19,17 +19,43 @@ export default function ContactPage() {
         message: ''
     });
 
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setLoading(true);
+
+    //     try {
+    //         await emailjs.send(
+    //             process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+    //             process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+    //             formData,
+    //             process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
+    //         );
+
+    //         toast.success("Message sent successfully! We'll get back to you soon.");
+    //         setFormData({ name: '', email: '', subject: '', phoneNumber: "", message: '' });
+    //     } catch (error) {
+    //         toast.error("Failed to send the message. Please try again later.");
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-                formData,
-                process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
-            );
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
 
             toast.success("Message sent successfully! We'll get back to you soon.");
             setFormData({ name: '', email: '', subject: '', phoneNumber: "", message: '' });
@@ -38,8 +64,7 @@ export default function ContactPage() {
         } finally {
             setLoading(false);
         }
-    };
-
+    }
     return (
         <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl mx-auto">
