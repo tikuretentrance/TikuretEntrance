@@ -15,9 +15,9 @@ RUN npm install -g pnpm
 # Copy package files from the pruned output
 COPY --from=builder /app/out/json/ .
 
-# Copy the server-specific package.json and pnpm-lock.yaml from the original context
-COPY ./apps/server/package.json ./apps/server/package.json
-COPY ./apps/server/pnpm-lock.yaml ./apps/server/pnpm-lock.yaml
+# Copy the server-specific package.json and pnpm-lock.yaml from the project root
+COPY ../../apps/server/package.json ./apps/server/package.json
+COPY ../../apps/server/pnpm-lock.yaml ./apps/server/pnpm-lock.yaml
 
 # Install only production dependencies for the server
 RUN cd apps/server && pnpm install --frozen-lockfile --prod
