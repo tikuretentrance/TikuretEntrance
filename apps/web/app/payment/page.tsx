@@ -112,7 +112,7 @@ export default function PaymentPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:4636/payments', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

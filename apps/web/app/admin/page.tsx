@@ -46,7 +46,7 @@ export default function AdminPaymentsPage() {
 
     const handleApprove = async (paymentId: string) => {
         try {
-            const response = await fetch(`http://localhost:4636/payments/${paymentId}/approve`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/approve`, {
                 method: 'PATCH',
             });
 
@@ -62,7 +62,7 @@ export default function AdminPaymentsPage() {
 
     const handleDecline = async (paymentId: string) => {
         try {
-            const response = await fetch(`http://localhost:4636/payments/${paymentId}/reject`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/reject`, {
                 method: 'PATCH',
             });
 
@@ -78,7 +78,7 @@ export default function AdminPaymentsPage() {
 
     const fetchPayments = async () => {
         try {
-            const response = await fetch(`http://localhost:4636/payments/?page=${page}&filter=${filter}&search=${search}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
             const data = await response.json();
 
             setPayments(data?.data || []);

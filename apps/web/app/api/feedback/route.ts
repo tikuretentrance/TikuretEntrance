@@ -3,7 +3,7 @@ import type { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const response = await fetch('http://localhost:4636/feedback', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -22,10 +22,10 @@ import { ThrottlerModule } from '@nestjs/throttler';
         PORT: Joi.number(),
       }),
     }),
-    ThrottlerModule.forRoot([{
-      ttl: 60000, // 1 minute
-      limit: 10, // 10 requests per minute
-    }]),
+    // ThrottlerModule.forRoot([{
+    //   ttl: 60000, // 1 minute
+    //   limit: 10, // 10 requests per minute
+    // }]),
 
     TypeOrmModule.forRoot({
       type: 'postgres',
