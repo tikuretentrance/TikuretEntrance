@@ -30,7 +30,6 @@ COPY turbo.json .
 # Build the server
 RUN pnpm turbo run build --filter=server...
 
-
 # Stage 3: Runner - Production image
 FROM node:20-alpine AS runner
 WORKDIR /app
