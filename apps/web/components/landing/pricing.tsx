@@ -42,13 +42,13 @@ export function PricingSection() {
                         {/* Price display */}
                         <div className="text-center mb-8">
                             <div className="flex items-center justify-center gap-4 mb-2">
-                                <span className="text-2xl text-muted-foreground line-through">ETB 2,999</span>
+                                <span className="text-2xl text-muted-foreground line-through">ETB 4,990</span>
                                 <Badge variant="secondary" className="text-lg px-3 py-1">
-                                    Save 67%
+                                    Save 90%
                                 </Badge>
                             </div>
                             <div className="text-5xl font-bold text-gradient mb-2">
-                                ETB 999
+                                ETB 499
                             </div>
                             <p className="text-sm text-muted-foreground">
                                 Special price valid until ESSLCE exam completion

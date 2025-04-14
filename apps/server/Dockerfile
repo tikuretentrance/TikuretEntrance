@@ -1,28 +1,48 @@
-FROM node:20.0.0 AS base
+# Stage 1: Builder - Create pruned workspace
+FROM node:20-alpine AS builder
+RUN apk add --no-cache libc6-compat && apk update
+WORKDIR /app
+RUN npm install -g pnpm turbo
+COPY . .
+RUN turbo prune --scope=server --docker
 
-FROM base AS build
+# Stage 2: Installer - Install dependencies
+FROM node:20-alpine AS installer
+RUN apk add --no-cache libc6-compat && apk update
+WORKDIR /app
+RUN npm install -g pnpm
 
-WORKDIR /tikuretentrance-base
+# Copy pruned package files
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml .
 
-COPY package.json package-lock.json ./
-RUN npm ci --legacy-peer-deps
+# Install dependencies
+RUN pnpm install --frozen-lockfile
 
-COPY . . 
-COPY .env .env
+# Copy full source code
+COPY --from=builder /app/out/full/ .
+COPY turbo.json .
 
-RUN npm run build
+# Build the server
+RUN pnpm turbo run build --filter=server...
 
-FROM node:20.0.0 AS production
+# Stage 3: Runner - Production image
+FROM node:20-alpine AS runner
+WORKDIR /app
+RUN npm install -g pnpm
 
-WORKDIR /tikuretentrance-base
+# Create non-root user
+RUN addgroup --system --gid 1001 nestjs && \
+    adduser --system --uid 1001 nestjs
 
-COPY --from=build /tikuretentrance-base/package.json /tikuretentrance-base/package-lock.json ./
-RUN npm ci --only=production --legacy-peer-deps
+# Copy production files
+COPY --from=installer /app/apps/server/dist ./dist
+COPY --from=installer /app/apps/server/package.json .
+COPY --from=installer /app/node_modules ./node_modules
 
-COPY --from=build /tikuretentrance-base/dist ./dist
-
+# Set permissions
+USER nestjs
 ENV NODE_ENV=production
-
-EXPOSE 4635
-
-CMD ["npm", "run", "start:prod"]
+EXPOSE 4636
+# CMD ["node", "dist/main.js"]
+CMD node apps/server/dist/main.js
