@@ -16,8 +16,12 @@ RUN npm install -g pnpm
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml .
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile
+# Copy server-specific package files
+COPY --from=builder /app/apps/server/package.json ./apps/server/package.json
+COPY --from=builder /app/apps/server/pnpm-lock.yaml ./apps/server/pnpm-lock.yaml
+
+# Install only production dependencies for the server
+RUN cd apps/server && pnpm install --frozen-lockfile --prod
 
 # Copy full source code
 COPY --from=builder /app/out/full/ .
@@ -25,6 +29,7 @@ COPY turbo.json .
 
 # Build the server
 RUN pnpm turbo run build --filter=server...
+
 
 # Stage 3: Runner - Production image
 FROM node:20-alpine AS runner
@@ -37,12 +42,11 @@ RUN addgroup --system --gid 1001 nestjs && \
 
 # Copy production files
 COPY --from=installer /app/apps/server/dist ./dist
-COPY --from=installer /app/apps/server/package.json .
-COPY --from=installer /app/node_modules ./node_modules
+COPY --from=installer /app/apps/server/package.json ./package.json
+COPY --from=installer /app/apps/server/node_modules ./node_modules
 
 # Set permissions
 USER nestjs
 ENV NODE_ENV=production
 EXPOSE 4636
-# CMD ["node", "dist/main.js"]
 CMD node dist/main.js
