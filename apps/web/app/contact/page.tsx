@@ -42,29 +42,34 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true);
 
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 },
                 body: JSON.stringify(formData),
             });
 
+            console.log('Response status:', response.status);
+
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Request failed');
             }
 
-            toast.success("Message sent successfully! We'll get back to you soon.");
-            setFormData({ name: '', email: '', subject: '', phoneNumber: "", message: '' });
-        } catch (error) {
-            toast.error("Failed to send the message. Please try again later.");
+            await response.json();
+            toast.success("Message sent successfully!");
+        } catch (error: any) {
+            console.error('Contact form error:', error);
+            toast.error(error.message || "Failed to send message");
         } finally {
             setLoading(false);
         }
-    }
+    };
+
     return (
         <div className="container mx-auto px-4 py-16">
             <div className="max-w-4xl mx-auto">
