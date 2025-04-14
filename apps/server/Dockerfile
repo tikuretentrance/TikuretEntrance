@@ -12,13 +12,12 @@ RUN apk add --no-cache libc6-compat && apk update
 WORKDIR /app
 RUN npm install -g pnpm
 
-# Copy pruned package files
+# Copy package files from the pruned output
 COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/pnpm-lock.yaml .
 
-# Copy server-specific package files
-COPY --from=builder /app/apps/server/package.json ./apps/server/package.json
-COPY --from=builder /app/apps/server/pnpm-lock.yaml ./apps/server/pnpm-lock.yaml
+# Copy the server-specific package.json and pnpm-lock.yaml from the original context
+COPY ./apps/server/package.json ./apps/server/package.json
+COPY ./apps/server/pnpm-lock.yaml ./apps/server/pnpm-lock.yaml
 
 # Install only production dependencies for the server
 RUN cd apps/server && pnpm install --frozen-lockfile --prod
