@@ -1,6 +1,6 @@
 import { PracticeQuestion } from "@/lib/types/practice";
 
-const historyQuestionsUnit1_and_2: PracticeQuestion[] = [
+export const historyQuestionsUnit1_and_2: PracticeQuestion[] = [
     {
         id: 1,
         text: "Which of the following is NOT a characteristic feature of capitalism?",
@@ -1121,566 +1121,567 @@ const historyQuestionsUnit1_and_2: PracticeQuestion[] = [
         topic: "African Resistance to Colonial Rule",
         difficulty: "medium"
     },
-    // {
-    //     id: 81,
-    //     text: "What was the primary motive behind the Maji-Maji Rebellion?",
-    //     options: [
-    //         "To promote cultural exchange",
-    //         "To resist colonial rule and forced labor",
-    //         "To establish a federal system",
-    //         "To spread socialism"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 82,
-    //     text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
-    //     options: [
-    //         "It led to the independence of Tanganyika",
-    //         "It resulted in the suppression of the rebellion and famine",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 83,
-    //     text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused economic decline and disruption",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
-    //     topic: "Trans-Atlantic Slave Trade",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 84,
-    //     text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
-    //     topic: "Scramble for Africa",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 85,
-    //     text: "What was the primary impact of the Berlin Conference on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in the exploitation of African resources",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
-    //     topic: "Berlin Conference",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 86,
-    //     text: "Which of the following was a major impact of British colonial administration on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
-    //     topic: "British Colonial Administration",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 87,
-    //     text: "What was the primary impact of French colonial policy on African cultures?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in cultural assimilation",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
-    //     topic: "French Colonial Policy",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 88,
-    //     text: "Which of the following was a major impact of colonialism on African agriculture?",
-    //     options: [
-    //         "It led to the modernization of farming techniques",
-    //         "It promoted cash crop production",
-    //         "It reduced the importance of agriculture",
-    //         "It led to the abandonment of traditional crops"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
-    //     topic: "Impact of Colonialism on African Agriculture",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 89,
-    //     text: "What was the primary impact of colonialism on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
-    //     topic: "Impact of Colonialism on African Societies",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 90,
-    //     text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
-    //     options: [
-    //         "The Maji-Maji Rebellion",
-    //         "The Zulu War",
-    //         "The Ashanti War",
-    //         "The Boer War"
-    //     ],
-    //     correctAnswer: 0,
-    //     explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
-    //     topic: "African Resistance to Colonial Rule",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 91,
-    //     text: "What was the primary motive behind the Maji-Maji Rebellion?",
-    //     options: [
-    //         "To promote cultural exchange",
-    //         "To resist colonial rule and forced labor",
-    //         "To establish a federal system",
-    //         "To spread socialism"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 92,
-    //     text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
-    //     options: [
-    //         "It led to the independence of Tanganyika",
-    //         "It resulted in the suppression of the rebellion and famine",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 93,
-    //     text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused economic decline and disruption",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
-    //     topic: "Trans-Atlantic Slave Trade",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 94,
-    //     text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
-    //     topic: "Scramble for Africa",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 95,
-    //     text: "What was the primary impact of the Berlin Conference on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in the exploitation of African resources",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
-    //     topic: "Berlin Conference",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 96,
-    //     text: "Which of the following was a major impact of British colonial administration on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
-    //     topic: "British Colonial Administration",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 97,
-    //     text: "What was the primary impact of French colonial policy on African cultures?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in cultural assimilation",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
-    //     topic: "French Colonial Policy",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 98,
-    //     text: "Which of the following was a major impact of colonialism on African agriculture?",
-    //     options: [
-    //         "It led to the modernization of farming techniques",
-    //         "It promoted cash crop production",
-    //         "It reduced the importance of agriculture",
-    //         "It led to the abandonment of traditional crops"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
-    //     topic: "Impact of Colonialism on African Agriculture",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 99,
-    //     text: "What was the primary impact of colonialism on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
-    //     topic: "Impact of Colonialism on African Societies",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 100,
-    //     text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
-    //     options: [
-    //         "The Maji-Maji Rebellion",
-    //         "The Zulu War",
-    //         "The Ashanti War",
-    //         "The Boer War"
-    //     ],
-    //     correctAnswer: 0,
-    //     explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
-    //     topic: "African Resistance to Colonial Rule",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 101,
-    //     text: "What was the primary motive behind the Maji-Maji Rebellion?",
-    //     options: [
-    //         "To promote cultural exchange",
-    //         "To resist colonial rule and forced labor",
-    //         "To establish a federal system",
-    //         "To spread socialism"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 102,
-    //     text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
-    //     options: [
-    //         "It led to the independence of Tanganyika",
-    //         "It resulted in the suppression of the rebellion and famine",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 103,
-    //     text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused economic decline and disruption",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
-    //     topic: "Trans-Atlantic Slave Trade",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 104,
-    //     text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
-    //     topic: "Scramble for Africa",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 105,
-    //     text: "What was the primary impact of the Berlin Conference on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in the exploitation of African resources",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
-    //     topic: "Berlin Conference",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 106,
-    //     text: "Which of the following was a major impact of British colonial administration on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
-    //     topic: "British Colonial Administration",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 107,
-    //     text: "What was the primary impact of French colonial policy on African cultures?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in cultural assimilation",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
-    //     topic: "French Colonial Policy",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 108,
-    //     text: "Which of the following was a major impact of colonialism on African agriculture?",
-    //     options: [
-    //         "It led to the modernization of farming techniques",
-    //         "It promoted cash crop production",
-    //         "It reduced the importance of agriculture",
-    //         "It led to the abandonment of traditional crops"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
-    //     topic: "Impact of Colonialism on African Agriculture",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 109,
-    //     text: "What was the primary impact of colonialism on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
-    //     topic: "Impact of Colonialism on African Societies",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 110,
-    //     text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
-    //     options: [
-    //         "The Maji-Maji Rebellion",
-    //         "The Zulu War",
-    //         "The Ashanti War",
-    //         "The Boer War"
-    //     ],
-    //     correctAnswer: 0,
-    //     explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
-    //     topic: "African Resistance to Colonial Rule",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 111,
-    //     text: "What was the primary motive behind the Maji-Maji Rebellion?",
-    //     options: [
-    //         "To promote cultural exchange",
-    //         "To resist colonial rule and forced labor",
-    //         "To establish a federal system",
-    //         "To spread socialism"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 112,
-    //     text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
-    //     options: [
-    //         "It led to the independence of Tanganyika",
-    //         "It resulted in the suppression of the rebellion and famine",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
-    //     topic: "Maji-Maji Rebellion",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 113,
-    //     text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused economic decline and disruption",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
-    //     topic: "Trans-Atlantic Slave Trade",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 114,
-    //     text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
-    //     topic: "Scramble for Africa",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 115,
-    //     text: "What was the primary impact of the Berlin Conference on African economies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in the exploitation of African resources",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
-    //     topic: "Berlin Conference",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 116,
-    //     text: "Which of the following was a major impact of British colonial administration on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
-    //     topic: "British Colonial Administration",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 117,
-    //     text: "What was the primary impact of French colonial policy on African cultures?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It resulted in cultural assimilation",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
-    //     topic: "French Colonial Policy",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 118,
-    //     text: "Which of the following was a major impact of colonialism on African agriculture?",
-    //     options: [
-    //         "It led to the modernization of farming techniques",
-    //         "It promoted cash crop production",
-    //         "It reduced the importance of agriculture",
-    //         "It led to the abandonment of traditional crops"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
-    //     topic: "Impact of Colonialism on African Agriculture",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 119,
-    //     text: "What was the primary impact of colonialism on African societies?",
-    //     options: [
-    //         "It led to economic prosperity",
-    //         "It caused social and political instability",
-    //         "It promoted cultural exchange",
-    //         "It strengthened traditional institutions"
-    //     ],
-    //     correctAnswer: 1,
-    //     explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
-    //     topic: "Impact of Colonialism on African Societies",
-    //     difficulty: "medium"
-    // },
-    // {
-    //     id: 120,
-    //     text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
-    //     options: [
-    //         "The Maji-Maji Rebellion",
-    //         "The Zulu War",
-    //         "The Ashanti War",
-    //         "The Boer War"
-    //     ],
-    //     correctAnswer: 0,
-    //     explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
-    //     topic: "African Resistance to Colonial Rule",
-    //     difficulty: "medium"
-    // }
 ];
 
-export default historyQuestionsUnit1_and_2;
+export const historyQuestionsUnit1_and_2_continued: PracticeQuestion[] = [
+    {
+        id: 81,
+        text: "What was the primary motive behind the Maji-Maji Rebellion?",
+        options: [
+            "To promote cultural exchange",
+            "To resist colonial rule and forced labor",
+            "To establish a federal system",
+            "To spread socialism"
+        ],
+        correctAnswer: 1,
+        explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 82,
+        text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
+        options: [
+            "It led to the independence of Tanganyika",
+            "It resulted in the suppression of the rebellion and famine",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 83,
+        text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused economic decline and disruption",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
+        topic: "Trans-Atlantic Slave Trade",
+        difficulty: "medium"
+    },
+    {
+        id: 84,
+        text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
+        topic: "Scramble for Africa",
+        difficulty: "medium"
+    },
+    {
+        id: 85,
+        text: "What was the primary impact of the Berlin Conference on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in the exploitation of African resources",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
+        topic: "Berlin Conference",
+        difficulty: "medium"
+    },
+    {
+        id: 86,
+        text: "Which of the following was a major impact of British colonial administration on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
+        topic: "British Colonial Administration",
+        difficulty: "medium"
+    },
+    {
+        id: 87,
+        text: "What was the primary impact of French colonial policy on African cultures?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in cultural assimilation",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
+        topic: "French Colonial Policy",
+        difficulty: "medium"
+    },
+    {
+        id: 88,
+        text: "Which of the following was a major impact of colonialism on African agriculture?",
+        options: [
+            "It led to the modernization of farming techniques",
+            "It promoted cash crop production",
+            "It reduced the importance of agriculture",
+            "It led to the abandonment of traditional crops"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
+        topic: "Impact of Colonialism on African Agriculture",
+        difficulty: "medium"
+    },
+    {
+        id: 89,
+        text: "What was the primary impact of colonialism on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
+        topic: "Impact of Colonialism on African Societies",
+        difficulty: "medium"
+    },
+    {
+        id: 90,
+        text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
+        options: [
+            "The Maji-Maji Rebellion",
+            "The Zulu War",
+            "The Ashanti War",
+            "The Boer War"
+        ],
+        correctAnswer: 0,
+        explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
+        topic: "African Resistance to Colonial Rule",
+        difficulty: "medium"
+    },
+    {
+        id: 91,
+        text: "What was the primary motive behind the Maji-Maji Rebellion?",
+        options: [
+            "To promote cultural exchange",
+            "To resist colonial rule and forced labor",
+            "To establish a federal system",
+            "To spread socialism"
+        ],
+        correctAnswer: 1,
+        explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 92,
+        text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
+        options: [
+            "It led to the independence of Tanganyika",
+            "It resulted in the suppression of the rebellion and famine",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 93,
+        text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused economic decline and disruption",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
+        topic: "Trans-Atlantic Slave Trade",
+        difficulty: "medium"
+    },
+    {
+        id: 94,
+        text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
+        topic: "Scramble for Africa",
+        difficulty: "medium"
+    },
+    {
+        id: 95,
+        text: "What was the primary impact of the Berlin Conference on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in the exploitation of African resources",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
+        topic: "Berlin Conference",
+        difficulty: "medium"
+    },
+    {
+        id: 96,
+        text: "Which of the following was a major impact of British colonial administration on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
+        topic: "British Colonial Administration",
+        difficulty: "medium"
+    },
+    {
+        id: 97,
+        text: "What was the primary impact of French colonial policy on African cultures?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in cultural assimilation",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
+        topic: "French Colonial Policy",
+        difficulty: "medium"
+    },
+    {
+        id: 98,
+        text: "Which of the following was a major impact of colonialism on African agriculture?",
+        options: [
+            "It led to the modernization of farming techniques",
+            "It promoted cash crop production",
+            "It reduced the importance of agriculture",
+            "It led to the abandonment of traditional crops"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
+        topic: "Impact of Colonialism on African Agriculture",
+        difficulty: "medium"
+    },
+    {
+        id: 99,
+        text: "What was the primary impact of colonialism on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
+        topic: "Impact of Colonialism on African Societies",
+        difficulty: "medium"
+    },
+    {
+        id: 100,
+        text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
+        options: [
+            "The Maji-Maji Rebellion",
+            "The Zulu War",
+            "The Ashanti War",
+            "The Boer War"
+        ],
+        correctAnswer: 0,
+        explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
+        topic: "African Resistance to Colonial Rule",
+        difficulty: "medium"
+    },
+    {
+        id: 101,
+        text: "What was the primary motive behind the Maji-Maji Rebellion?",
+        options: [
+            "To promote cultural exchange",
+            "To resist colonial rule and forced labor",
+            "To establish a federal system",
+            "To spread socialism"
+        ],
+        correctAnswer: 1,
+        explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 102,
+        text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
+        options: [
+            "It led to the independence of Tanganyika",
+            "It resulted in the suppression of the rebellion and famine",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 103,
+        text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused economic decline and disruption",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
+        topic: "Trans-Atlantic Slave Trade",
+        difficulty: "medium"
+    },
+    {
+        id: 104,
+        text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
+        topic: "Scramble for Africa",
+        difficulty: "medium"
+    },
+    {
+        id: 105,
+        text: "What was the primary impact of the Berlin Conference on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in the exploitation of African resources",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
+        topic: "Berlin Conference",
+        difficulty: "medium"
+    },
+    {
+        id: 106,
+        text: "Which of the following was a major impact of British colonial administration on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
+        topic: "British Colonial Administration",
+        difficulty: "medium"
+    },
+    {
+        id: 107,
+        text: "What was the primary impact of French colonial policy on African cultures?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in cultural assimilation",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
+        topic: "French Colonial Policy",
+        difficulty: "medium"
+    },
+    {
+        id: 108,
+        text: "Which of the following was a major impact of colonialism on African agriculture?",
+        options: [
+            "It led to the modernization of farming techniques",
+            "It promoted cash crop production",
+            "It reduced the importance of agriculture",
+            "It led to the abandonment of traditional crops"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
+        topic: "Impact of Colonialism on African Agriculture",
+        difficulty: "medium"
+    },
+    {
+        id: 109,
+        text: "What was the primary impact of colonialism on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
+        topic: "Impact of Colonialism on African Societies",
+        difficulty: "medium"
+    },
+    {
+        id: 110,
+        text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
+        options: [
+            "The Maji-Maji Rebellion",
+            "The Zulu War",
+            "The Ashanti War",
+            "The Boer War"
+        ],
+        correctAnswer: 0,
+        explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
+        topic: "African Resistance to Colonial Rule",
+        difficulty: "medium"
+    },
+    {
+        id: 111,
+        text: "What was the primary motive behind the Maji-Maji Rebellion?",
+        options: [
+            "To promote cultural exchange",
+            "To resist colonial rule and forced labor",
+            "To establish a federal system",
+            "To spread socialism"
+        ],
+        correctAnswer: 1,
+        explanation: "The primary motive behind the Maji-Maji Rebellion was to resist colonial rule and forced labor, as the people of Tanganyika fought against German colonizers.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 112,
+        text: "Which of the following was a major impact of the Maji-Maji Rebellion?",
+        options: [
+            "It led to the independence of Tanganyika",
+            "It resulted in the suppression of the rebellion and famine",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Maji-Maji Rebellion resulted in the suppression of the rebellion and famine, as the German colonizers used scorched-earth tactics to defeat the rebels.",
+        topic: "Maji-Maji Rebellion",
+        difficulty: "medium"
+    },
+    {
+        id: 113,
+        text: "What was the primary impact of the Trans-Atlantic Slave Trade on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused economic decline and disruption",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Trans-Atlantic Slave Trade caused economic decline and disruption in African economies, as it led to the loss of labor and the disruption of traditional trade networks.",
+        topic: "Trans-Atlantic Slave Trade",
+        difficulty: "medium"
+    },
+    {
+        id: 114,
+        text: "Which of the following was a major impact of the 'Scramble for Africa' on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The 'Scramble for Africa' caused social and political instability in African societies, as it led to the colonization and exploitation of African resources.",
+        topic: "Scramble for Africa",
+        difficulty: "medium"
+    },
+    {
+        id: 115,
+        text: "What was the primary impact of the Berlin Conference on African economies?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in the exploitation of African resources",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "The Berlin Conference resulted in the exploitation of African resources, as European powers established colonial rule and extracted raw materials.",
+        topic: "Berlin Conference",
+        difficulty: "medium"
+    },
+    {
+        id: 116,
+        text: "Which of the following was a major impact of British colonial administration on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "British colonial administration caused social and political instability in African societies, as it imposed European rule and disrupted traditional systems.",
+        topic: "British Colonial Administration",
+        difficulty: "medium"
+    },
+    {
+        id: 117,
+        text: "What was the primary impact of French colonial policy on African cultures?",
+        options: [
+            "It led to economic prosperity",
+            "It resulted in cultural assimilation",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "French colonial policy resulted in cultural assimilation, as it promoted French language and laws in African societies.",
+        topic: "French Colonial Policy",
+        difficulty: "medium"
+    },
+    {
+        id: 118,
+        text: "Which of the following was a major impact of colonialism on African agriculture?",
+        options: [
+            "It led to the modernization of farming techniques",
+            "It promoted cash crop production",
+            "It reduced the importance of agriculture",
+            "It led to the abandonment of traditional crops"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism promoted cash crop production in Africa, as European powers encouraged the cultivation of export crops like coffee, cocoa, and cotton.",
+        topic: "Impact of Colonialism on African Agriculture",
+        difficulty: "medium"
+    },
+    {
+        id: 119,
+        text: "What was the primary impact of colonialism on African societies?",
+        options: [
+            "It led to economic prosperity",
+            "It caused social and political instability",
+            "It promoted cultural exchange",
+            "It strengthened traditional institutions"
+        ],
+        correctAnswer: 1,
+        explanation: "Colonialism caused social and political instability in African societies, as it disrupted traditional systems and imposed European rule.",
+        topic: "Impact of Colonialism on African Societies",
+        difficulty: "medium"
+    },
+    {
+        id: 120,
+        text: "Which of the following was a major form of African resistance to colonial rule in East Africa?",
+        options: [
+            "The Maji-Maji Rebellion",
+            "The Zulu War",
+            "The Ashanti War",
+            "The Boer War"
+        ],
+        correctAnswer: 0,
+        explanation: "The Maji-Maji Rebellion was a major form of African resistance to colonial rule in East Africa, led by the people of Tanganyika against German colonizers.",
+        topic: "African Resistance to Colonial Rule",
+        difficulty: "medium"
+    }
+];
