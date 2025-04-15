@@ -16,42 +16,17 @@ export default function FeedbackPage() {
         feedback: ''
     });
 
-    // const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     setLoading(true);
-
-    //     try {
-    //         await emailjs.send(
-    //             process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-    //             process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_TEMPLATE_ID || '',
-    //             formData,
-    //             process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
-    //         );
-    //         toast.success("Feedback submitted successfully! Thank you for your input.");
-    //         setFormData({ name: "", phoneNumber: "", feedback: "" });
-    //     } catch (error) {
-    //         toast.error("Failed to submit feedback. Please try again later.");
-    //     }
-    //     setLoading(false);
-    // };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to submit feedback');
-            }
-
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+                process.env.NEXT_PUBLIC_EMAILJS_FEEDBACK_TEMPLATE_ID || '',
+                formData,
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
+            );
             toast.success("Feedback submitted successfully! Thank you for your input.");
             setFormData({ name: "", phoneNumber: "", feedback: "" });
         } catch (error) {
@@ -59,6 +34,31 @@ export default function FeedbackPage() {
         }
         setLoading(false);
     };
+
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     setLoading(true);
+
+    //     try {
+    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(formData),
+    //         });
+
+    //         if (!response.ok) {
+    //             throw new Error('Failed to submit feedback');
+    //         }
+
+    //         toast.success("Feedback submitted successfully! Thank you for your input.");
+    //         setFormData({ name: "", phoneNumber: "", feedback: "" });
+    //     } catch (error) {
+    //         toast.error("Failed to submit feedback. Please try again later.");
+    //     }
+    //     setLoading(false);
+    // };
     
     return (
         <><div className="container mx-auto px-4 py-16">

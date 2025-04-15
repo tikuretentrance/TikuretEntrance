@@ -27,13 +27,13 @@ export class MailerService {
       this.transporter = nodemailer.createTransport({
         service: 'gmail',
         port: 465,
-        secure: false, // true for 465, false for other ports
+        secure: true,
         logger: true,
         debug: true,
-        ignoreTLS: true,
         auth: {
           type: 'OAuth2',
           user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
           clientId: this.CLIENT_ID,
           clientSecret: this.CLIENT_SECRET,
           refreshToken: this.REFRESH_TOKEN,
