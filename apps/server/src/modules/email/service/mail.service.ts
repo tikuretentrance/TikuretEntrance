@@ -26,8 +26,8 @@ export class MailerService {
     oAuth2Client.getAccessToken().then(accessToken => {
       this.transporter = nodemailer.createTransport({
         service: 'gmail',
-        // port: 465,
-        // secure: true,
+        port: 465,
+        secure: true,
         auth: {
           type: 'OAuth2',
           user: process.env.EMAIL_USER,
