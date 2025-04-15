@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Query, Param, Patch } from '@nestjs/common';
+import { Controller, Get, Post, Body, Query, Param, Patch, UseGuards } from '@nestjs/common';
 import { PaymentsService } from '../service/payment.service';
 import { CreatePaymentDto } from '../dto/payment.dto';
+import { ClerkAuthGuard } from 'src/modules/user/guard/user-clerk.guard';
 
 @Controller('payments')
 export class PaymentsController {
@@ -12,6 +13,7 @@ export class PaymentsController {
     }
 
     @Get()
+    @UseGuards(ClerkAuthGuard)
     findAll(
         @Query('status') status: string,
         @Query('page') page = 1,
