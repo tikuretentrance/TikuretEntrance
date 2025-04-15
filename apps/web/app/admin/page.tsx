@@ -21,9 +21,8 @@ import {
 import { format } from 'date-fns';
 import { toast } from "sonner";
 import Image from "next/image";
-import { useAuth, useUser } from "@clerk/nextjs";
-import { redirect, useRouter } from "next/navigation";
-import { checkRole } from '@/lib/utils/checkRoles';
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 interface PaymentProof {
     id: string;
@@ -37,7 +36,6 @@ interface PaymentProof {
 }
 
 export default async function AdminPaymentsPage() {
-    // const { isLoaded,  } = useAuth();
     const [payments, setPayments] = useState<PaymentProof[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedPayment, setSelectedPayment] = useState<PaymentProof | null>(null);
@@ -104,11 +102,6 @@ export default async function AdminPaymentsPage() {
             setLoading(false);
         }
     };
-
-    // const isAdmin = await checkRole('admin')
-    // if (!isAdmin) {
-    //     redirect('/')
-    // }
 
     useEffect(() => {
         fetchPayments();

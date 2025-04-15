@@ -25,8 +25,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { UploadDropzone } from "@/lib/uploadthing";
-import "@uploadthing/react/styles.css";
 import { useAuth } from '@clerk/nextjs';
+import "@uploadthing/react/styles.css";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
