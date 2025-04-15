@@ -21,7 +21,8 @@ import {
 import { format } from 'date-fns';
 import { toast } from "sonner";
 import Image from "next/image";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 interface PaymentProof {
     id: string;
@@ -43,7 +44,9 @@ export default function AdminPaymentsPage() {
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-
+    const { user } = useUser();
+    const router = useRouter();
+    
     const handleApprove = async (paymentId: string) => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/approve`, {
@@ -89,6 +92,17 @@ export default function AdminPaymentsPage() {
             setLoading(false);
         }
     };
+    useEffect(() => {
+        if (isLoaded) {
+            // Check if the user is logged in and has the admin role
+            if (!userId || user?.publicMetadata?.role !== "admin") {
+                // Redirect to a "not authorized" page or login page
+                router.push("/not-authorized");
+            } else {
+                setLoading(false); // Allow access if the user is an admin
+            }
+        }
+    }, [isLoaded, userId, user, router]);
 
     useEffect(() => {
         fetchPayments();
