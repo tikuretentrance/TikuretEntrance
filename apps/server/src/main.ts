@@ -38,12 +38,6 @@ async function bootstrap() {
   app.use(cookieParser());
   app.useBodyParser('json', { limit: '500mb' });
 
-  // app.enableCors({
-  //   origin: true,
-  //   credentials: true,
-  //   // allowedHeaders: ['Content-Type', 'Authorization'],
-  // });
-
   app.enableCors({
     origin: [
       'http://localhost:3200',
@@ -54,7 +48,6 @@ async function bootstrap() {
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     exposedHeaders: ['Content-Length', 'X-Request-ID'],
-    // maxAge: 86400 // 24 hours
   });
 
   const port = process.env.PORT;

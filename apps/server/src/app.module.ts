@@ -6,7 +6,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MailerModule } from './modules/email/mail.module';
 import { UsersModule } from './modules/user/user.module';
 import { ExamsModule } from './modules/exams/exams.module';
-import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -20,12 +19,15 @@ import { ThrottlerModule } from '@nestjs/throttler';
         PSQL_PASSWORD: Joi.string().required(),
         PSQL_DB: Joi.string().required(),
         PORT: Joi.number(),
+        EMAIL_SERVICE: Joi.string().required(),
+        EMAIL_USER: Joi.string().required(),
+        ADMIN_EMAIL: Joi.string().required(),
+        GOOGLE_CLIENT_ID: Joi.string().required(),
+        GOOGLE_CLIENT_SECRET: Joi.string().required(),
+        GOOGLE_REFRESH_TOKEN: Joi.string().required(),
+        CLERK_SECRET_KEY: Joi.string().required()
       }),
     }),
-    // ThrottlerModule.forRoot([{
-    //   ttl: 60000, // 1 minute
-    //   limit: 10, // 10 requests per minute
-    // }]),
 
     TypeOrmModule.forRoot({
       type: 'postgres',
