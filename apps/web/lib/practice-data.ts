@@ -4,11 +4,25 @@ import economicsUnit1Questions from "./data/practice-questions/economics/grade12
 import economicsUnit2Questions from "./data/practice-questions/economics/grade12-unit-2";
 import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
 import { historyQuestionsUnit1_and_2, historyQuestionsUnit1_and_2_continued } from "./data/practice-questions/history/grade12-unit1-and-2";
+import mathQuestionsUnit1_and_2 from "./data/practice-questions/math/grade12-u1and2";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
 import { PracticeSet } from "./types/practice";
 import { biologyQuestionsUnit1_and_2, biologyQuestionsUnit3and4_2024 } from "@/lib/data/practice-questions/biology/grade11";
 
 export const practiceData: PracticeSet[] = [
+  // mathQuestionsUnit1_and_2 (Securence and Series and Intro to calculus) 80 questions
+  {
+    id: "math-u1-and-2",
+    title: "Math G-12 Unit 1 and 2",
+    subject: "Mathematics",
+    topic: "Sequences & Series and Introduction to Calculus",
+    difficulty: "medium",
+    questionCount: 80,
+    timeLimit: 120,
+    questions: mathQuestionsUnit1_and_2.flat(),
+    attempts: 0,
+    averageScore: 0,
+  },
   {
     id: "history-u1-and-2",
     title: "Part || History G-12 Unit 1 and 2",
