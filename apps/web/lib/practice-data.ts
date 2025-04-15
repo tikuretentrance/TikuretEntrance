@@ -2,7 +2,7 @@ import chemistryQuestions from "./data/practice-questions/chemistry/chemistry-25
 import chemistryG12Questions from "./data/practice-questions/chemistry/chemistry-u1-and-2";
 import economicsUnit1Questions from "./data/practice-questions/economics/grade12-unit-1";
 import economicsUnit2Questions from "./data/practice-questions/economics/grade12-unit-2";
-import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history-g11";
+import { historyQuestionsUnit1, historyQuestionsUnit2 } from "./data/practice-questions/history/history-g11";
 import { historyQuestionsUnit1_and_2, historyQuestionsUnit1_and_2_continued } from "./data/practice-questions/history/grade12-unit1-and-2";
 import mathQuestionsUnit1_and_2 from "./data/practice-questions/math/grade12-u1and2";
 import { physicsUnit1Questions, physicsUnit2Questions } from "./data/practice-questions/physics/physics-g11";
@@ -50,7 +50,7 @@ export const practiceData: PracticeSet[] = [
   // biologyQuestionsUnit3and4_2024 (Enzymes and Genetics) 100 questions
   {
     id: "biology-u3-and-4",
-    title: "Biology G-12 Unit 3 and 4",
+    title: "Biology G-11 Unit 3 and 4",
     subject: "Biology",
     topic: "Enzymes & Genetics",
     difficulty: "medium",
@@ -63,7 +63,7 @@ export const practiceData: PracticeSet[] = [
   // biologyQuestionsUnit1_and_2 Unit 1 (Biology and Technology and 2 (Animals)
   {
     id: "biology-u1-and-2",
-    title: "Biology G-12 Unit 1 and 2",
+    title: "Biology G-11 Unit 1 and 2",
     subject: "Biology",
     topic: "Biology and Technology & Animals",
     difficulty: "easy",
