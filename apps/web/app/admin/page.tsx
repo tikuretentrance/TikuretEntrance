@@ -47,6 +47,7 @@ export default function AdminPaymentsPage() {
     const [totalPages, setTotalPages] = useState(1);
     const { user } = useUser();
     const router = useRouter();
+    const { getToken } = useAuth();
 
     const handleApprove = async (paymentId: string) => {
         try {
@@ -81,8 +82,13 @@ export default function AdminPaymentsPage() {
     };
 
     const fetchPayments = async () => {
+        const token = await getToken();
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             const data = await response.json();
 
             setPayments(data?.data || []);
