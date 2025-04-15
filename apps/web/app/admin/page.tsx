@@ -37,7 +37,7 @@ interface PaymentProof {
 }
 
 export default async function AdminPaymentsPage() {
-    const { isLoaded, userId } = useAuth();
+    // const { isLoaded,  } = useAuth();
     const [payments, setPayments] = useState<PaymentProof[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedPayment, setSelectedPayment] = useState<PaymentProof | null>(null);
@@ -45,8 +45,19 @@ export default async function AdminPaymentsPage() {
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const { user } = useUser();
+    const { user, isLoaded } = useUser();
     const router = useRouter();
+
+    useEffect(() => {
+        if (isLoaded) {
+            if (user?.publicMetadata?.role !== "admin") {
+                router.push("/not-authorized"); // Redirect non-admin users
+            } else {
+                setLoading(false); // Allow access for admins
+            }
+        }
+    }, [isLoaded, user, router]);
+
 
     const handleApprove = async (paymentId: string) => {
         try {
@@ -94,10 +105,10 @@ export default async function AdminPaymentsPage() {
         }
     };
 
-    const isAdmin = await checkRole('admin')
-    if (!isAdmin) {
-        redirect('/')
-    }
+    // const isAdmin = await checkRole('admin')
+    // if (!isAdmin) {
+    //     redirect('/')
+    // }
 
     useEffect(() => {
         fetchPayments();
