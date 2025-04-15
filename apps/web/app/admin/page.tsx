@@ -21,8 +21,9 @@ import {
 import { format } from 'date-fns';
 import { toast } from "sonner";
 import Image from "next/image";
-import { useUser } from "@clerk/nextjs";
+import { useAuth, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { checkRole } from '@/lib/utils/checkRoles';
 
 interface PaymentProof {
     id: string;
@@ -35,7 +36,8 @@ interface PaymentProof {
     paymentMethod: string;
 }
 
-export default async function AdminPaymentsPage() {
+export default function AdminPaymentsPage() {
+    const { isLoaded, userId } = useAuth();
     const [payments, setPayments] = useState<PaymentProof[]>([]);
     const [loading, setLoading] = useState(true);
     const [selectedPayment, setSelectedPayment] = useState<PaymentProof | null>(null);
@@ -43,43 +45,8 @@ export default async function AdminPaymentsPage() {
     const [search, setSearch] = useState('');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const { user, isLoaded } = useUser();
+    const { user } = useUser();
     const router = useRouter();
-
-    useEffect(() => {
-        if (isLoaded) {
-            if (user?.publicMetadata?.role !== "admin") {
-                router.push("/not-authorized"); // Redirect non-admin users
-            } else {
-                setLoading(false); // Allow access for admins
-            }
-        }
-    }, [isLoaded, user, router]);
-
-    const fetchPayments = async () => {
-        let isMounted = true; // Track if the component is still mounted
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
-            const data = await response.json();
-
-            if (isMounted) {
-                setPayments(data?.data || []);
-                setTotalPages(data?.last_page || 1);
-            }
-        } catch (error) {
-            if (isMounted) {
-                toast.error('Failed to fetch payments');
-            }
-        } finally {
-            if (isMounted) {
-                setLoading(false);
-            }
-        }
-
-        return () => {
-            isMounted = false; // Cleanup on unmount
-        };
-    };
 
     const handleApprove = async (paymentId: string) => {
         try {
@@ -113,19 +80,30 @@ export default async function AdminPaymentsPage() {
         }
     };
 
-    // const fetchPayments = async () => {
-    //     try {
-    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
-    //         const data = await response.json();
+    const fetchPayments = async () => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
+            const data = await response.json();
 
-    //         setPayments(data?.data || []);
-    //         setTotalPages(data?.last_page || 1);
-    //     } catch (error) {
-    //         toast.error('Failed to fetch payments');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
+            setPayments(data?.data || []);
+            setTotalPages(data?.last_page || 1);
+        } catch (error) {
+            toast.error('Failed to fetch payments');
+        } finally {
+            setLoading(false);
+        }
+    };
+    useEffect(() => {
+        if (isLoaded) {
+            // Check if the user is logged in and has the admin role
+            if (!userId || user?.publicMetadata?.role !== "admin") {
+                // Redirect to a "not authorized" page or login page
+                router.push("/not-authorized");
+            } else {
+                setLoading(false); // Allow access if the user is an admin
+            }
+        }
+    }, [isLoaded, userId, user, router]);
 
     useEffect(() => {
         fetchPayments();
