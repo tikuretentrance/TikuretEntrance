@@ -38,9 +38,6 @@ export class MailerService {
           refreshToken: this.REFRESH_TOKEN,
           accessToken: accessToken?.token || '',
         },
-        tls: {
-          rejectUnAuthorized: true
-        }
       });
     }).catch(error => {
       this.logger.error('Error getting access token:', error);
