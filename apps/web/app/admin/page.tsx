@@ -22,7 +22,8 @@ import { format } from 'date-fns';
 import { toast } from "sonner";
 import Image from "next/image";
 import { useAuth, useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
+import { checkRole } from '@/lib/utils/checkRoles';
 
 interface PaymentProof {
     id: string;
@@ -35,7 +36,7 @@ interface PaymentProof {
     paymentMethod: string;
 }
 
-export default function AdminPaymentsPage() {
+export default async function AdminPaymentsPage() {
     const { isLoaded, userId } = useAuth();
     const [payments, setPayments] = useState<PaymentProof[]>([]);
     const [loading, setLoading] = useState(true);
@@ -46,7 +47,7 @@ export default function AdminPaymentsPage() {
     const [totalPages, setTotalPages] = useState(1);
     const { user } = useUser();
     const router = useRouter();
-    
+
     const handleApprove = async (paymentId: string) => {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/approve`, {
@@ -92,17 +93,11 @@ export default function AdminPaymentsPage() {
             setLoading(false);
         }
     };
-    useEffect(() => {
-        if (isLoaded) {
-            // Check if the user is logged in and has the admin role
-            if (!userId || user?.publicMetadata?.role !== "admin") {
-                // Redirect to a "not authorized" page or login page
-                router.push("/not-authorized");
-            } else {
-                setLoading(false); // Allow access if the user is an admin
-            }
-        }
-    }, [isLoaded, userId, user, router]);
+
+    const isAdmin = await checkRole('admin')
+    if (!isAdmin) {
+        redirect('/')
+    }
 
     useEffect(() => {
         fetchPayments();
