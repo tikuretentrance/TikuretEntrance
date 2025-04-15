@@ -30,7 +30,6 @@ export class MailerService {
         secure: true, // true for 465, false for other ports
         logger: true,
         debug: true,
-        secureConnection: false,
         auth: {
           type: 'OAuth2',
           user: process.env.EMAIL_USER,
