@@ -27,7 +27,10 @@ export class MailerService {
       this.transporter = nodemailer.createTransport({
         service: 'gmail',
         port: 465,
-        secure: true,
+        secure: true, // true for 465, false for other ports
+        logger: true,
+        debug: true,
+        secureConnection: false,
         auth: {
           type: 'OAuth2',
           user: process.env.EMAIL_USER,
@@ -36,6 +39,9 @@ export class MailerService {
           refreshToken: this.REFRESH_TOKEN,
           accessToken: accessToken?.token || '',
         },
+        tls: {
+          rejectUnAuthorized: true
+        }
       });
     }).catch(error => {
       this.logger.error('Error getting access token:', error);
