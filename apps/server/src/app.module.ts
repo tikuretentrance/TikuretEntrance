@@ -41,7 +41,7 @@ import { ExamsModule } from './modules/exams/exams.module';
       autoLoadEntities: true,
       migrations: ['dist/migrations/*{.ts,.js}'],
       migrationsRun: true,
-      logging: false,
+      logging: true,
       migrationsTableName: 'mela_migration_table',
     }),
 
