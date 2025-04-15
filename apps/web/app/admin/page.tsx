@@ -56,6 +56,30 @@ export default async function AdminPaymentsPage() {
         }
     }, [isLoaded, user, router]);
 
+    const fetchPayments = async () => {
+        let isMounted = true; // Track if the component is still mounted
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
+            const data = await response.json();
+
+            if (isMounted) {
+                setPayments(data?.data || []);
+                setTotalPages(data?.last_page || 1);
+            }
+        } catch (error) {
+            if (isMounted) {
+                toast.error('Failed to fetch payments');
+            }
+        } finally {
+            if (isMounted) {
+                setLoading(false);
+            }
+        }
+
+        return () => {
+            isMounted = false; // Cleanup on unmount
+        };
+    };
 
     const handleApprove = async (paymentId: string) => {
         try {
@@ -89,19 +113,19 @@ export default async function AdminPaymentsPage() {
         }
     };
 
-    const fetchPayments = async () => {
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
-            const data = await response.json();
+    // const fetchPayments = async () => {
+    //     try {
+    //         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`);
+    //         const data = await response.json();
 
-            setPayments(data?.data || []);
-            setTotalPages(data?.last_page || 1);
-        } catch (error) {
-            toast.error('Failed to fetch payments');
-        } finally {
-            setLoading(false);
-        }
-    };
+    //         setPayments(data?.data || []);
+    //         setTotalPages(data?.last_page || 1);
+    //     } catch (error) {
+    //         toast.error('Failed to fetch payments');
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     useEffect(() => {
         fetchPayments();
