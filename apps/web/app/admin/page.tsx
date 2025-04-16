@@ -83,6 +83,7 @@ export default function AdminPaymentsPage() {
 
     const fetchPayments = async () => {
         const token = await getToken();
+        console.log('Token:', token);
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`,

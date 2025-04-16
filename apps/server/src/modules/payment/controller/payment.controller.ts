@@ -8,6 +8,7 @@ export class PaymentsController {
     constructor(private readonly paymentsService: PaymentsService) { }
 
     @Post()
+    @UseGuards(ClerkAuthGuard)
     create(@Body() createPaymentDto: CreatePaymentDto) {
         return this.paymentsService.create(createPaymentDto);
     }
@@ -27,6 +28,7 @@ export class PaymentsController {
     }
 
     @Patch(':id/approve')
+    @UseGuards(ClerkAuthGuard)
     approve(@Param('id') id: string) {
         return this.paymentsService.updateStatus(id, {
             status: 'approved',
@@ -35,6 +37,7 @@ export class PaymentsController {
     }
 
     @Patch(':id/reject')
+    @UseGuards(ClerkAuthGuard)
     reject(@Param('id') id: string) {
         return this.paymentsService.updateStatus(id, { status: 'rejected' });
     }

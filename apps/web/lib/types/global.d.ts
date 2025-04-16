@@ -1,7 +1,7 @@
 interface Window {
     adsbygoogle: any[];
 }
-
+    
 export { }
 
 // Create a type for the roles
