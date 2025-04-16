@@ -1,1 +1,1 @@
-export * from './biology';
+export * from './biology/grade11';
