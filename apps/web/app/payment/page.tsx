@@ -344,7 +344,7 @@ export default function PaymentPage() {
                             <li>Open Telebirr app</li>
                             <li>Select "Pay"</li>
                             <li>Enter the phone number</li>
-                            <li>Enter amount: ETB 999</li>
+                            <li>Enter amount: ETB 499</li>
                             <li>Take screenshot of confirmation</li>
                             <li>Upload the screenshot here</li>
                           </>
@@ -353,7 +353,7 @@ export default function PaymentPage() {
                             <li>Open {method.toUpperCase()} Mobile Banking app</li>
                             <li>Select {method === "cbe" ? '"Transfer to Account"' : '"Transfer"'}</li>
                             <li>Enter the account number</li>
-                            <li>Enter amount: ETB 999</li>
+                            <li>Enter amount: ETB 499</li>
                             <li>Take screenshot of confirmation</li>
                             <li>Upload the screenshot here</li>
                           </>
