@@ -3,7 +3,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, Sparkles } from "lucide-react";
+import { CheckCircle2, GraduationCap, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export function PricingSection() {
@@ -69,8 +69,8 @@ export function PricingSection() {
                         <div className="text-center space-y-4">
                             <Button asChild size="lg" className="w-full md:w-auto px-8">
                                 <Link href="/payment" className="flex items-center gap-2">
-                                    <Sparkles className="h-5 w-5" />
-                                    Get Started Now
+                                    <GraduationCap className="h-5 w-5" />
+                                    Join TikuretEntrance
                                 </Link>
                             </Button>
                             <p className="text-xs text-muted-foreground">

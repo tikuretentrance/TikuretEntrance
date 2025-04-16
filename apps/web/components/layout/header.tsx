@@ -19,6 +19,9 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Books", href: "/books" },
   { name: "Courses", href: "/courses" },
+  // membership
+  { name: "Membership", href: "/membership" },
+
   // { name: "Exams", href: "/exams" },
   // { name: "Blog", href: "/blog" },
   // { name: "About", href: "/about" },
@@ -47,11 +50,10 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center text-sm font-medium transition-colors hover:text-primary ${
-                pathname === item.href
+              className={`flex items-center text-sm font-medium transition-colors hover:text-primary ${pathname === item.href
                   ? "text-foreground"
                   : "text-foreground/60"
-              }`}
+                }`}
             >
               {item.name}
             </Link>
@@ -73,11 +75,10 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center text-sm font-medium transition-colors hover:text-primary ${
-                    pathname === item.href
+                  className={`flex items-center text-sm font-medium transition-colors hover:text-primary ${pathname === item.href
                       ? "text-foreground"
                       : "text-foreground/60"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
