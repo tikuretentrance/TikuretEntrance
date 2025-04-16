@@ -8,7 +8,7 @@ export class PaymentsController {
     constructor(private readonly paymentsService: PaymentsService) { }
 
     @Post()
-    @UseGuards(ClerkAuthGuard)
+    // @UseGuards(ClerkAuthGuard)
     create(@Body() createPaymentDto: CreatePaymentDto) {
         return this.paymentsService.create(createPaymentDto);
     }

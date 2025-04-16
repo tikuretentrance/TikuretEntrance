@@ -11,7 +11,7 @@ export class PaymentProof {
     @Column()
     phone: string;
 
-    @Column({ type: 'float', default: 999 }) // Default amount
+    @Column({ type: 'float', default: 499 }) // Default amount
     amount: number;
 
     @Column()
