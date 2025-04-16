@@ -14,6 +14,9 @@ export class PaymentProof {
     @Column({ type: 'float', default: 499 }) // Default amount
     amount: number;
 
+    @Column({ default: "default@example.com" })
+    email: string;
+
     @Column()
     screenshotUrl: string;
 

@@ -1,6 +1,7 @@
 export class CreatePaymentDto {
     fullName: string;
     phone: string;
+    email: string;
     screenshotUrl: string;
     paymentMethod: string;
 }

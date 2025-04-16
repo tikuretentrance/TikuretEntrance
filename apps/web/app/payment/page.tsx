@@ -31,6 +31,7 @@ import "@uploadthing/react/styles.css";
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
   phone: z.string().regex(/^\+251[0-9]{9}$/, "Please enter a valid Ethiopian phone number"),
+  email: z.string().email("Please enter a valid email address").optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -251,6 +252,18 @@ export default function PaymentPage() {
                           />
                           {errors.phone && (
                             <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
+                          )}
+                        </div>
+                        {/* Email */}
+                        <div>
+                          <Label htmlFor="email">Email</Label>
+                          <Input
+                            id="email"
+                            {...register("email")}
+                            className="mt-1"
+                          />
+                          {errors.email && (
+                            <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
                           )}
                         </div>
 
