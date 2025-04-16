@@ -82,13 +82,8 @@ export default function AdminPaymentsPage() {
     };
 
     const fetchPayments = async () => {
+        const token = await getToken();
         try {
-            const token = await getToken();
-            if (!token) {
-                router.push('/sign-in');
-                return;
-            }
-
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`,
                 {
@@ -99,15 +94,8 @@ export default function AdminPaymentsPage() {
                     credentials: 'include' // Important for cookies
                 }
             );
-
-            if (response.status === 401) {
-                router.push('/sign-in');
-                return;
-            }
-
-            if (!response.ok) throw new Error('Failed to fetch payments');
-
             const data = await response.json();
+
             setPayments(data?.data || []);
             setTotalPages(data?.last_page || 1);
         } catch (error) {
@@ -116,7 +104,6 @@ export default function AdminPaymentsPage() {
             setLoading(false);
         }
     };
-
     useEffect(() => {
         if (isLoaded) {
             // Check if the user is logged in and has the admin role
