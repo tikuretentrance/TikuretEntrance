@@ -88,11 +88,11 @@ export default function AdminPaymentsPage() {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`,
                 {
-                    // headers: {
-                    //     'Authorization': `Bearer ${token}`,
-                    //     'Content-Type': 'application/json'
-                    // },
-                    // credentials: 'include'
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include'
                 }
             );
             const data = await response.json();
@@ -105,17 +105,17 @@ export default function AdminPaymentsPage() {
             setLoading(false);
         }
     };
-    // useEffect(() => {
-    //     if (isLoaded) {
-    //         // Check if the user is logged in and has the admin role
-    //         if (!userId || user?.publicMetadata?.role !== "admin") {
-    //             // Redirect to a "not authorized" page or login page
-    //             router.push("/not-authorized");
-    //         } else {
-    //             setLoading(false); // Allow access if the user is an admin
-    //         }
-    //     }
-    // }, [isLoaded, userId, user, router]);
+    useEffect(() => {
+        if (isLoaded) {
+            // Check if the user is logged in and has the admin role
+            if (!userId || user?.publicMetadata?.role !== "admin") {
+                // Redirect to a "not authorized" page or login page
+                router.push("/not-authorized");
+            } else {
+                setLoading(false); // Allow access if the user is an admin
+            }
+        }
+    }, [isLoaded, userId, user, router]);
 
     useEffect(() => {
         fetchPayments();
