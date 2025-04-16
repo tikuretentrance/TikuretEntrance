@@ -42,6 +42,7 @@ import { ExamsModule } from './modules/exams/exams.module';
       migrations: ['dist/migrations/*{.ts,.js}'],
       migrationsRun: true,
       logging: true,
+      logger: 'advanced-console',
       migrationsTableName: 'mela_migration_table',
     }),
 

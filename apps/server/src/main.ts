@@ -12,6 +12,7 @@ import {
 async function bootstrap() {
   const app: NestExpressApplication = await NestFactory.create(AppModule, {
     bufferLogs: true,
+    logger: ['error', 'warn', 'log'],
   });
 
   const SwaggerConfig = new DocumentBuilder()
