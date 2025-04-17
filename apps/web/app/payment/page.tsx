@@ -41,6 +41,7 @@ export default function PaymentPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [language, setLanguage] = useState<'en' | 'am'>('en');
   const [isUploading, setIsUploading] = useState(false);
+  const [selectedMethod, setSelectedMethod] = useState<'cbe' | 'awash' | 'telebirr'>('cbe');
   const { userId } = useAuth();
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema)
@@ -118,7 +119,7 @@ export default function PaymentPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...data,
-          paymentMethod: 'cbe', // or 'awash' or 'telebirr'
+          paymentMethod: selectedMethod,
           userId: userId,
           screenshotUrl: selectedFile,
           submittedAt: new Date().toISOString()
@@ -162,7 +163,7 @@ export default function PaymentPage() {
           </p>
         </div>
 
-        <Tabs defaultValue="cbe" className="space-y-8">
+        <Tabs value={selectedMethod} onValueChange={(value) => setSelectedMethod(value as 'cbe' | 'awash' | 'telebirr')} className="space-y-8">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="cbe" className="space-x-2">
               <Building2 className="h-4 w-4" />

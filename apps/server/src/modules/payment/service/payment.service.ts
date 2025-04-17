@@ -70,4 +70,14 @@ export class PaymentsService {
             throw new BadRequestException(error.message || 'Failed to approve payment');
         }
     }
+
+    // async rejectPayment(id: string) {
+    //     const payment = await this.paymentRepo.findOneBy({ id });
+    //     if (!payment) {
+    //         throw new NotFoundException('Payment not found');
+    //     }
+
+    //     // Update payment status to rejected
+    //     return await this.paymentRepo.update(id, { status: 'rejected' });
+    // }
 }
