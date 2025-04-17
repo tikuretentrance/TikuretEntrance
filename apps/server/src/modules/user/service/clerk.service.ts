@@ -1,5 +1,6 @@
 import { BadRequestException, ConflictException, Inject, Injectable } from '@nestjs/common';
-import { ClerkClient, clerkClient } from '@clerk/express';
+import { ClerkClient, clerkClient, Invitation } from '@clerk/express';
+import { PaginatedResourceResponse } from '@clerk/backend/dist/api/resources/Deserializer';
 
 @Injectable()
 export class ClerkService {
@@ -35,6 +36,7 @@ export class ClerkService {
             const user = await clerkClient.users.createUser({
                 emailAddress: [email],
                 firstName,
+                username,
                 lastName,
             });
 
@@ -45,13 +47,53 @@ export class ClerkService {
         }
     }
 
-    // async getUserList() {
-    //     try {
-    //         const users = await clerkClient.users.getUserList();
-    //         return users;
-    //     } catch (error) {
-    //         // console.error('Error fetching users:', error);
-    //         throw new BadRequestException('Failed to fetch users');
-    //     }
-    // }
+    async getInvitationList(): Promise<PaginatedResourceResponse<Invitation[]>> {
+        try {
+            const invitations = await clerkClient.invitations.getInvitationList();
+            return invitations;
+        } catch (error) {
+            // console.error('Error fetching invitations:', error);
+            throw new BadRequestException('Failed to fetch invitations');
+        }
+    }
+
+    async getCount() {
+        try {
+            const users = await clerkClient.users.getCount();
+            return users;
+        } catch (error) {
+            throw new BadRequestException(error.message);
+        }
+    }
+
+    /**
+     * 
+     * @param date - The date to filter users by. Only users created after this date will be returned.
+     * @returns  A list of users created after the specified date.
+     * @throws BadRequestException if the request fails.
+     *
+    **/
+
+    async getUsersCreatedAfter(date: Date) {
+        try {
+            const users = await clerkClient.users.getUserList();
+            const filteredUsers = users.data.filter(user => new Date(user.createdAt).getTime() > date.getTime());
+            return filteredUsers;
+        } catch (error) {
+            throw new BadRequestException('Failed to fetch users created after the specified date');
+        }        // return users.data;/
+    } catch(error) {
+        throw new Error(`Failed to fetch users: ${error.message}`);
+    }
 }
+
+// async getUserList() {
+//     try {
+//         const users = await clerkClient.users.getUserList();
+//         return users;
+//     } catch (error) {
+//         // console.error('Error fetching users:', error);
+//         throw new BadRequestException('Failed to fetch users');
+//     }
+// }
+

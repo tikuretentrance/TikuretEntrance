@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { clerkClient } from '@clerk/express';
 import { ClerkUser } from '../interface/user-response.interface';
 
@@ -22,6 +22,15 @@ export class UsersService {
             return formattedUsers;
         } catch (error) {
             throw new Error(`Failed to fetch users: ${error.message}`);
+        }
+    }
+
+    async getUserCount() {
+        try {
+            const users = await clerkClient.users.getUserList();
+            return users.totalCount;
+        } catch (error) {
+            throw new BadRequestException(`Failed to fetch user count: ${error.message}`);
         }
     }
 }

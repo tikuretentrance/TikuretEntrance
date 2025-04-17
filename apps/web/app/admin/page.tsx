@@ -1,123 +1,105 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
   Users,
   UserCheck,
   Clock,
-  CreditCard,
   CheckCircle2,
-  AlertCircle,
   ArrowUpRight,
-
+  AlertCircle,
   Calendar
 } from "lucide-react";
-import Link from "next/link";
-import PaymentPage from "../payment/page";
 import AdminPaymentsPage from "./payments/page";
+import { Skeleton } from "@/components/ui/skeleton";
+import { toast } from 'sonner';
+
+interface DashboardStats {
+  totalUsers: number;
+  paidUsers: number;
+  pendingPayments: number;
+  verifiedToday: number;
+}
 
 export default function AdminOverviewPage() {
-  // Mock data - replace with real data from your API
-  const stats = {
-    totalUsers: 10542,
-    paidUsers: 8234,
-    pendingPayments: 156,
-    verifiedToday: 45,
-    dailyActive: 3256,
-    questionsAnswered: 156789,
-    averageScore: 85,
-  };
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const recentActivity = [
-    { type: 'payment', status: 'pending', user: 'Kidus Abebe', time: '5 minutes ago' },
-    { type: 'signup', user: 'Sara Tesfaye', time: '15 minutes ago' },
-    { type: 'payment', status: 'verified', user: 'Mohammed Ahmed', time: '30 minutes ago' },
-  ];
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/stats/dashboard');
+        if (!response.ok) throw new Error('Failed to fetch stats');
+        const data = await response.json();
+        setStats(data);
+      } catch (error: any) {
+        toast.error(`Failed to fetch stats: ${error.message}`, { position: "top-center" });
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {[...Array(4)].map((_, i) => (
+          <Card key={i}>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between space-x-4">
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-[100px]" />
+                  <Skeleton className="h-8 w-[80px]" />
+                </div>
+                <Skeleton className="h-12 w-12 rounded-full" />
+              </div>
+              <div className="mt-4">
+                <Skeleton className="h-4 w-[120px]" />
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">
-      {/* <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-        <Button asChild>
-          <Link href="/admin/payments">View Pending Payments</Link>
-        </Button>
-      </div> */}
-
-      {/* Quick Stats Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between space-x-4">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Total Users</p>
-                <p className="text-2xl font-bold">{stats.totalUsers.toLocaleString()}</p>
-              </div>
-              <div className="p-3 bg-primary/10 rounded-full">
-                <Users className="h-5 w-5 text-primary" />
-              </div>
-            </div>
-            <div className="mt-4 flex items-center text-sm text-green-600">
-              <ArrowUpRight className="h-4 w-4 mr-1" />
-              <span>12% increase</span>
-            </div>
-          </CardContent>
-        </Card>
+        <StatCard
+          title="Total Users"
+          value={stats?.totalUsers || 0}
+          icon={<Users className="h-5 w-5 text-primary" />}
+          trend="12% increase"
+          trendPositive
+        />
 
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between space-x-4">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Paid Users</p>
-                <p className="text-2xl font-bold">{stats.paidUsers.toLocaleString()}</p>
-              </div>
-              <div className="p-3 bg-green-500/10 rounded-full">
-                <UserCheck className="h-5 w-5 text-green-500" />
-              </div>
-            </div>
-            <div className="mt-4 flex items-center text-sm text-green-600">
-              <ArrowUpRight className="h-4 w-4 mr-1" />
-              <span>8% increase</span>
-            </div>
-          </CardContent>
-        </Card>
+        <StatCard
+          title="Paid Users"
+          value={stats?.paidUsers || 0}
+          icon={<UserCheck className="h-5 w-5 text-green-500" />}
+          trend="8% increase"
+          trendPositive
+        />
 
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between space-x-4">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Pending Payments</p>
-                <p className="text-2xl font-bold">{stats.pendingPayments}</p>
-              </div>
-              <div className="p-3 bg-orange-500/10 rounded-full">
-                <Clock className="h-5 w-5 text-orange-500" />
-              </div>
-            </div>
-            <div className="mt-4 flex items-center text-sm text-orange-600">
-              <AlertCircle className="h-4 w-4 mr-1" />
-              <span>Needs attention</span>
-            </div>
-          </CardContent>
-        </Card>
+        <StatCard
+          title="Pending Payments"
+          value={stats?.pendingPayments || 0}
+          icon={<Clock className="h-5 w-5 text-orange-500" />}
+          trend="Needs attention"
+          trendPositive={false}
+        />
 
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between space-x-4">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Verified Today</p>
-                <p className="text-2xl font-bold">{stats.verifiedToday}</p>
-              </div>
-              <div className="p-3 bg-green-500/10 rounded-full">
-                <CheckCircle2 className="h-5 w-5 text-green-500" />
-              </div>
-            </div>
-            <div className="mt-4 flex items-center text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4 mr-1" />
-              <span>Today's progress</span>
-            </div>
-          </CardContent>
-        </Card>
+        <StatCard
+          title="Verified Today"
+          value={stats?.verifiedToday || 0}
+          icon={<CheckCircle2 className="h-5 w-5 text-green-500" />}
+          trend="Today's progress"
+        />
       </div>
 
       <AdminPaymentsPage />
@@ -208,5 +190,41 @@ export default function AdminOverviewPage() {
         </CardContent>
       </Card> */}
     </div>
+  );
+}
+
+function StatCard({ title, value, icon, trend, trendPositive }: {
+  title: string;
+  value: number;
+  icon: React.ReactNode;
+  trend: string;
+  trendPositive?: boolean;
+}) {
+  return (
+    <Card>
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between space-x-4">
+          <div>
+            <p className="text-sm font-medium text-muted-foreground">{title}</p>
+            <p className="text-2xl font-bold">{value.toLocaleString()}</p>
+          </div>
+          <div className="p-3 rounded-full bg-primary/10">
+            {icon}
+          </div>
+        </div>
+        <div className={`mt-4 flex items-center text-sm ${trendPositive === undefined
+          ? 'text-muted-foreground'
+          : trendPositive
+            ? 'text-green-600'
+            : 'text-orange-600'
+          }`}>
+          {trendPositive !== undefined && (
+            <ArrowUpRight className={`h-4 w-4 mr-1 ${!trendPositive && 'rotate-180'
+              }`} />
+          )}
+          <span>{trend}</span>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
