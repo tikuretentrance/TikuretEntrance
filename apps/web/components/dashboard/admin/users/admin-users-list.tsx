@@ -8,7 +8,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Loader2 } from "lucide-react";
 
 export interface ClerkUser {
@@ -77,13 +77,13 @@ export function AdminUsersList() {
                 {users.map((user) => (
                     <TableRow key={user.id}>
                         <TableCell className="flex items-center gap-3">
-                            {/* <Avatar>
+                            <Avatar>
                                 <AvatarImage src={user.imageUrl} />
                                 <AvatarFallback>
                                     {user.firstName?.[0]}
                                     {user.lastName?.[0]}
                                 </AvatarFallback>
-                            </Avatar> */}
+                            </Avatar>
                             <div>
                                 <p className="font-medium">
                                     {user.firstName} {user.lastName}
