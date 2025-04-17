@@ -4,7 +4,7 @@ export async function GET() {
     try {
         const nestResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stats/dashboard`, {
             headers: {
-                'Authorization': `Bearer ${process.env.API_SECRET_KEY}`
+                'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`
             },
             credentials: 'include'
         });
