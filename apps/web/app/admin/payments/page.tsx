@@ -65,8 +65,8 @@ export default function AdminPaymentsPage() {
             toast.success('Payment approved successfully');
             // Refresh payments list
             fetchPayments();
-        } catch (error) {
-            toast.error('Failed to approve payment');
+        } catch (error: any) {
+            toast.error(error.message);
         }
     };
 

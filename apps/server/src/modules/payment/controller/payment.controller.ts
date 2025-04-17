@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Query, Param, Patch, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Query, Param, Patch, UseGuards, BadRequestException } from '@nestjs/common';
 import { PaymentsService } from '../service/payment.service';
 import { CreatePaymentDto } from '../dto/payment.dto';
 import { ClerkAuthGuard } from 'src/modules/user/guard/user-clerk.guard';
@@ -29,11 +29,12 @@ export class PaymentsController {
 
     @Patch(':id/approve')
     @UseGuards(ClerkAuthGuard)
-    approve(@Param('id') id: string) {
-        return this.paymentsService.updateStatus(id, {
-            status: 'approved',
-            // Add userId assignment when Clerk is ready
-        });
+    async approve(@Param('id') id: string) {
+        // try {
+        return await this.paymentsService.approvePayment(id);
+        // } catch (error) {
+        //     throw new BadRequestException(error.message);
+        // }
     }
 
     @Patch(':id/reject')

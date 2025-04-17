@@ -1,15 +1,16 @@
-// payments.service.ts
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { PaymentProof } from 'src/entities/payment-proof.entity';
 import { CreatePaymentDto, UpdatePaymentDto } from '../dto/payment.dto';
+import { ClerkService } from 'src/modules/user/service/clerk.service';
 
 @Injectable()
 export class PaymentsService {
     constructor(
         @InjectRepository(PaymentProof)
         private paymentRepo: Repository<PaymentProof>,
+        private clerkService: ClerkService,
     ) { }
 
     async create(createPaymentDto: CreatePaymentDto) {
@@ -39,5 +40,34 @@ export class PaymentsService {
     async updateStatus(id: string, updateDto: UpdatePaymentDto) {
         await this.paymentRepo.update(id, updateDto);
         return this.paymentRepo.findOneBy({ id });
+    }
+
+    async approvePayment(id: string) {
+        const payment = await this.paymentRepo.findOneBy({ id });
+        if (!payment) {
+            throw new NotFoundException('Payment not found');
+        }
+
+        // Send invitation via Clerk
+        try {
+            await this.clerkService.inviteUser(payment.email);
+
+            // Alternatively, create user directly if you prefer:
+            // const user = await this.clerkService.createUser(
+            //   payment.email,
+            //   payment.fullName.split(' ')[0],
+            //   payment.fullName.split(' ').slice(1).join(' ')
+            // );
+
+            // Update payment with user ID if needed
+            return await this.paymentRepo.update(id, {
+                status: 'approved',
+                // userId: invitation.emailAddress // or user.id if creating user directly
+            });
+
+        } catch (error) {
+            // console.error('Error during approval:', error);
+            throw new BadRequestException(error.message || 'Failed to approve payment');
+        }
     }
 }
