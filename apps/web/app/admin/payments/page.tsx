@@ -12,8 +12,6 @@ import {
     XCircle,
     Clock,
     Search,
-    Download,
-    ExternalLink,
     ChevronLeft,
     ChevronRight,
     Filter
@@ -50,9 +48,16 @@ export default function AdminPaymentsPage() {
     const { getToken } = useAuth();
 
     const handleApprove = async (paymentId: string) => {
+        const token = await getToken();
+
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/approve`, {
                 method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
             });
 
             if (!response.ok) throw new Error('Failed to approve payment');
@@ -66,9 +71,15 @@ export default function AdminPaymentsPage() {
     };
 
     const handleDecline = async (paymentId: string) => {
+        const token = await getToken();
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/payments/${paymentId}/reject`, {
                 method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
             });
 
             if (!response.ok) throw new Error('Failed to reject payment');
@@ -83,7 +94,6 @@ export default function AdminPaymentsPage() {
 
     const fetchPayments = async () => {
         const token = await getToken();
-        // console.log('Token:', token);
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_API_URL}/payments/?page=${page}&filter=${filter}&search=${search}`,

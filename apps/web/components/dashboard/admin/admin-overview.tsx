@@ -30,12 +30,6 @@ export function AdminOverview() {
       change: "+15%",
     },
     // {
-    //   title: "Appointments",
-    //   value: "567",
-    //   icon: Calendar,
-    //   change: "+8%",
-    // },
-    // {
     //   title: "Verified Today",
     //   value: "45",
     //   icon: Activity,

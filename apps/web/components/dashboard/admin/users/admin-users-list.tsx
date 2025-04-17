@@ -118,6 +118,9 @@ export function AdminUsersList() {
                     </TableRow>
                 ))}
             </TableBody>
+            <p className="text-sm text-muted-foreground">
+                Showing {users?.length} users
+            </p>
         </Table>
     );
 }
