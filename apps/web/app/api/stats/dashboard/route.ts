@@ -1,10 +1,14 @@
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
         const nestResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/stats/dashboard`, {
+            // headers: {
+            //     'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`
+            // },
             headers: {
-                'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`
+                Cookie: cookies().toString(),
             },
             credentials: 'include'
         });
