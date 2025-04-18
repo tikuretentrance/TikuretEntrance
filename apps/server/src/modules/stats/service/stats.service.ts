@@ -1,6 +1,5 @@
-// stats.service.ts
 import { Injectable } from '@nestjs/common';
-import { ClerkService } from '../user/service/clerk.service';
+import { ClerkService } from 'src/modules/user/service/clerk.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { PaymentProof } from 'src/entities';
