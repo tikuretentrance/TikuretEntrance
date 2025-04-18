@@ -70,7 +70,7 @@ export function UserNav({ isMobile = false }: UserNavProps) {
         <Link href="/sign-in">Login</Link>
       </Button> */}
       <Button variant="ghost" asChild>
-        <Link href="/sign-up">Start Now</Link>
+        <Link href="/membership">Start Now</Link>
       </Button>
     </div>
   );
