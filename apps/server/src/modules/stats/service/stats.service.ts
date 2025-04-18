@@ -34,7 +34,6 @@ export class StatsService {
                 paidUsers,
                 pendingPayments,
                 verifiedToday,
-                // Add other stats as needed
             };
         } catch (error) {
             throw new Error(`Failed to fetch dashboard stats: ${error.message}`);
