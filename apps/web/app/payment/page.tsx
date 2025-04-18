@@ -50,7 +50,7 @@ export default function PaymentPage() {
   const bankDetails = {
     cbe: {
       name: "Dagim Wallelgne Yitayew",
-      accountNumber: "1000123456789",
+      accountNumber: "1000501476548",
       bankName: "Commercial Bank of Ethiopia",
       branch: "Bole Branch",
       qrCode: "/images/cbe-qr.png"
